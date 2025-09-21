@@ -5,5 +5,20 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:MyRelic": {
+    "NAME": "MyRelic",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, gain #b",
+      " #y${modID}:格挡."
+    ]
+  },
+  "${modID}:ODBar": {
+    "NAME": "ODBar",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "右键单击发动OD，消耗40点Hit数，弃置所有手牌，回复3点能量，抽5张牌"
+    ]
   }
 }

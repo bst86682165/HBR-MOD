@@ -2,6 +2,7 @@ package heavenburnsred.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import heavenburnsred.util.GeneralUtils;
 import heavenburnsred.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -102,4 +103,6 @@ public abstract class BaseRelic extends CustomRelic {
     private static boolean notPng(String name) {
         return !name.endsWith(".png");
     }
+
+    public abstract void onUseCard(AbstractCard targetCard, UseCardAction useCardAction);
 }
