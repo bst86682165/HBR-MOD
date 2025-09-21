@@ -1,0 +1,43 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description. NL Second line.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 ${modID}:格挡",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 ${modID}:格挡",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Enhancement": {
+    "NAME": "强化",
+    "DESCRIPTION": "获得 !M! 层 ${modID}:加攻",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 ${modID}:加攻",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  }
+}
+
