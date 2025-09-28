@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import heavenburnsred.cards.Strike;
 import heavenburnsred.cards.Defend;
 import heavenburnsred.cards.Enhancement;
+import heavenburnsred.relics.Attribute;
 import heavenburnsred.relics.ODBar;
 
 import java.util.ArrayList;
@@ -161,6 +162,7 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
         retVal.add(ODBar.ID);
+        retVal.add(Attribute.ID);
 
         return retVal;
     }
