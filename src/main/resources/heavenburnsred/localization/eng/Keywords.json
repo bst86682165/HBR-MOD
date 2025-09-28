@@ -43,5 +43,13 @@
     ],
     "DESCRIPTION": "提升攻击卡50%的伤害",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "段数",
+    "NAMES": [
+      "段数"
+    ],
+    "DESCRIPTION": "为初始遗物ODBar增加X点Hit数",
+    "COLOR": "fc83da"
   }
 ]

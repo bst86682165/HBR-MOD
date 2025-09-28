@@ -22,9 +22,9 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 //import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import heavenburnsred.cards.Strike;
-import heavenburnsred.cards.Defend;
-import heavenburnsred.cards.Enhancement;
+import heavenburnsred.cards.attack.Strike;
+import heavenburnsred.cards.skill.Defend;
+import heavenburnsred.cards.skill.Enhancement;
 import heavenburnsred.relics.Attribute;
 import heavenburnsred.relics.ODBar;
 

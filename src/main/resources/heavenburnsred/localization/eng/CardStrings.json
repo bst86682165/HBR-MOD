@@ -11,8 +11,8 @@
   },
   "${modID}:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害",
+    "DESCRIPTION": "造成 !D! 点伤害 NL ${modID}:段数 3",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 NL ${modID}:段数 3",
     "EXTENDED_DESCRIPTION": [
       "You can put more text in here.",
       "If you need to use it for stuff.",
@@ -38,6 +38,10 @@
       "If you need to use it for stuff.",
       "Blizzard is a good example for this."
     ]
+  },
+  "${modID}:StrikeAll": {
+    "NAME": "群体打击",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 NL ${modID}:段数 3"
   }
 }
 
