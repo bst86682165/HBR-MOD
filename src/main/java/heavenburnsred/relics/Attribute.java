@@ -95,7 +95,7 @@ public class Attribute extends BaseRelic
     public void onObtainCard(AbstractCard c) {
         if (c.cardID.endsWith("card")){
             addToBot(new UseCardAction(c));
-            addToBot(new );
+            AbstractDungeon.player.masterDeck.removeCard(c);
         }
     }
 
