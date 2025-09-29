@@ -24,6 +24,10 @@ public class ZYcard extends BaseCard {
     }
 
     @Override
+    public void upgrade() {
+    }
+
+    @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         hbrZY = hbrZY + 1;
     }

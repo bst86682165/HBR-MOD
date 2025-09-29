@@ -24,6 +24,10 @@ public class TJcard extends BaseCard {
     }
 
     @Override
+    public void upgrade() {
+    }
+
+    @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         hbrTJ = hbrTJ + 1;
     }

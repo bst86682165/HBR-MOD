@@ -6,9 +6,15 @@
     ]
   },
   "${modID}:AttributeCal": {
-    "NAME": "jisuan",
+    "NAME": "白值效果",
     "DESCRIPTIONS": [
-      "jisuan."
+      "根据自身四维数值，会获得不同的增益"
+    ]
+  },
+  "${modID}:MonsterPoint": {
+    "NAME": "白值",
+    "DESCRIPTIONS": [
+      "怪物白值越高，受到的伤害会越低，造成的伤害会越高"
     ]
   }
 }

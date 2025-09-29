@@ -24,6 +24,10 @@ public class LLcard extends BaseCard {
     }
 
     @Override
+    public void upgrade() {
+    }
+
+    @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         hbrLL = hbrLL + 1;
     }
