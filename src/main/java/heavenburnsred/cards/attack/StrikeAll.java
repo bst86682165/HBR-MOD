@@ -1,12 +1,9 @@
 package heavenburnsred.cards.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.HbrTags;
@@ -14,7 +11,7 @@ import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
 
 public class StrikeAll extends BaseCard {
-    public static final String ID = makeID("StrikeAll"); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+    public static final String ID = makeID(StrikeAll.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.ATTACK, //The type. ATTACK/SKILL/POWER/CURSE/STATUS

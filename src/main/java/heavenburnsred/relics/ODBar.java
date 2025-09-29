@@ -1,5 +1,7 @@
 package heavenburnsred.relics;
 
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -13,6 +15,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.patches.HBRRelicClick;
 import heavenburnsred.cards.BaseCard;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.core.Settings;
+import com.badlogic.gdx.graphics.Color;
 
 import static heavenburnsred.BasicMod.makeID;
 
@@ -74,7 +79,27 @@ public class ODBar extends HBRRelicClick {
     }
 
     @Override
+    public void renderCounter(SpriteBatch sb, boolean inTopPanel) {
+        if (inTopPanel) {
+            float offsetX = (float) ReflectionHacks.getPrivate(this, AbstractRelic.class, "offsetX");
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelInfoFont,
+                    Integer.toString(this.counter), offsetX + this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, Color.WHITE);
+        } else {
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelInfoFont,
+                    Integer.toString(this.counter), this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, Color.WHITE);
+        }
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+    }
+
+    public static int getCounter() {
+        AbstractRelic relic = AbstractDungeon.player.getRelic(ID);
+        if (relic instanceof ODBar) {
+            return relic.counter;
+        }
+        return 0; // 没有遗物时默认 0 当然理论上不可能没有该遗物
     }
 }

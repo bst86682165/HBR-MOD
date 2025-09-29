@@ -33,7 +33,7 @@
     "NAMES": [
       "格挡"
     ],
-    "DESCRIPTION": "持续到下回合开始前，阻挡伤害",
+    "DESCRIPTION": "持续到下回合开始前，阻挡伤害。",
     "COLOR": "fc83da"
   },
   {
@@ -41,15 +41,15 @@
     "NAMES": [
       "加攻"
     ],
-    "DESCRIPTION": "提升攻击卡50%的伤害",
+    "DESCRIPTION": "提升攻击卡50%的伤害。",
     "COLOR": "fc83da"
   },
   {
-    "PROPER_NAME": "段数",
+    "PROPER_NAME": "超频（X）",
     "NAMES": [
-      "段数"
+      "超频"
     ],
-    "DESCRIPTION": "为初始遗物ODBar增加X点Hit数",
+    "DESCRIPTION": "为初始遗物超频条增加HIT数，每个被攻击的怪物增加X点。",
     "COLOR": "fc83da"
   }
 ]

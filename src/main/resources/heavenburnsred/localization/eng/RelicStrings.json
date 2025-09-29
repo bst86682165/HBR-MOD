@@ -15,17 +15,17 @@
     ]
   },
   "${modID}:ODBar": {
-    "NAME": "ODBar",
-    "FLAVOR": "I followed a tutorial!",
+    "NAME": "超频条",
+    "FLAVOR": "我们没有限制上限9次哈哈。",
     "DESCRIPTIONS": [
-      "右键单击发动OD，消耗40点Hit数，弃置所有手牌，回复3点能量，抽5张牌"
+      "右键单击发动超频OVERDRIVE，消耗40点HIT数，弃置所有手牌，回复3点能量，抽5张牌。"
     ]
   },
   "${modID}:Attribute": {
     "NAME": "六维",
-    "FLAVOR": "I followed a tutorial!",
+    "FLAVOR": "六维有四个。",
     "DESCRIPTIONS": [
-      "六维有四个"
+      "六维有四个。"
     ]
   }
 }

@@ -2,11 +2,11 @@
   "${modID}:Nabi": {
     "NAMES": [
       "Nabi",
-      "nabi"
+      "Nabi"
     ],
     "TEXT": [
-      "Line #1 of character select description. NL Line 2 of character select description.",
-      " NL Text displayed when smacking the heart. The next one is used for the Vampires event. Usually you just change the last bit.",
+      "一只具有6维（？）属性的纳比。 NL 可以使用超频OVERDRIVE进行附加回合。擅长利用多种buff和debuff效果打出高额伤害。",
+      "面对心脏说的话，下一个是吸血鬼事件，不过emm怎么是英文",
       "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~basic~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
     ]
   }

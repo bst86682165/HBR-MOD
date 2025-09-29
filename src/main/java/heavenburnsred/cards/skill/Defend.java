@@ -9,7 +9,7 @@ import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
 
 public class Defend extends BaseCard {
-    public static final String ID = makeID("Defend"); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+    public static final String ID = makeID(Defend.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
