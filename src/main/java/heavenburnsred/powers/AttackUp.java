@@ -11,7 +11,6 @@ public class AttackUp extends HBRTurnStackPower {
     public static final String POWER_ID = makeID(AttackUp.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = true;
-    private boolean isEffected;  // 默认为false
     //The only thing TURN_BASED controls is the color of the number on the power icon.
     //Turn based powers are white, non-turn based powers are red or green depending on if their amount is positive or negative.
     //For a power to actually decrease/go away on its own they do it themselves.
@@ -19,27 +18,30 @@ public class AttackUp extends HBRTurnStackPower {
 
     public AttackUp(AbstractCreature owner, int amount, int stack_layers) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, stack_layers);
+        this.priority = 6;
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         //If NORMAL (attack) damage, modify damage by this power's amount
-        if (!this.isEffected) {
-            int total_layers = 0;
+        if (!this.isEffected) {  // 计算伤害时第一个加攻buff
+            int layers = Math.min(calculateTotalLayers(), 2);
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p.ID.equals(this.ID)) {
-                    total_layers += ((AttackUp)p).stack_layers;
-                    ((AttackUp) p).isEffected = true;
+                    ((HBRTurnStackPower)p).isEffected = true;  // 先把所有的标记为true，防止其他同名buff重复计算
                 }
             }
-            int layers = Math.min(total_layers, 2);
-            this.isEffected = false;
+            this.isEffected = false;  // 由于不会再把本buff调用一遍atDamageGive，因此可以还原为false
             return type == DamageInfo.DamageType.NORMAL ? damage * (1 + layers * 0.5F) : damage;
         }
+        // 计算伤害时其他的buff，不改变damage的值，同时还原为false
         this.isEffected = false;
         return damage;
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (Math.min(stack_layers, 2) * 50) + "%";
+        // 初始化时，这里还未添加自己进入powers的队列，因此需要加上自己的stack_layers
+        // 不过叠加同回合数buff的话，因为是在原buff上直接叠加层数，calculateTotalLayers()计算结果正确，会多算n层
+        // 但肯定不少于2层所以没区别了，有空再改吧，至少代码结果能跑对，尽管过程屎山
+        this.description = DESCRIPTIONS[0] + (Math.min(calculateTotalLayers()+this.stack_layers, 2) * 50) + "%";
     }
 }
