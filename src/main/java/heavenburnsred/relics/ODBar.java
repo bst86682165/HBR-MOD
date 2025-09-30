@@ -80,13 +80,19 @@ public class ODBar extends HBRRelicClick {
 
     @Override
     public void renderCounter(SpriteBatch sb, boolean inTopPanel) {
+        Color c;
+        if (this.counter >= 0) {
+            c = Color.WHITE;
+        } else {
+            c = Color.RED;
+        }
         if (inTopPanel) {
             float offsetX = (float) ReflectionHacks.getPrivate(this, AbstractRelic.class, "offsetX");
             FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelInfoFont,
-                    Integer.toString(this.counter), offsetX + this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, Color.WHITE);
+                    Integer.toString(this.counter), offsetX + this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, c);
         } else {
             FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelInfoFont,
-                    Integer.toString(this.counter), this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, Color.WHITE);
+                    Integer.toString(this.counter), this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, c);
         }
     }
 

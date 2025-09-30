@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
+import heavenburnsred.patches.ApplyHBRStackPowerAction;
+import heavenburnsred.powers.AttackUp;
 import heavenburnsred.util.CardStats;
 
 public class Enhancement extends BaseCard {
@@ -20,16 +22,13 @@ public class Enhancement extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 1;  // 使用为加攻效果的回合数
     private static final int UPG_MAGIC = 1;
 
     public Enhancement() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setMagic(MAGIC,UPG_MAGIC); //Sets the card's damage and how much it changes when upgraded.
-
-        tags.add(CardTags.STARTER_DEFEND);
-
 
     }
 
@@ -43,8 +42,7 @@ public class Enhancement extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         {
-            addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,magicUpgrade),magicUpgrade));
-            //（p，未拥有时），拥有时
+            addToBot(new ApplyHBRStackPowerAction(p,p,new AttackUp(p, magicNumber, 1)));
         }
     }
 

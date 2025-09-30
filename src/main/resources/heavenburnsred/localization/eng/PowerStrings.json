@@ -16,5 +16,11 @@
     "DESCRIPTIONS": [
       "怪物白值越高，受到的伤害会越低，造成的伤害会越高"
     ]
+  },
+  "${modID}:AttackUp": {
+    "NAME": "加攻",
+    "DESCRIPTIONS": [
+      "你造成的攻击伤害增加 #b"
+    ]
   }
 }

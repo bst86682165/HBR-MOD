@@ -19,7 +19,7 @@
   },
   "${modID}:Enhancement": {
     "NAME": "强化",
-    "DESCRIPTION": "获得 !M! 层 ${modID}:加攻 。"
+    "DESCRIPTION": "获得1层持续 !M! 回合的 ${modID}:加攻 。"
   },
   "${modID}:StrikeAll": {
     "NAME": "群体打击",
