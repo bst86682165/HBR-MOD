@@ -22,5 +22,11 @@
     "DESCRIPTIONS": [
       "你造成的攻击伤害增加 #b"
     ]
+  },
+  "${modID}:DefendDown": {
+    "NAME": "降防",
+    "DESCRIPTIONS": [
+      "被攻击时受到的攻击伤害增加 #b"
+    ]
   }
 }

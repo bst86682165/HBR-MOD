@@ -41,7 +41,7 @@
     "NAMES": [
       "加攻"
     ],
-    "DESCRIPTION": "提升攻击卡50%的伤害。",
+    "DESCRIPTION": "提升攻击卡50%的伤害。最多可以叠加2层",
     "COLOR": "fc83da"
   },
   {
@@ -50,6 +50,14 @@
       "超频"
     ],
     "DESCRIPTION": "为初始遗物超频条增加HIT数，每个被攻击的怪物增加X点。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "降防",
+    "NAMES": [
+      "降防"
+    ],
+    "DESCRIPTION": "被攻击时受到伤害增加50%。最多可以叠加2层",
     "COLOR": "fc83da"
   }
 ]

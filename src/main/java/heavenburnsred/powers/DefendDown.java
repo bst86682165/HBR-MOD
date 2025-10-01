@@ -6,21 +6,20 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static heavenburnsred.BasicMod.makeID;
 
-public class AttackUp extends HBRTurnStackPower {
-    public static final String POWER_ID = makeID(AttackUp.class.getSimpleName());
-    private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
+public class DefendDown extends HBRTurnStackPower {
+    public static final String POWER_ID = makeID(DefendDown.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
     //The only thing TURN_BASED controls is the color of the number on the power icon.
     //Turn based powers are white, non-turn based powers are red or green depending on if their amount is positive or negative.
     //For a power to actually decrease/go away on its own they do it themselves.
     //Look at powers that do this like VulnerablePower and DoubleTapPower.
 
-    public AttackUp(AbstractCreature owner, int amount, int stack_layers) {
+    public DefendDown(AbstractCreature owner, int amount, int stack_layers) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, stack_layers);
-        this.priority = 6;  // 和幻杀一个等级，乘算的优先级为6，力量的优先级为5
     }
 
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (!this.isEffected) {  // 计算伤害时第一个加攻buff
             int layers = calculateTotalLayers();
             for (AbstractPower p : this.owner.powers) {

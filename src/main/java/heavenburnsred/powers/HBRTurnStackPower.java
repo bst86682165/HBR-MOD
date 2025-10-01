@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -73,7 +72,7 @@ public class HBRTurnStackPower extends BasePower {
     // 计算不同回合数的buff的总层数，上限为2
     protected int calculateTotalLayers() {
         int total_layers = 0;
-        for (AbstractPower p : AbstractDungeon.player.powers) {
+        for (AbstractPower p : this.owner.powers) {
             if (p.ID.equals(this.ID)) {
                 total_layers += ((HBRTurnStackPower)p).stack_layers;
             }
