@@ -22,7 +22,7 @@ public class PlayerPowerTipsPatch {
                 .collect(Collectors.toMap(
                     obj -> obj.header,  // header作为键筛重
                     obj -> obj,  // obj本身作为值用来取values赋值列表
-                    (first, duplicate) -> duplicate  // 选后出现的计算description的层数更准确（只要后出现就一定至少是2层）
+                    (first, duplicate) -> first  // 每一个power理论上显示一样的description所以先后都行
                     ))
                     .values()
         );

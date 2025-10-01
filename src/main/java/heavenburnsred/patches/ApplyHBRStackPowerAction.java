@@ -6,8 +6,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.PowerBuffEffect;
@@ -56,7 +54,7 @@ public class ApplyHBRStackPowerAction extends ApplyPowerAction {
             for (AbstractPower p : this.target.powers) {
                 if (p.ID.equals(powerToApply.ID) && p.amount == powerToApply.amount) {
                     // 重复直接叠加stack_layers即可
-                    int powerToApply_layers = ((HBRTurnStackPower)powerToApply).stack_layers;
+                    int powerToApply_layers = ((HBRTurnStackPower)powerToApply).getStack_layers();
                     p.stackPower(powerToApply_layers);
                     p.flash();
                     if (p.type == AbstractPower.PowerType.BUFF) {
@@ -64,7 +62,6 @@ public class ApplyHBRStackPowerAction extends ApplyPowerAction {
                     } else {
                         AbstractDungeon.effectList.add(new PowerDebuffEffect(this.target.hb.cX - this.target.animX, this.target.hb.cY + this.target.hb.height / 2.0F, "+" + powerToApply_layers + " " + powerToApply.name));
                     }
-                    p.updateDescription();
                     hasBuffAlready = true;
                     AbstractDungeon.onModifyPower();
                 }
@@ -91,6 +88,12 @@ public class ApplyHBRStackPowerAction extends ApplyPowerAction {
                     }
                     if (buffCount >= 10)
                         UnlockTracker.unlockAchievement("POWERFUL");
+                }
+            }
+            // 增加新的/叠加旧的buff时把所有同ID的描述均更新一遍
+            for (AbstractPower p : this.target.powers) {
+                if (p.ID.equals(powerToApply.ID)) {
+                    p.updateDescription();
                 }
             }
         }

@@ -18,13 +18,13 @@ public class AttackUp extends HBRTurnStackPower {
 
     public AttackUp(AbstractCreature owner, int amount, int stack_layers) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, stack_layers);
-        this.priority = 6;
+        this.priority = 6;  // 和幻杀一个等级，乘算的优先级为6，力量的优先级为5
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         //If NORMAL (attack) damage, modify damage by this power's amount
         if (!this.isEffected) {  // 计算伤害时第一个加攻buff
-            int layers = Math.min(calculateTotalLayers(), 2);
+            int layers = calculateTotalLayers();
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p.ID.equals(this.ID)) {
                     ((HBRTurnStackPower)p).isEffected = true;  // 先把所有的标记为true，防止其他同名buff重复计算
@@ -39,9 +39,7 @@ public class AttackUp extends HBRTurnStackPower {
     }
 
     public void updateDescription() {
-        // 初始化时，这里还未添加自己进入powers的队列，因此需要加上自己的stack_layers
-        // 不过叠加同回合数buff的话，因为是在原buff上直接叠加层数，calculateTotalLayers()计算结果正确，会多算n层
-        // 但肯定不少于2层所以没区别了，有空再改吧，至少代码结果能跑对，尽管过程屎山
-        this.description = DESCRIPTIONS[0] + (Math.min(calculateTotalLayers()+this.stack_layers, 2) * 50) + "%";
+        // 返回上限为2的层数，每层50%加攻量
+        this.description = DESCRIPTIONS[0] + (calculateTotalLayers() * 50) + "%";
     }
 }
