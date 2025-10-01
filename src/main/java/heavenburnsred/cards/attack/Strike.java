@@ -24,17 +24,17 @@ public class Strike extends BaseCard {
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
-    private static final int HIT = 3;
+//    private static final int HIT = 3;
 
     public Strike() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        setCustomVar("hit", HIT);
+//        setCustomVar("hit", HIT);
 
         tags.add(CardTags.STARTER_STRIKE);
         tags.add(CardTags.STRIKE);
-        tags.add(HbrTags.HIT);
+//        tags.add(HbrTags.HIT);
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {

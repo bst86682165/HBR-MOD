@@ -11,7 +11,7 @@
   },
   "${modID}:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL ${modID}:超频  !${modID}:hit! 。"
+    "DESCRIPTION": "造成 !D! 点伤害。"
   },
   "${modID}:Defend": {
     "NAME": "防御",
@@ -21,8 +21,8 @@
     "NAME": "强化",
     "DESCRIPTION": "获得1层持续 !M! 回合的 ${modID}:加攻 。"
   },
-  "${modID}:StrikeAll": {
-    "NAME": "群体打击",
+  "${modID}:BlueFlame": {
+    "NAME": "苍焰螺旋",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:超频  !${modID}:hit! 。"
   },
   "${modID}:LLcard": {
@@ -52,8 +52,7 @@
   },
   "${modID}:KongMingChop": {
     "NAME": "卧龙演舞斩",
-    "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。 NL ${modID}:超频  !${modID}:hit! 。",
-    "UPGRADE_DESCRIPTION": "超频条的HIT数值为负数时不能打出。"
+    "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。 NL ${modID}:超频  !${modID}:hit! 。"
   }
 }
 

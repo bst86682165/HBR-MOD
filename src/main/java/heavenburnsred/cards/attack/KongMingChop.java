@@ -34,7 +34,7 @@ public class KongMingChop extends BaseCard {
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setCustomVar("hit", HIT);
-        setMagic(MAGIC, 1);
+        setMagic(MAGIC);
 
         tags.add(HbrTags.HIT);
     }
@@ -42,7 +42,7 @@ public class KongMingChop extends BaseCard {
         if (!this.upgraded) {
             this.upgradeName(); // 卡牌名字变为绿色并添加“+”，且标为升级过的卡牌，之后不能再升级。
             this.upgradeDamage(UPG_DAMAGE); // 将该卡牌的伤害提高3点。
-            this.upgradeMagicNumber(magicUpgrade);
+//            this.upgradeMagicNumber(magicUpgrade);
         }
     }
 
