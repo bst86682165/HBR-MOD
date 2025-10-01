@@ -93,7 +93,7 @@ public class HBRTurnStackPower extends BasePower {
         super.renderAmount(sb, x, y, c);
         c = this.type == PowerType.DEBUFF ? Color.RED : Color.GREEN;
         if (this.stack_layers != 0) {
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.stack_layers), x - 16.0F * Settings.scale, y + 16.0F * Settings.scale, this.fontScale, c);
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.stack_layers), x, y + 16.0F * Settings.scale, this.fontScale, c);
         }
     }
 }
