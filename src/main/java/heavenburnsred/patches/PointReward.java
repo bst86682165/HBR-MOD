@@ -1,14 +1,9 @@
 package heavenburnsred.patches;
 
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import heavenburnsred.cards.PointCard.LLcard;
 import heavenburnsred.cards.PointCard.LQcard;
 import heavenburnsred.cards.PointCard.TJcard;
@@ -19,12 +14,8 @@ import java.util.ArrayList;
 public class PointReward extends RewardItem {
 
     public PointReward(){
-
-        this.hb = new Hitbox(460.0F * Settings.xScale, 90.0F * Settings.yScale);
-        this.flashTimer = 0.0F;
-        this.isDone = false;
-        this.ignoreReward = false;
-        this.redText = false;
+        // 卡牌奖励实际上是4选1的options，并非实际可以添加的卡牌3选1
+        // 这里模仿生成卡牌奖励的空参构造
         this.type = RewardItem.RewardType.CARD;
         ArrayList<AbstractCard> PointCards = new ArrayList<>();
         PointCards.add(new LLcard());
@@ -32,8 +23,15 @@ public class PointReward extends RewardItem {
         PointCards.add(new TJcard());
         PointCards.add(new ZYcard());
         this.cards = PointCards;
-        this.text = "Point";
-
+        this.text = "白值奖励";
     }
 
+    @Override
+    // 选择时展开没有跳过选项的4选1面板，参照许愿
+    public boolean claimReward() {
+        AbstractDungeon.cardRewardScreen.chooseOneOpen(this.cards);
+        // 返回时回到奖励页面
+        AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+        return true;
+    }
 }
