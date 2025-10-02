@@ -7,11 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
-import static heavenburnsred.patches.MonsterPointMap.MPMap;
-import static heavenburnsred.relics.Attribute.ATTpoint;
-import static heavenburnsred.relics.Attribute.hbrTJ;
 
 public class AttributeCal extends BasePower {
     public static final String POWER_ID = makeID("AttributeCal");
@@ -26,7 +24,7 @@ public class AttributeCal extends BasePower {
     public int onAttacked(DamageInfo info, int damageAmount){
         if (info.type == DamageInfo.DamageType.NORMAL) {
             int MonsterPoint = info.owner.getPower("heavenburnsred:MonsterPoint").amount;
-            int DEFpoint = MonsterPoint - hbrTJ;
+            int DEFpoint = MonsterPoint - Attribute.getHbrTJ();
             float DamageRatio = 0;
             if (DEFpoint >= 10) {
                 DamageRatio = 2;
@@ -46,11 +44,11 @@ public class AttributeCal extends BasePower {
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }
-//防止战斗中被移除，未测试
+
+    // 防止战斗中被移除，未测试
     public void onRemove(){
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttributeCal(AbstractDungeon.player, 1)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttributeCal(AbstractDungeon.player, -1)));
         }
-
     }
 }
