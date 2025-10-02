@@ -1,9 +1,12 @@
 package heavenburnsred.patches;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -38,13 +41,25 @@ public class ApplyHBRStackPowerAction extends ApplyPowerAction {
         float startingDuration = (float) ReflectionHacks.getPrivate(this, ApplyPowerAction.class, "startingDuration");
         AbstractPower powerToApply = (AbstractPower) ReflectionHacks.getPrivate(this, ApplyPowerAction.class, "powerToApply");
         if (this.duration == startingDuration) {
+            // 其他power起作用，应该暂时不会用到
             if (this.source != null)
                 for (AbstractPower pow : this.source.powers)
                     pow.onApplyPower(powerToApply, this.target, this.source);
+            // 死了就不上debuff了
             if (this.target instanceof com.megacrit.cardcrawl.monsters.AbstractMonster &&
                     this.target.isDeadOrEscaped()) {
                 this.duration = 0.0F;
                 this.isDone = true;
+                return;
+            }
+            // 与人工的交互
+            if (this.target.hasPower("Artifact") &&
+                    powerToApply.type == AbstractPower.PowerType.DEBUFF) {
+                addToTop((AbstractGameAction)new TextAboveCreatureAction(this.target, TEXT[0]));
+                this.duration -= Gdx.graphics.getDeltaTime();
+                CardCrawlGame.sound.play("NULLIFY_SFX");
+                this.target.getPower("Artifact").flashWithoutSound();
+                this.target.getPower("Artifact").onSpecificTrigger();
                 return;
             }
             // 上动画效果的不知道有没有用，先留着吧
