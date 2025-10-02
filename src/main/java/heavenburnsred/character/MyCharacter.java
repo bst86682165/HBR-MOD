@@ -10,9 +10,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-//import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-//import com.megacrit.cardcrawl.cards.green.Neutralize;
-//import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -20,8 +17,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-//import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import heavenburnsred.cards.attack.BlueFlame;
 import heavenburnsred.cards.attack.Strike;
 import heavenburnsred.cards.skill.Defend;
 import heavenburnsred.cards.skill.Enhancement;
@@ -153,6 +151,7 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Enhancement.ID);
+        retVal.add(BlueFlame.ID);
 
         return retVal;
     }
@@ -163,6 +162,7 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
         //IDs of starting relics. You can have multiple, but one is recommended.
         retVal.add(ODBar.ID);
         retVal.add(Attribute.ID);
+        retVal.add(PrismaticShard.ID);
 
         return retVal;
     }
