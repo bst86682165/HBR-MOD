@@ -27,22 +27,22 @@
   },
   "${modID}:LLcard": {
     "NAME": "力量",
-    "DESCRIPTION": "增加1点力量属性，强化你的攻击",
+    "DESCRIPTION": "增加1点力量属性，强化你的攻击。",
     "UPGRADE_DESCRIPTION": "增加1点力量属性，强化你的攻击"
   },
   "${modID}:LQcard": {
     "NAME": "灵巧",
-    "DESCRIPTION": "增加1点灵巧属性，强化你的攻击",
+    "DESCRIPTION": "增加1点灵巧属性，强化你的攻击。",
     "UPGRADE_DESCRIPTION": "增加1点灵巧属性，强化你的攻击"
   },
   "${modID}:TJcard": {
     "NAME": "体精",
-    "DESCRIPTION": "增加1点体精属性，强化你的防御",
+    "DESCRIPTION": "增加1点体精属性，强化你的防御。",
     "UPGRADE_DESCRIPTION": "增加1点体精属性，强化你的防御"
   },
   "${modID}:ZYcard": {
     "NAME": "智运",
-    "DESCRIPTION": "增加1点智运属性，获得增益效果",
+    "DESCRIPTION": "增加1点智运属性，获得增益效果。",
     "UPGRADE_DESCRIPTION": "增加1点智运属性，获得增益效果"
   },
   "${modID}:LightRoad": {
