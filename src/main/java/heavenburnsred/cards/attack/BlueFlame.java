@@ -33,10 +33,9 @@ public class BlueFlame extends BaseCard {
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
         setCustomVar("hit", HIT, HIT_UPGRADE);
-//        setCustomVar("direct_od", ADD_OD);
 
         tags.add(HbrTags.HIT);
-//        tags.add(HbrTags.DIRECT_OD);
+        tags.add(HbrTags.TJ);  // 用作测试
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {

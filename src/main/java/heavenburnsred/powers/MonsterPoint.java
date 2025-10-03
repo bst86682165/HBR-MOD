@@ -18,25 +18,34 @@ public class MonsterPoint extends BasePower{
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
-    //对怪物造成伤害时，计算伤害
-    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        int Point = Attribute.getATTpoint() - this.amount;
+    // 计算被怪物攻击时的伤害倍率
+    private float calculateBeAttackedRatio() {
+        float MonsterPoint = Attribute.getMonPoint();
+        float DEFpoint = MonsterPoint - Attribute.getHbrTJ();
         float DamageRatio = 0;
-        if (Point >= 10) {
+        if (DEFpoint >= 10) {
             DamageRatio = 2;
-        } else if (Point < 10 && Point >= 0) {
-            DamageRatio = Point / 10f + 1;
-        } else if (Point < 0 && Point >= -20) {
-            DamageRatio = (20 + Point) / 20f;
-        } else if (Point < -20) {
+        } else if (DEFpoint < 10 && DEFpoint >= 0) {
+            DamageRatio = DEFpoint / 10f + 1;
+        } else if (DEFpoint < 0 && DEFpoint >= -20) {
+            DamageRatio = (20 + DEFpoint) / 20f;
+        } else if (DEFpoint < -20) {
             DamageRatio = 0;
         }
-        damage = damage * DamageRatio;
+        return DamageRatio;
+    }
+
+    // 受到伤害时计算减伤，可以直接反应到怪物头上的数值
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (type == DamageInfo.DamageType.NORMAL) {
+            damage *= calculateBeAttackedRatio();
+        }
         return damage;
     }
 
+    // 目前采用保留2位小数的描述方式
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = "造成伤害倍率：" + String.format("%.2f", calculateBeAttackedRatio()) + "。";
     }
-
 }

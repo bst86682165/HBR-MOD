@@ -8,7 +8,8 @@
   "${modID}:AttributeCal": {
     "NAME": "白值效果",
     "DESCRIPTIONS": [
-      "根据自身四维数值，会获得不同的增益。"
+      "根据自身四维数值，会获得不同的增益。",
+      " NL "
     ]
   },
   "${modID}:MonsterPoint": {

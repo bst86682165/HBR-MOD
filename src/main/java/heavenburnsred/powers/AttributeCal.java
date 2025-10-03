@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import heavenburnsred.cards.HbrTags;
 import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
@@ -20,32 +21,62 @@ public class AttributeCal extends BasePower {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
-//收到伤害时计算减伤
-    public int onAttacked(DamageInfo info, int damageAmount){
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            int MonsterPoint = info.owner.getPower("heavenburnsred:MonsterPoint").amount;
-            int DEFpoint = MonsterPoint - Attribute.getHbrTJ();
-            float DamageRatio = 0;
-            if (DEFpoint >= 10) {
-                DamageRatio = 2;
-            } else if (DEFpoint < 10 && DEFpoint >= 0) {
-                DamageRatio = DEFpoint / 10f + 1;
-            } else if (DEFpoint < 0 && DEFpoint >= -20) {
-                DamageRatio = (20 + DEFpoint) / 20f;
-            } else if (DEFpoint < -20) {
-                DamageRatio = 0;
-            }
-            damageAmount = (int) (damageAmount * DamageRatio);
-            return damageAmount;
+    // 计算不同类型的伤害倍率
+    private float calculateGiveDamageRatio(float deltaAttack) {
+        float DamageRatio = 0;
+        if (deltaAttack >= 10) {
+            DamageRatio = 2;
+        } else if (deltaAttack < 10 && deltaAttack >= 0) {
+            DamageRatio = deltaAttack / 10f + 1;
+        } else if (deltaAttack < 0 && deltaAttack >= -20) {
+            DamageRatio = (20 + deltaAttack) / 20f;
+        } else if (deltaAttack < -20) {
+            DamageRatio = 0;
         }
-        return damageAmount;
+        return DamageRatio;
     }
 
+    // 对怪物造成伤害时，计算伤害数值
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
+        if (type != DamageInfo.DamageType.NORMAL) {
+            return damage;
+        }
+        // 理论上可以保证有tag都是攻击牌，不过先留着这个if吧
+        if (card.type == AbstractCard.CardType.ATTACK) {
+            float deltaAttack = 0;
+            if (card.hasTag(HbrTags.LL)){
+                deltaAttack = Attribute.getAttackPoint()[0] - Attribute.getMonPoint();
+            }
+            else if (card.hasTag(HbrTags.LQ)){
+                deltaAttack = Attribute.getAttackPoint()[1] - Attribute.getMonPoint();
+            }
+            else if (card.hasTag(HbrTags.TJ)){
+                deltaAttack = Attribute.getAttackPoint()[2] - Attribute.getMonPoint();
+            }
+            else if (card.hasTag(HbrTags.ZY)){
+                deltaAttack = Attribute.getAttackPoint()[3] - Attribute.getMonPoint();
+            }
+            else if (card.hasTag(HbrTags.WP)){
+                deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
+            }
+            damage *= calculateGiveDamageRatio(deltaAttack);
+        }
+        return damage;
+    }
+
+    // 目前采用保留2位小数的描述方式
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description =
+                "力量型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
+                "灵巧型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
+                "智运型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
+                "体精型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
+                "均衡型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + "。";
     }
 
     // 防止战斗中被移除，未测试
+    // 被反伤反死再复活是有buff的，不过没测试没有这一条方法buff是不是真的会消失
     public void onRemove(){
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttributeCal(AbstractDungeon.player, -1)));

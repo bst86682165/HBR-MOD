@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import heavenburnsred.cards.HbrTags;
 import heavenburnsred.patches.PointReward;
 import heavenburnsred.powers.AttributeCal;
 import heavenburnsred.powers.MonsterPoint;
@@ -31,7 +30,8 @@ public class Attribute extends BaseRelic
     private static int hbrLQ = 10;
     private static int hbrTJ = 10;
     private static int hbrZY = 10;
-    private static int ATTpoint = 0;
+    private static float MonPoint;
+    private static float[] AttackPoint = new float[5];
 
     // 构建遗物实例及其描述，刷新鼠标放在其上出现的tips
     public Attribute() {
@@ -73,16 +73,49 @@ public class Attribute extends BaseRelic
         Attribute.hbrZY += hbrZY;
     }
 
-    public static int getATTpoint() {
-        return ATTpoint;
+    public static float getMonPoint() {
+        return MonPoint;
     }
 
-    public static void plusATTpoint(int ATTpoint) {
-        Attribute.ATTpoint += ATTpoint;
+    public static void setMonPoint(float monPoint) {
+        MonPoint = monPoint;
     }
 
-    //在此书写智运提高后的增益
+    public static float[] getAttackPoint() {
+        return AttackPoint;
+    }
+
+    public static void setAttackPoint(float[] attackPoint) {
+        AttackPoint = attackPoint;
+    }
+
+    private void initializeAttackPoint() {
+        // 这里是向下取整了
+        float LL_preferred = (Attribute.getHbrLL() * 2f + Attribute.getHbrLQ()) / 3f;
+        float LQ_preferred = (Attribute.getHbrLL() + Attribute.getHbrLQ() * 2f) / 3f;
+        float TJ_preferred = Attribute.getHbrTJ();
+        float ZY_preferred = Attribute.getHbrZY();
+        float No_preferred = (Attribute.getHbrLL() + Attribute.getHbrLQ()) / 2f;
+        AttackPoint[0] = LL_preferred;
+        AttackPoint[1] = LQ_preferred;
+        AttackPoint[2] = TJ_preferred;
+        AttackPoint[3] = ZY_preferred;
+        AttackPoint[4] = No_preferred;
+    }
+
+    //计算怪物白值，此处可以待怪物与白值对照表完成后再修改
+    private float calculateMonPoint() {
+        int Floor = AbstractDungeon.floorNum;
+        int Act = AbstractDungeon.actNum;
+        return 10;
+    }
+
     public void atBattleStartPreDraw(){
+        this.flash();
+        // 战斗开始先初始化怪物白值和己方5种攻击牌的攻击点数
+        setMonPoint(calculateMonPoint());
+        initializeAttackPoint();
+        //在此书写智运提高后的增益
         if (hbrZY > 15){
             addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ArtifactPower(AbstractDungeon.player,1)));
         }
@@ -96,35 +129,8 @@ public class Attribute extends BaseRelic
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
                 if (!m.isDead && !m.isDying && !m.hasPower("heavenburnsred:MonsterPoint")){
-                    int Floor = AbstractDungeon.floorNum;
-                    int Act = AbstractDungeon.actNum;
-                    int MonPoint = 10;
-                    //此处可以待怪物与白值对照表完成后再修改
-                    addToBot(new ApplyPowerAction(m,AbstractDungeon.player,new MonsterPoint(m,MonPoint)));
+                    addToBot(new ApplyPowerAction(m,AbstractDungeon.player,new MonsterPoint(m,(int)MonPoint)));
                 }
-            }
-        }
-    }
-
-    //使用攻击牌时，计算ATTpoint以供调用
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-
-        // 理论上可以保证有tag都是攻击牌，不过先留着这个if吧
-        if (card.type == AbstractCard.CardType.ATTACK) {
-            if (card.hasTag(HbrTags.LL)){
-                ATTpoint = (hbrLL * 2 + hbrLQ) / 3;
-            }
-            else if (card.hasTag(HbrTags.LQ)){
-                ATTpoint = (hbrLL + hbrLQ * 2) / 3;
-            }
-            else if (card.hasTag(HbrTags.TJ)){
-                ATTpoint = hbrTJ;
-            }
-            else if (card.hasTag(HbrTags.ZY)){
-                ATTpoint = hbrZY;
-            }
-            else if (card.hasTag(HbrTags.WP)){
-                ATTpoint = (hbrLL + hbrLQ) / 2;
             }
         }
     }
@@ -147,10 +153,17 @@ public class Attribute extends BaseRelic
                "智运" + Attribute.getHbrZY() + "。";
     }
 
+    // 选完提升的属性之后刷新显示
     public void onSelectPoint() {
         this.flash();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.getUpdatedTip()));
         this.initializeTips();
+    }
+
+    // 为什么规定遗物一定需要这个呢？
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+
     }
 }
