@@ -53,6 +53,25 @@
   "${modID}:KongMingChop": {
     "NAME": "卧龙演舞斩",
     "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。 NL ${modID}:超频  !${modID}:hit! 。"
+  },
+  "${modID}:FallingintoaFantasy": {
+    "NAME": "沉入梦幻",
+    "DESCRIPTION": "抽 !M! 张牌 NL 当手卡有2张以上此卡时费用为0。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，获得2点格挡，当手卡有2张以上此卡时费用为0。"
+  },
+  "${modID}:UltraSisters": {
+    "NAME": "六姐妹齐心",
+    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。"
+  },
+  "${modID}:MercyDance": {
+    "NAME": "慈悲之舞",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，向手卡加入 !M! 张沉入梦幻。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，向手卡加入 !M! 张沉入梦幻。"
+  },
+  "${modID}:SoaringExcitement": {
+    "NAME": "快感慢跑",
+    "DESCRIPTION": "获得 !D! 点格挡，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
   }
 }
 

@@ -29,5 +29,11 @@
     "DESCRIPTIONS": [
       "被攻击时受到的攻击伤害增加 #b"
     ]
+  },
+  "${modID}:UltraSistersPower": {
+    "NAME": "大岛家的羁绊",
+    "DESCRIPTIONS": [
+      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
+    ]
   }
 }
