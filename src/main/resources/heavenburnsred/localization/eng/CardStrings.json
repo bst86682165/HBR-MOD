@@ -56,22 +56,25 @@
   },
   "${modID}:FallingintoaFantasy": {
     "NAME": "沉入梦幻",
-    "DESCRIPTION": "抽 !M! 张牌 NL 当手卡有2张以上此卡时费用为0。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，获得2点格挡，当手卡有2张以上此卡时费用为0。"
+    "DESCRIPTION": "抽1张牌，当手卡有2张以上此卡时费用为0。",
+    "UPGRADE_DESCRIPTION": "抽1张牌，获得2点格挡，当手卡有2张以上此卡时费用为0。"
   },
   "${modID}:UltraSisters": {
     "NAME": "六姐妹齐心",
-    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。"
+    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。"
   },
   "${modID}:MercyDance": {
     "NAME": "慈悲之舞",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，向手卡加入 !M! 张沉入梦幻。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，向手卡加入 !M! 张沉入梦幻。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将2张沉入梦幻加入手卡。"
   },
   "${modID}:SoaringExcitement": {
-    "NAME": "快感慢跑",
-    "DESCRIPTION": "获得 !D! 点格挡，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
+    "NAME": "飘然亢奋",
+    "DESCRIPTION": "获得 !B! 点格挡，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
+  },
+  "${modID}:TooHotToHandle": {
+    "NAME": "发烫的肉体",
+    "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。",
+    "UPGRADE_DESCRIPTION": "将3张沉入梦幻加入手卡。"
   }
 }
 
