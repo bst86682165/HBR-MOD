@@ -75,6 +75,15 @@
     "NAME": "发烫的肉体",
     "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。",
     "UPGRADE_DESCRIPTION": "将3张沉入梦幻加入手卡。"
+  },
+  "${modID}:DelightfulDash": {
+    "NAME": "快感短跑",
+    "DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点格挡。",
+    "UPGRADE_DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点可保留至下回合的格挡 NL 固有。"
+  },
+  "${modID}:WaveofAffection": {
+    "NAME": "慈爱的波动",
+    "DESCRIPTION": "消耗所有手卡，将等量的沉入梦幻加入手卡。"
   }
 }
 

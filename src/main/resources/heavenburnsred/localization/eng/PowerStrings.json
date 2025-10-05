@@ -35,5 +35,12 @@
     "DESCRIPTIONS": [
       "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
     ]
+  },
+  "${modID}:DelightfulDashPower": {
+    "NAME": "快感短跑",
+    "DESCRIPTIONS": [
+      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
+    ]
   }
+
 }

@@ -139,7 +139,7 @@ public class FallingintoaFantasy extends BaseCard {
                     count++;
                 }
             }
-            if (count == 12) {
+            if (count == 11) {
                 MakeNewCard.upgrade();
                 addToBot(new UpgradeCardsByTypeAction(card -> card.cardID.contains("FallingintoaFantasy"), "沉入梦幻"));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new UltraSistersPower(AbstractDungeon.player, 1)));
