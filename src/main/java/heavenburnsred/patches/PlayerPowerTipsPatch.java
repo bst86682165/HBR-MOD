@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,9 +23,10 @@ public class PlayerPowerTipsPatch {
                 .collect(Collectors.toMap(
                     obj -> obj.header,  // header作为键筛重
                     obj -> obj,  // obj本身作为值用来取values赋值列表
-                    (first, duplicate) -> first  // 每一个power理论上显示一样的description所以先后都行
-                    ))
-                    .values()
+                    (first, duplicate) -> first,  // 每一个power理论上显示一样的description所以先后都行
+                    LinkedHashMap::new
+                ))
+                .values()
         );
         // 清空原列表并写回过滤后的元素
         tips.clear();
