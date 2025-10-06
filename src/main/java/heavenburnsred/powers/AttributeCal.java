@@ -1,12 +1,9 @@
 package heavenburnsred.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.relics.Attribute;
 
@@ -71,7 +68,7 @@ public class AttributeCal extends BasePower {
         this.description =
                 "力量型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
                 "灵巧型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
-                "体精击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
+                "体精型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
                 "智运型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
                 "均衡型攻击基础倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + "。";
     }

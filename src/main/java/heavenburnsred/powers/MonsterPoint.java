@@ -2,7 +2,9 @@ package heavenburnsred.powers;
 
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
@@ -21,7 +23,8 @@ public class MonsterPoint extends BasePower{
     // 计算被怪物攻击时的伤害倍率
     private float calculateBeAttackedRatio() {
         float MonsterPoint = Attribute.getMonPoint();
-        float DEFpoint = MonsterPoint - Attribute.getHbrTJ();
+        AbstractRelic attribute = AbstractDungeon.player.getRelic(Attribute.ID);
+        float DEFpoint = MonsterPoint - ((Attribute)attribute).getHbrTJ();;
         float DamageRatio = 0;
         if (DEFpoint >= 10) {
             DamageRatio = 2;

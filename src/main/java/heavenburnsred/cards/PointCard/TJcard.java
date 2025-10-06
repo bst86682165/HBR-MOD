@@ -10,7 +10,6 @@ import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.relics.Attribute;
 import heavenburnsred.util.CardStats;
-import static heavenburnsred.relics.Attribute.plusHbrTJ;
 
 public class TJcard extends BaseCard {
     public static final String ID = makeID(TJcard.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
@@ -36,8 +35,8 @@ public class TJcard extends BaseCard {
 
     @Override
     public void onChoseThisOption() {
-        plusHbrTJ(1);
         AbstractRelic attribute = AbstractDungeon.player.getRelic(Attribute.ID);
+        ((Attribute)attribute).plusHbrTJ(1);
         ((Attribute)attribute).onSelectPoint();
     }
 
