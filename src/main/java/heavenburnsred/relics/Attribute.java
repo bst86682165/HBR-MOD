@@ -178,10 +178,10 @@ public class Attribute extends BaseRelic
         }
     }
 
-    //战斗奖励添加点数增长，添加PointReward类
-    public void onVictory() {
-        AbstractDungeon.getCurrRoom().addCardReward(new PointReward());
-    }
+    //战斗奖励添加点数增长，添加PointReward类，为实现sl在CombatRewardScreenPatch中实现
+//    public void onVictory() {
+//        AbstractDungeon.getCurrRoom().addCardReward(new PointReward());
+//    }
 
     @Override
     public String getUpdatedDescription() {
