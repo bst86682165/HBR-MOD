@@ -1,6 +1,10 @@
 package heavenburnsred.powers;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import heavenburnsred.cards.attack.UltraSisters;
+import heavenburnsred.cards.skill.FallingintoaFantasy;
+import heavenburnsred.patches.CountCards;
 
 import static heavenburnsred.BasicMod.makeID;
 
@@ -8,6 +12,7 @@ public class UltraSistersPower extends BasePower {
     public static final String POWER_ID = makeID(UltraSistersPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
+    private static int TurnCount = 0;
     //The only thing TURN_BASED controls is the color of the number on the power icon.
     //Turn based powers are white, non-turn based powers are red or green depending on if their amount is positive or negative.
     //For a power to actually decrease/go away on its own they do it themselves.
@@ -15,6 +20,16 @@ public class UltraSistersPower extends BasePower {
 
     public UltraSistersPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        TurnCount = 0;
+    }
+
+    public void atStartOfTurn(){
+        addToBot(new MakeTempCardInHandAction(new FallingintoaFantasy(),1));
+        TurnCount++;
+        if(TurnCount == 3){
+            addToBot(new MakeTempCardInHandAction(new UltraSisters(),1));
+            TurnCount = 0;
+        }
     }
 
 

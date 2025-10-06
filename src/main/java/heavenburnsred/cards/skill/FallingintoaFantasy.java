@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.attack.UltraSisters;
 import heavenburnsred.character.MyCharacter;
+import heavenburnsred.patches.CountCards;
 import heavenburnsred.patches.UpgradeCardsByTypeAction;
 import heavenburnsred.powers.UltraSistersPower;
 import heavenburnsred.util.CardStats;
@@ -123,22 +124,7 @@ public class FallingintoaFantasy extends BaseCard {
                 MakeNewCard.upgrade();
             }
             else {
-            int count = 0;
-            for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                    count++;
-                }
-            }
-            for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-                if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                    count++;
-                }
-            }
-            for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                    count++;
-                }
-            }
+            int count = new CountCards().CountCardsInWholeDeck(FallingintoaFantasy.ID);
             if (count == 11) {
                 MakeNewCard.upgrade();
                 addToBot(new UpgradeCardsByTypeAction(card -> card.cardID.contains("FallingintoaFantasy"), "沉入梦幻"));

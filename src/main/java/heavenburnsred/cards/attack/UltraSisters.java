@@ -6,15 +6,13 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.cards.skill.FallingintoaFantasy;
 import heavenburnsred.character.MyCharacter;
+import heavenburnsred.patches.CountCards;
 import heavenburnsred.util.CardStats;
-
-import java.util.Objects;
 
 public class UltraSisters extends BaseCard {
     public static final String ID = makeID(UltraSisters.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
@@ -47,26 +45,9 @@ public class UltraSisters extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int DRAW = 0;
-        int HAND = 0;
-        int DISCARD = 0;
-        for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-            if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                DRAW++;
-            }
-        }
-        for (AbstractCard card : AbstractDungeon.player.hand.group) {
-            if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                HAND++;
-            }
-        }
-        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-            if (Objects.equals(card.cardID, FallingintoaFantasy.ID)) {
-                DISCARD++;
-            }
-        }
-        addToBot(new GainBlockAction(p,damage * (HAND + DISCARD)));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage * (HAND + DRAW), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        int FFcount = new CountCards().CountCardsInWholeDeck(FallingintoaFantasy.ID);
+        addToBot(new GainBlockAction(p,6 + damage * FFcount));
+        addToBot(new DamageAction(m, new DamageInfo(p, 6 + (damage - 1) * FFcount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

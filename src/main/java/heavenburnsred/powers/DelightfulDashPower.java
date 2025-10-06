@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BarricadePower;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import heavenburnsred.cards.skill.FallingintoaFantasy;
 import heavenburnsred.patches.SoaringExcitementAction;
 
@@ -41,7 +42,7 @@ public class DelightfulDashPower extends BasePower{
                              if(Objects.equals(AbstractDungeon.player.hand.group.get(AbstractDungeon.player.hand.group.size() - 2).cardID, FallingintoaFantasy.ID)){
                                  addToBot(new GainBlockAction(AbstractDungeon.player,4));
                                  if (DelightfulDashPower.Upgraded){
-                                     addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BarricadePower(AbstractDungeon.player)));
+                                     addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BlurPower(AbstractDungeon.player,1)));
                                  }
                              }
                              this.isDone = true;
