@@ -19,6 +19,7 @@ public class AttributeCal extends BasePower {
 
     public AttributeCal(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        this.priority = 3;  // 优先级仅次于混乱
     }
 
     // 计算不同类型的伤害倍率
@@ -77,9 +78,9 @@ public class AttributeCal extends BasePower {
 
     // 防止战斗中被移除，未测试
     // 被反伤反死再复活是有buff的，不过没测试没有这一条方法buff是不是真的会消失
-    public void onRemove(){
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttributeCal(AbstractDungeon.player, -1)));
-        }
-    }
+//    public void onRemove(){
+//        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+//            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttributeCal(AbstractDungeon.player, -1)));
+//        }
+//    }
 }
