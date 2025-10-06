@@ -29,9 +29,11 @@ public class PointReward extends RewardItem {
     @Override
     // 选择时展开没有跳过选项的4选1面板，参照许愿
     public boolean claimReward() {
+        // 这里没有跳过按钮，还是应该修改一下
         AbstractDungeon.cardRewardScreen.chooseOneOpen(this.cards);
         // 返回时回到奖励页面
         AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+        // 选择后该奖励消失
         return true;
     }
 }
