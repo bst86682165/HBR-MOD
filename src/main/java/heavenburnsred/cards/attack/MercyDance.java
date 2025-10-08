@@ -39,6 +39,7 @@ public class MercyDance extends BaseCard {
         this.isMultiDamage = true;
         setCustomVar("hit", HIT);
         tags.add(HbrTags.HIT);
+        tags.add(HbrTags.WP);
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {
