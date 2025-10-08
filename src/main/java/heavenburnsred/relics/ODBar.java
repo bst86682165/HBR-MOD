@@ -18,8 +18,10 @@ import heavenburnsred.cards.BaseCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.badlogic.gdx.graphics.Color;
+import heavenburnsred.util.TextureLoader;
 
 import static heavenburnsred.BasicMod.makeID;
+import static heavenburnsred.BasicMod.relicPath;
 
 public class ODBar extends HBRRelicClick {
     private static final String NAME = "ODBar"; // The name will be used for determining the image file as well as the
@@ -35,9 +37,62 @@ public class ODBar extends HBRRelicClick {
     public ODBar() {
         super(ID, NAME, RARITY, SOUND);
         this.counter = 0;
+        loadOtherTexture();
+    }
+
+    @Override
+    public void setCounter(int counter) {
+        int old_counter = this.counter;
+        super.setCounter(counter);
+        onCounterChanged(old_counter, counter);
+    }
+
+    // 把3个其他状态都加载进游戏
+    private void loadOtherTexture() {
+        this.img = TextureLoader.getTextureNull(relicPath("ODBar_1" + ".png"), true);
+        this.img = TextureLoader.getTextureNull(relicPath("ODBar_2" + ".png"), true);
+        this.img = TextureLoader.getTextureNull(relicPath("ODBar_3" + ".png"), true);
+        this.img = TextureLoader.getTextureNull(relicPath(NAME + ".png"), true);
+    }
+
+    // 返回应该显示的od条数值
+    private int counterRank(int counter) {
+        if (counter < 40) {
+            return 0;
+        } else if (counter < 80) {
+            return 1;
+        } else if (counter < 120) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+
+    // 在任何可能改变od条显示图片的时候更改图片并加入flash动画效果
+    public void onCounterChanged(int old_counter, int new_counter) {
+        if (counterRank(old_counter) != counterRank(new_counter)) {
+            // 切换不同图片
+            switch (counterRank(new_counter)) {
+                case 0:
+                    this.img = TextureLoader.getTextureNull(relicPath(NAME + ".png"), true);
+                    break;
+                case 1:
+                    this.img = TextureLoader.getTextureNull(relicPath("ODBar_1" + ".png"), true);
+                    break;
+                case 2:
+                    this.img = TextureLoader.getTextureNull(relicPath("ODBar_2" + ".png"), true);
+                    break;
+                case 3:
+                    this.img = TextureLoader.getTextureNull(relicPath("ODBar_3" + ".png"), true);
+                    break;
+            }
+            // 动画效果
+            this.flash();
+        }
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        int old_counter = this.counter;
         // 攻击卡按hit数计算
         if (card.hasTag(HbrTags.HIT)) {
             if (card.type == AbstractCard.CardType.ATTACK) {  // 理论上有hit的一定是attack，但这个判断还是先放着吧
@@ -63,6 +118,10 @@ public class ODBar extends HBRRelicClick {
         if (this.counter > HITLIMIT) {
             this.counter = HITLIMIT;
         }
+
+        // 利用新旧counter数检测counter的改变，是否需要图片修改
+        int new_counter = this.counter;
+        if (new_counter != old_counter) onCounterChanged(old_counter, new_counter);
     }
 
     public void onRightClick() {
@@ -70,12 +129,12 @@ public class ODBar extends HBRRelicClick {
         if (!this.usedUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
                 && this.counter >= 40) {
             this.counter = this.counter - 40;
+            onCounterChanged(this.counter + 40, this.counter);
             int handCards = AbstractDungeon.player.hand.size();
             addToBot(new DiscardAction(p, p, handCards, true));
             addToBot(new DrawCardAction(p, 5));
             addToBot(new GainEnergyAction(3));
         }
-
     }
 
     @Override
