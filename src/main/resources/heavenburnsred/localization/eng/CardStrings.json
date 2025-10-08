@@ -74,7 +74,7 @@
   "${modID}:TooHotToHandle": {
     "NAME": "发烫的肉体",
     "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。",
-    "UPGRADE_DESCRIPTION": "将3张沉入梦幻加入手卡。"
+    "UPGRADE_DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。 NL 将3张沉入梦幻加入手卡。"
   },
   "${modID}:DelightfulDash": {
     "NAME": "快感短跑",
