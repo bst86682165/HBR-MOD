@@ -40,18 +40,16 @@ public class TooHotToHandle extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        {
-            for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                if (!monster.isDead && !monster.isDying) {
-                    addToBot(new ApplyHBRStackPowerAction(m,p,new DefendDown(AbstractDungeon.player,magicNumber,1)));
-                    if (monster.currentBlock > 0){
-                        addToBot(new ApplyHBRStackPowerAction(m,p,new DefendDown(AbstractDungeon.player,magicNumber,1)));
-                    }
+        for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+            if (!monster.isDead && !monster.isDying) {
+                addToBot(new ApplyHBRStackPowerAction(monster,p,new DefendDown(monster,magicNumber,1)));
+                if (monster.currentBlock > 0){
+                    addToBot(new ApplyHBRStackPowerAction(monster,p,new DefendDown(monster,magicNumber,1)));
                 }
             }
-            if (this.upgraded){
-                addToBot(new MakeTempCardInHandAction(new FallingintoaFantasy(),3));
-            }
+        }
+        if (this.upgraded){
+            addToBot(new MakeTempCardInHandAction(new FallingintoaFantasy(),3));
         }
     }
 
