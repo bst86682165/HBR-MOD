@@ -41,6 +41,12 @@
     "DESCRIPTIONS": [
       "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
     ]
+  },
+  "${modID}:InductionCeremonyPower": {
+    "NAME": "入队仪式",
+    "DESCRIPTIONS": [
+      "本场战斗中，六维全属性增加","点"
+    ]
   }
 
 }

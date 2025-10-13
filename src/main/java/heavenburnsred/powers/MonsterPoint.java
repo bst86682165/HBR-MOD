@@ -24,7 +24,7 @@ public class MonsterPoint extends BasePower{
     private float calculateBeAttackedRatio() {
         float MonsterPoint = Attribute.getMonPoint();
         AbstractRelic attribute = AbstractDungeon.player.getRelic(Attribute.ID);
-        float DEFpoint = MonsterPoint - ((Attribute)attribute).getHbrTJ();;
+        float DEFpoint = MonsterPoint - ((Attribute)attribute).getCurTJ();
         float DamageRatio = 0;
         if (DEFpoint >= 10) {
             DamageRatio = 2;

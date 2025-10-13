@@ -4,15 +4,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import heavenburnsred.patches.PointReward;
 import heavenburnsred.powers.AttributeCal;
 import heavenburnsred.powers.MonsterPoint;
 
@@ -134,6 +133,31 @@ public class Attribute extends BaseRelic
         return MonPoint;
     }
 
+    //提供临时提升白值的方法，不改变本身白值，附加描述更新
+    private static int TTLL = 0;
+    private static int TTLQ = 0;
+    private static int TTTJ = 0;
+    private static int TTZY = 0;
+
+    public int getCurTJ(){
+        return TTTJ + hbrTJ;
+    }
+
+    public void AddTempAttribute(int TempLL, int TempLQ, int TempTJ, int TempZY) {
+        TTLL += TempLL;
+        TTLQ += TempLQ;
+        TTTJ += TempTJ;
+        TTZY += TempZY;
+        initializeAttackPoint();
+        AbstractDungeon.player.getPower(AttributeCal.POWER_ID).updateDescription();
+        for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+            if (!m.isDead && !m.isDying && m.hasPower(MonsterPoint.POWER_ID)){
+                m.getPower(MonsterPoint.POWER_ID).updateDescription();
+            }
+        }
+        ((Attribute)AbstractDungeon.player.getRelic(Attribute.ID)).onSelectPoint();
+    }
+
     // AttackPoint的get、set方法
     public static float[] getAttackPoint() {
         return AttackPoint;
@@ -146,11 +170,12 @@ public class Attribute extends BaseRelic
     // 战斗开局时调用，初始化各类型攻击牌的attackpoint
     private void initializeAttackPoint() {
         // 这里全部用小数计算
-        float LL_preferred = (this.hbrLL * 2f + this.hbrLQ) / 3f;
-        float LQ_preferred = (this.hbrLL + this.hbrLQ * 2f) / 3f;
-        float TJ_preferred = this.hbrTJ;
-        float ZY_preferred = this.hbrZY;
-        float No_preferred = (this.hbrLL + this.hbrLQ) / 2f;
+        int a = 1;
+        float LL_preferred = ((this.hbrLL + TTLL) * 2f + this.hbrLQ + TTLQ) / 3f;
+        float LQ_preferred = (this.hbrLL + TTLL + (this.hbrLQ + TTLQ) * 2f) / 3f;
+        float TJ_preferred = this.hbrTJ + TTTJ;
+        float ZY_preferred = this.hbrZY + TTZY;
+        float No_preferred = (this.hbrLL + this.hbrLQ + TTLL + TTLQ) / 2f;
         AttackPoint[0] = LL_preferred;
         AttackPoint[1] = LQ_preferred;
         AttackPoint[2] = TJ_preferred;
@@ -161,6 +186,7 @@ public class Attribute extends BaseRelic
     public void atBattleStartPreDraw(){
         this.flash();
         // 战斗开始先初始化怪物白值和己方5种攻击牌的攻击点数
+        TTLL = TTLQ = TTTJ = TTZY = 0;
         setMonPoint(calculateMonPoint());
         initializeAttackPoint();
 
@@ -185,9 +211,9 @@ public class Attribute extends BaseRelic
     }
 
     //战斗奖励添加点数增长，添加PointReward类，为实现sl在CombatRewardScreenPatch中实现
-//    public void onVictory() {
-//        AbstractDungeon.getCurrRoom().addCardReward(new PointReward());
-//    }
+    public void onVictory() {
+        TTLL = TTLQ = TTTJ = TTZY = 0;
+    }
 
     @Override
     public String getUpdatedDescription() {
@@ -196,10 +222,10 @@ public class Attribute extends BaseRelic
 
     public String getUpdatedTip() {
         return DESCRIPTIONS[2] + DESCRIPTIONS[0] +
-               "力量" + this.hbrLL + "。" + DESCRIPTIONS[0] +
-               "灵巧" + this.hbrLQ + "。" + DESCRIPTIONS[0] +
-               "体精" + this.hbrTJ + "。" + DESCRIPTIONS[0] +
-               "智运" + this.hbrZY + "。";
+               "力量" + this.hbrLL + (TTLL > 0 ? "+" + TTLL + "。":"。") + DESCRIPTIONS[0] +
+               "灵巧" + this.hbrLQ + (TTLQ > 0 ? "+" + TTLQ + "。":"。") + DESCRIPTIONS[0] +
+               "体精" + this.hbrTJ + (TTTJ > 0 ? "+" + TTTJ + "。":"。") + DESCRIPTIONS[0] +
+               "智运" + this.hbrZY + (TTZY > 0 ? "+" + TTZY + "。":"。");
     }
 
     // 选完提升的属性之后刷新显示
