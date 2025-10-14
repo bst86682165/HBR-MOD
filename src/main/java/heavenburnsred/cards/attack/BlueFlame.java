@@ -29,13 +29,12 @@ public class BlueFlame extends BaseCard {
 
     public BlueFlame() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
-
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
-        setCustomVar("hit", HIT, HIT_UPGRADE);
 
+        setCustomVar("hit", HIT, HIT_UPGRADE);
         tags.add(HbrTags.HIT);
-        tags.add(HbrTags.TJ);  // 用作测试
+        tags.add(HbrTags.WP);
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {

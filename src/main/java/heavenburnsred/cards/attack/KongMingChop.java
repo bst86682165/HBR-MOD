@@ -33,10 +33,11 @@ public class KongMingChop extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        setCustomVar("hit", HIT);
         setMagic(MAGIC);
 
+        setCustomVar("hit", HIT);
         tags.add(HbrTags.HIT);
+        tags.add(HbrTags.WP);
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {

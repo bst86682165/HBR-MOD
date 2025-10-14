@@ -25,18 +25,19 @@ public class LightRoad extends BaseCard {
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 3;
-//    private static final int HIT = 3;
+    private static final int HIT = 1;
     private static final int OD_DOWN = -20;
 
     public LightRoad() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-//        setCustomVar("hit", HIT);
-        setCustomVar("direct_od", OD_DOWN);
 
-//        tags.add(HbrTags.HIT);
+        setCustomVar("direct_od", OD_DOWN);
         tags.add(HbrTags.DIRECT_OD);
+        setCustomVar("hit", HIT);
+        tags.add(HbrTags.HIT);
+        tags.add(HbrTags.WP);
     }
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {

@@ -33,6 +33,7 @@ public class UltraSisters extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+
         setCustomVar("hit", HIT);
         tags.add(HbrTags.HIT);
         tags.add(HbrTags.WP);
