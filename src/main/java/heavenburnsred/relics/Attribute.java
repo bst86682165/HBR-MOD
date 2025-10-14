@@ -220,6 +220,9 @@ public class Attribute extends BaseRelic
     // 重置临时6维属性值
     public void onVictory() {
         TTLL = TTLQ = TTTJ = TTZY = 0;
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.getUpdatedTip()));
+        this.initializeTips();
     }
 
     @Override
@@ -229,10 +232,10 @@ public class Attribute extends BaseRelic
 
     public String getUpdatedTip() {
         return DESCRIPTIONS[2] + DESCRIPTIONS[0] +
-               "力量" + this.hbrLL + (TTLL > 0 ? "+" + TTLL + "。":"。") + DESCRIPTIONS[0] +
-               "灵巧" + this.hbrLQ + (TTLQ > 0 ? "+" + TTLQ + "。":"。") + DESCRIPTIONS[0] +
-               "体精" + this.hbrTJ + (TTTJ > 0 ? "+" + TTTJ + "。":"。") + DESCRIPTIONS[0] +
-               "智运" + this.hbrZY + (TTZY > 0 ? "+" + TTZY + "。":"。");
+               "力量" + this.hbrLL + (TTLL > 0 ? "+ #b" + TTLL + " 。":"。") + DESCRIPTIONS[0] +
+               "灵巧" + this.hbrLQ + (TTLQ > 0 ? "+ #b" + TTLQ + " 。":"。") + DESCRIPTIONS[0] +
+               "体精" + this.hbrTJ + (TTTJ > 0 ? "+ #b" + TTTJ + " 。":"。") + DESCRIPTIONS[0] +
+               "智运" + this.hbrZY + (TTZY > 0 ? "+ #b" + TTZY + " 。":"。");
     }
 
     // 选完提升的属性之后刷新显示

@@ -1,8 +1,6 @@
 package heavenburnsred.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
@@ -16,13 +14,13 @@ public class InductionCeremonyPower extends BasePower {
     }
 
     public void onInitialApplication(){
-        ((Attribute) AbstractDungeon.player.getRelic(Attribute.ID)).AddTempAttribute(amount,amount,amount,amount);
+        Attribute.AddTempAttribute(amount,amount,amount,amount);
         updateDescription();
     }
 
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
-        ((Attribute) AbstractDungeon.player.getRelic(Attribute.ID)).AddTempAttribute(stackAmount,stackAmount,stackAmount,stackAmount);
+        Attribute.AddTempAttribute(stackAmount,stackAmount,stackAmount,stackAmount);
         updateDescription();
     }
 

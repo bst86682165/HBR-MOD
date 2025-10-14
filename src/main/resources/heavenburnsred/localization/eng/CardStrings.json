@@ -87,7 +87,7 @@
   },
   "${modID}:InductionCeremony": {
     "NAME": "入队仪式",
-    "DESCRIPTION": "四项六维各增加 !M! 点。"
+    "DESCRIPTION": "四项六维各增加 !M! 点。 NL 消耗。"
   }
 }
 
