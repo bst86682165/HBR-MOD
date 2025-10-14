@@ -85,6 +85,8 @@ public class HBRTurnStackPower extends BasePower {
     public void stackPower(int stack_layers) {
         this.fontScale = 8.0F;
         this.stack_layers += stack_layers;
+        // 加入叠加上限999
+        if (this.stack_layers > 999) this.stack_layers = 999;
     }
 
     // render左上角buff/debuff层数，分别为绿/红色

@@ -52,6 +52,8 @@ public class Attribute extends BaseRelic
 
     public void plusHbrLL(int delta_hbrLL) {
         this.hbrLL += delta_hbrLL;
+        // 加入上限120
+        if (this.hbrLL > 120) this.hbrLL = 120;
         this.counter = encodeStates(hbrLL,hbrLQ,hbrTJ,hbrZY);
     }
 
@@ -61,6 +63,8 @@ public class Attribute extends BaseRelic
 
     public void plusHbrLQ(int delta_hbrLQ) {
         this.hbrLQ += delta_hbrLQ;
+        // 加入上限120
+        if (this.hbrLQ > 120) this.hbrLQ = 120;
         this.counter = encodeStates(hbrLL,hbrLQ,hbrTJ,hbrZY);
     }
 
@@ -70,6 +74,8 @@ public class Attribute extends BaseRelic
 
     public void plusHbrTJ(int delta_hbrTJ) {
         this.hbrTJ += delta_hbrTJ;
+        // 加入上限120
+        if (this.hbrTJ > 120) this.hbrTJ = 120;
         this.counter = encodeStates(hbrLL,hbrLQ,hbrTJ,hbrZY);
     }
 
@@ -79,6 +85,8 @@ public class Attribute extends BaseRelic
 
     public void plusHbrZY(int delta_hbrZY) {
         this.hbrZY += delta_hbrZY;
+        // 加入上限120
+        if (this.hbrZY > 120) this.hbrZY = 120;
         this.counter = encodeStates(hbrLL,hbrLQ,hbrTJ,hbrZY);
     }
 
@@ -133,7 +141,7 @@ public class Attribute extends BaseRelic
         return MonPoint;
     }
 
-    //提供临时提升白值的方法，不改变本身白值，附加描述更新
+    // 提供临时提升白值的方法，不改变本身白值，附加描述更新
     private static int TTLL = 0;
     private static int TTLQ = 0;
     private static int TTTJ = 0;
@@ -143,12 +151,12 @@ public class Attribute extends BaseRelic
         return TTTJ + hbrTJ;
     }
 
-    public void AddTempAttribute(int TempLL, int TempLQ, int TempTJ, int TempZY) {
+    public static void AddTempAttribute(int TempLL, int TempLQ, int TempTJ, int TempZY) {
         TTLL += TempLL;
         TTLQ += TempLQ;
         TTTJ += TempTJ;
         TTZY += TempZY;
-        initializeAttackPoint();
+        ((Attribute)AbstractDungeon.player.getRelic(Attribute.ID)).initializeAttackPoint();
         AbstractDungeon.player.getPower(AttributeCal.POWER_ID).updateDescription();
         for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
             if (!m.isDead && !m.isDying && m.hasPower(MonsterPoint.POWER_ID)){
@@ -170,7 +178,6 @@ public class Attribute extends BaseRelic
     // 战斗开局时调用，初始化各类型攻击牌的attackpoint
     private void initializeAttackPoint() {
         // 这里全部用小数计算
-        int a = 1;
         float LL_preferred = ((this.hbrLL + TTLL) * 2f + this.hbrLQ + TTLQ) / 3f;
         float LQ_preferred = (this.hbrLL + TTLL + (this.hbrLQ + TTLQ) * 2f) / 3f;
         float TJ_preferred = this.hbrTJ + TTTJ;
@@ -210,7 +217,7 @@ public class Attribute extends BaseRelic
         }
     }
 
-    //战斗奖励添加点数增长，添加PointReward类，为实现sl在CombatRewardScreenPatch中实现
+    // 重置临时6维属性值
     public void onVictory() {
         TTLL = TTLQ = TTTJ = TTZY = 0;
     }
