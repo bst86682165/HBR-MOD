@@ -47,6 +47,12 @@
     "DESCRIPTIONS": [
       "本场战斗中，六维全属性增加","点"
     ]
+  },
+  "${modID}:ChargePower": {
+    "NAME": "充能",
+    "DESCRIPTIONS": [
+      "下一张攻击牌造成的伤害提升 #b10% 。"
+    ]
   }
 
 }

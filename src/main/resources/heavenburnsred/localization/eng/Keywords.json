@@ -59,5 +59,13 @@
     ],
     "DESCRIPTION": "被攻击时受到伤害增加50%。最多可以叠加2层。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "充能",
+    "NAMES": [
+      "充能"
+    ],
+    "DESCRIPTION": "下一张攻击牌造成的伤害提升 #b10% 。",
+    "COLOR": "fc83da"
   }
 ]
