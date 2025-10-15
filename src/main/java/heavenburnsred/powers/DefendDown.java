@@ -38,6 +38,6 @@ public class DefendDown extends HBRTurnStackPower {
 
     public void updateDescription() {
         // 返回上限为2的层数，每层50%加攻量
-        this.description = DESCRIPTIONS[0] + (calculateTotalLayers() * 50) + "%。";
+        this.description = DESCRIPTIONS[0] + (calculateTotalLayers() * 50) + "% 。";
     }
 }

@@ -35,7 +35,7 @@ public class HBRTurnStackPower extends BasePower {
         Integer thisTurns = this.amount;
         Integer otherTurns = (other instanceof HBRTurnStackPower) ? other.amount : null;
 
-        // 非本mod的排后面，剩下的回合数小的在前
+        // 非本HBRTurnStackPower的排后面，剩下的回合数小的在前
         return otherTurns == null ? -1 : thisTurns - otherTurns;
     }
 
