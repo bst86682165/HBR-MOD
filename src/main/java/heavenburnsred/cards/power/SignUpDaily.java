@@ -30,7 +30,7 @@ public class SignUpDaily extends BaseCard {
     public SignUpDaily() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
          //Sets the card's damage and how much it changes when upgraded.
-        this.misc = SIGNUPTIMES;
+        this.misc = SIGNUPTIMES;  // 存储跨卡（战斗中和牌组中）的重要信息
         this.baseMagicNumber = this.misc;
         this.magicNumber = this.misc;
     }
