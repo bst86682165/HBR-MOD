@@ -24,6 +24,7 @@ public class ChargePower extends BasePower {
         return damage;
     }
 
+    // 使用攻击牌消耗充能
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
             flash();

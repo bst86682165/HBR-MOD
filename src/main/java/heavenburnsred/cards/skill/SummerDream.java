@@ -25,15 +25,16 @@ public class SummerDream extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int MAGIC = 2;  // 使用为加攻效果的回合数
+    private static final int MAGIC = 2;  // 增加能量
 
     public SummerDream() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC); //Sets the card's damage and how much it changes when upgraded.
         this.exhaust = true;
-        this.cardsToPreview = new ElegantSerious(true);
+        this.cardsToPreview = new ElegantSerious(true);  // 添加被展示的关联卡
     }
 
+    // 被展示的关联卡的构造方法，没有this.cardsToPreview
     public SummerDream(boolean onlyForDisplay) {
         super(ID,info); //Pass the required information to the BaseCard constructor.
     }
@@ -41,6 +42,7 @@ public class SummerDream extends BaseCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            // 没有this.cardsToPreview是被展示的关联卡，不需要升级
             if (this.cardsToPreview != null) {
                 this.cardsToPreview.upgrade();
             }
@@ -52,6 +54,7 @@ public class SummerDream extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         {
             addToBot((AbstractGameAction)new GainEnergyAction(2));
+            // 如果已经有充能则不添加充能（本buff不可叠加）
             if (!p.hasPower(ChargePower.POWER_ID)) {
                 addToBot(new ApplyPowerAction(p,p,new ChargePower(p,-1)));
             }

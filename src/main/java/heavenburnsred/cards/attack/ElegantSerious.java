@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
@@ -15,7 +14,6 @@ import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.ChargePower;
 import heavenburnsred.util.CardStats;
 
-import java.util.Arrays;
 
 public class ElegantSerious extends BaseCard {
     public static final String ID = makeID(ElegantSerious.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
@@ -37,13 +35,14 @@ public class ElegantSerious extends BaseCard {
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
         this.exhaust = true;
-        this.cardsToPreview = new SummerDream(true);
+        this.cardsToPreview = new SummerDream(true);  // 用来展示关联卡
 
         setCustomVar("hit", HIT);
         tags.add(HbrTags.HIT);
         tags.add(HbrTags.LL);
     }
 
+    // 定义展示关联卡的构造方法，关键是不添加this.cardsToPreview，防止互相调用造成死循环
     public ElegantSerious(boolean onlyForDisplay) {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
@@ -55,28 +54,14 @@ public class ElegantSerious extends BaseCard {
             upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
+            // 没有this.cardsToPreview的是被展示的关联卡，不需要升级
             if (this.cardsToPreview != null) {
                 this.cardsToPreview.upgrade();
             }
         }
     }
 
-//    private void updateDescriptionInBattle() {
-//        String lastDescription;
-//        if (this.upgraded) {
-//            lastDescription = cardStrings.UPGRADE_DESCRIPTION;
-//        } else {
-//            lastDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-//        }
-//        AbstractPlayer player = AbstractDungeon.player;
-//        if (player.hasPower(ChargePower.POWER_ID)) {
-//            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[1] + lastDescription;
-//        } else {
-//            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + lastDescription;
-//        }
-//        initializeDescription();
-//    }
-
+    // 下述3个方法用来修改伤害和描述，参考全身撞击
     private void updateBaseDamage() {
         AbstractPlayer player = AbstractDungeon.player;
         if (player.hasPower(ChargePower.POWER_ID)) {
@@ -89,7 +74,6 @@ public class ElegantSerious extends BaseCard {
     @Override
     public void calculateCardDamage(AbstractMonster m) {
         super.calculateCardDamage(m);
-//        updateDescriptionInBattle();
         initializeDescription();
     }
 
@@ -97,10 +81,10 @@ public class ElegantSerious extends BaseCard {
     public void applyPowers() {
         updateBaseDamage();
         super.applyPowers();
-//        updateDescriptionInBattle();
         initializeDescription();
     }
 
+    // 造成群体伤害和添加青夏之梦(+)
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         updateBaseDamage();
@@ -111,7 +95,6 @@ public class ElegantSerious extends BaseCard {
             addCard.upgrade();
         }
         addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(addCard, 1));
-//        updateDescriptionInBattle();
         initializeDescription();
     }
 
