@@ -53,6 +53,18 @@
     "DESCRIPTIONS": [
       "下一张攻击牌造成的伤害提升 #b10% 。"
     ]
+  },
+  "${modID}:AlreadySignUp": {
+    "NAME": "已签到",
+    "DESCRIPTIONS": [
+      "今日已签到。"
+    ]
+  },
+  "${modID}:PlayHBRForever": {
+    "NAME": "玩一辈子红烧天堂",
+    "DESCRIPTIONS": [
+      "今日已签到。"
+    ]
   }
 
 }

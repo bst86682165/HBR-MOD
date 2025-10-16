@@ -98,6 +98,11 @@
     "NAME": "优雅整肃",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为50。 NL 向 *弃牌堆 添加一张 *青夏之梦 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为50。 NL 向 *弃牌堆 添加一张 *青夏之梦+ 。 NL 消耗 。"
+  },
+  "${modID}:SignUpDaily": {
+    "NAME": "每日签到",
+    "DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。 NL 获得金币后移出牌组。",
+    "UPGRADE_DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。"
   }
 }
 
