@@ -3,6 +3,7 @@ package heavenburnsred.powers;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.relics.Attribute;
@@ -41,8 +42,8 @@ public class AttributeCal extends BasePower {
             return damage;
         }
         // 理论上可以保证有tag都是攻击牌，不过先留着这个if吧
+        float deltaAttack = 0;
         if (card.type == AbstractCard.CardType.ATTACK) {
-            float deltaAttack = 0;
             if (card.hasTag(HbrTags.LL)){
                 deltaAttack = Attribute.getAttackPoint()[0] - Attribute.getMonPoint();
             }
@@ -58,8 +59,12 @@ public class AttributeCal extends BasePower {
             else if (card.hasTag(HbrTags.WP)){
                 deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
             }
-            damage *= calculateGiveDamageRatio(deltaAttack);
         }
+        //处理暴击效果
+        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
+            deltaAttack += 10;
+        }
+        damage *= calculateGiveDamageRatio(deltaAttack);
         return damage;
     }
 

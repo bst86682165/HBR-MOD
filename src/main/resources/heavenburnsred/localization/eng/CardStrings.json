@@ -103,6 +103,15 @@
     "NAME": "每日签到",
     "DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。 NL 获得金币后移出牌组。",
     "UPGRADE_DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。"
+  },
+  "${modID}:TrailBlazer": {
+    "NAME": "让道宣言",
+    "DESCRIPTION": "获得 !M! 点格挡，下一次攻击获得暴击效果。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点格挡，下一次攻击获得暴击效果。 NL 移除自身所有负面效果。"
+  },
+  "${modID}:AbsolutePhenomenon": {
+    "NAME": "绝美奇观",
+    "DESCRIPTION": "下一次攻击获得暴击效果。"
   }
 }
 

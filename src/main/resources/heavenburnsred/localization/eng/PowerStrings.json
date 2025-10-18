@@ -65,6 +65,12 @@
     "DESCRIPTIONS": [
       "今日已签到。"
     ]
+  },
+  "${modID}:CriticalHit": {
+    "NAME": "暴击",
+    "DESCRIPTIONS": [
+      "下一张攻击牌无视敌人10点白值"
+    ]
   }
 
 }
