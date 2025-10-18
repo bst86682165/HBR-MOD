@@ -26,7 +26,7 @@ public class SignUpDaily extends BaseCard {
             1);//The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     public final int SIGNUPTIMES = 7;
 
-
+    // 整体是模仿遗传算法的写法
     public SignUpDaily() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
          //Sets the card's damage and how much it changes when upgraded.
