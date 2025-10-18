@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.CriticalHit;
-import heavenburnsred.powers.InductionCeremonyPower;
 import heavenburnsred.util.CardStats;
 
-public class Trailblazer extends BaseCard {
-    public static final String ID = makeID(Trailblazer.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+public class TrailBlazer extends BaseCard {
+    public static final String ID = makeID(TrailBlazer.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -24,7 +23,7 @@ public class Trailblazer extends BaseCard {
 
     private static final int MAGIC = 10;  // 使用为加攻效果的回合数
 
-    public Trailblazer() {
+    public TrailBlazer() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC);
@@ -53,7 +52,7 @@ public class Trailblazer extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new Trailblazer();
+        return new TrailBlazer();
     }
 }
 
