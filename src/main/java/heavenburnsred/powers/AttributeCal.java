@@ -41,9 +41,9 @@ public class AttributeCal extends BasePower {
         if (type != DamageInfo.DamageType.NORMAL) {
             return damage;
         }
-        // 只修改HBRHitAndTypeAttackCard类别的卡
+        float deltaAttack = 0;
+        // 针对HBRHitAndTypeAttackCard类别的卡
         if (card instanceof HBRHitAndTypeAttackCard) {
-            float deltaAttack = 0;
             HBRHitAndTypeAttackCard.HBRAttackType attackCardType = ((HBRHitAndTypeAttackCard)card).attackPreference;
             switch (attackCardType) {
                 case LL:
@@ -62,12 +62,17 @@ public class AttributeCal extends BasePower {
                     deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
                     break;
             }
-            //处理暴击效果
-            if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
-                deltaAttack += 10;
-            }
-            damage *= calculateGiveDamageRatio(deltaAttack);
+        // 针对非本mod的攻击卡，默认为无偏
+        } else if (card.type == AbstractCard.CardType.ATTACK) {
+            deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
         }
+
+        //处理暴击效果
+        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
+            deltaAttack += 10;
+        }
+
+        damage *= calculateGiveDamageRatio(deltaAttack);
         return damage;
     }
 
