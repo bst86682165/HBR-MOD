@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import heavenburnsred.cards.HbrTags;
+import heavenburnsred.cards.attack.HBRHitAndTypeAttackCard;
 import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
@@ -41,30 +41,33 @@ public class AttributeCal extends BasePower {
         if (type != DamageInfo.DamageType.NORMAL) {
             return damage;
         }
-        // 理论上可以保证有tag都是攻击牌，不过先留着这个if吧
-        float deltaAttack = 0;
-        if (card.type == AbstractCard.CardType.ATTACK) {
-            if (card.hasTag(HbrTags.LL)){
-                deltaAttack = Attribute.getAttackPoint()[0] - Attribute.getMonPoint();
+        // 只修改HBRHitAndTypeAttackCard类别的卡
+        if (card instanceof HBRHitAndTypeAttackCard) {
+            float deltaAttack = 0;
+            HBRHitAndTypeAttackCard.HBRAttackType attackCardType = ((HBRHitAndTypeAttackCard)card).attackPreference;
+            switch (attackCardType) {
+                case LL:
+                    deltaAttack = Attribute.getAttackPoint()[0] - Attribute.getMonPoint();
+                    break;
+                case LQ:
+                    deltaAttack = Attribute.getAttackPoint()[1] - Attribute.getMonPoint();
+                    break;
+                case TJ:
+                    deltaAttack = Attribute.getAttackPoint()[2] - Attribute.getMonPoint();
+                    break;
+                case ZY:
+                    deltaAttack = Attribute.getAttackPoint()[3] - Attribute.getMonPoint();
+                    break;
+                case WP:
+                    deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
+                    break;
             }
-            else if (card.hasTag(HbrTags.LQ)){
-                deltaAttack = Attribute.getAttackPoint()[1] - Attribute.getMonPoint();
+            //处理暴击效果
+            if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
+                deltaAttack += 10;
             }
-            else if (card.hasTag(HbrTags.TJ)){
-                deltaAttack = Attribute.getAttackPoint()[2] - Attribute.getMonPoint();
-            }
-            else if (card.hasTag(HbrTags.ZY)){
-                deltaAttack = Attribute.getAttackPoint()[3] - Attribute.getMonPoint();
-            }
-            else if (card.hasTag(HbrTags.WP)){
-                deltaAttack = Attribute.getAttackPoint()[4] - Attribute.getMonPoint();
-            }
+            damage *= calculateGiveDamageRatio(deltaAttack);
         }
-        //处理暴击效果
-        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
-            deltaAttack += 10;
-        }
-        damage *= calculateGiveDamageRatio(deltaAttack);
         return damage;
     }
 

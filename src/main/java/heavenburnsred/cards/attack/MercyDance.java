@@ -1,24 +1,17 @@
 package heavenburnsred.cards.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import heavenburnsred.cards.BaseCard;
-import heavenburnsred.cards.HbrTags;
 import heavenburnsred.cards.skill.FallingintoaFantasy;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
 
-import java.util.Objects;
 
-public class MercyDance extends BaseCard {
+public class MercyDance extends HBRHitAndTypeAttackCard {
     public static final String ID = makeID(MercyDance.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -34,14 +27,11 @@ public class MercyDance extends BaseCard {
     private static final int HIT = 3;
 
     public MercyDance() {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HIT); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
-
-        setCustomVar("hit", HIT);
-        tags.add(HbrTags.HIT);
-        tags.add(HbrTags.WP);
     }
+
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {
             this.upgradeName(); // 卡牌名字变为绿色并添加“+”，且标为升级过的卡牌，之后不能再升级。

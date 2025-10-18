@@ -5,12 +5,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import heavenburnsred.cards.BaseCard;
-import heavenburnsred.cards.HbrTags;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
 
-public class BlueFlame extends BaseCard {
+public class BlueFlame extends HBRHitAndTypeAttackCard {
     public static final String ID = makeID(BlueFlame.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -28,13 +26,9 @@ public class BlueFlame extends BaseCard {
 //    private static final int ADD_OD = 20;
 
     public BlueFlame() {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HBRAttackType.WP,HIT,HIT_UPGRADE); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
-
-        setCustomVar("hit", HIT, HIT_UPGRADE);
-        tags.add(HbrTags.HIT);
-        tags.add(HbrTags.WP);
     }
 
     public void upgrade() { // 升级调用的方法

@@ -6,13 +6,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.relics.ODBar;
 import heavenburnsred.util.CardStats;
 
-public class LightRoad extends BaseCard {
+public class LightRoad extends HBRHitAndTypeAttackCard {
     public static final String ID = makeID(LightRoad.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -25,7 +24,6 @@ public class LightRoad extends BaseCard {
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 3;
-    private static final int HIT = 1;
     private static final int OD_DOWN = -20;
 
     public LightRoad() {
@@ -35,10 +33,8 @@ public class LightRoad extends BaseCard {
 
         setCustomVar("direct_od", OD_DOWN);
         tags.add(HbrTags.DIRECT_OD);
-        setCustomVar("hit", HIT);
-        tags.add(HbrTags.HIT);
-        tags.add(HbrTags.WP);
     }
+
     public void upgrade() { // 升级调用的方法
         if (!this.upgraded) {
             this.upgradeName(); // 卡牌名字变为绿色并添加“+”，且标为升级过的卡牌，之后不能再升级。

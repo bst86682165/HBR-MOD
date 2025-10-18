@@ -7,15 +7,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import heavenburnsred.cards.BaseCard;
-import heavenburnsred.cards.HbrTags;
 import heavenburnsred.cards.skill.SummerDream;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.ChargePower;
 import heavenburnsred.util.CardStats;
 
 
-public class ElegantSerious extends BaseCard {
+public class ElegantSerious extends HBRHitAndTypeAttackCard {
     public static final String ID = makeID(ElegantSerious.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -27,24 +25,19 @@ public class ElegantSerious extends BaseCard {
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 1;
-    private static final int HIT = 1;
     private static final int CHARGE_DAMAGE = 50;
 
     public ElegantSerious() {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HBRAttackType.LL); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
         this.exhaust = true;
         this.cardsToPreview = new SummerDream(true);  // 用来展示关联卡
-
-        setCustomVar("hit", HIT);
-        tags.add(HbrTags.HIT);
-        tags.add(HbrTags.LL);
     }
 
     // 定义展示关联卡的构造方法，关键是不添加this.cardsToPreview，防止互相调用造成死循环
     public ElegantSerious(boolean onlyForDisplay) {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HBRAttackType.LL); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
     }
 
