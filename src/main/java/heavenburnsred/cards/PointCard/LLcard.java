@@ -11,6 +11,8 @@ import heavenburnsred.character.MyCharacter;
 import heavenburnsred.relics.Attribute;
 import heavenburnsred.util.CardStats;
 
+import static heavenburnsred.relics.Attribute.AddTempAttribute;
+
 public class LLcard extends BaseCard {
     public static final String ID = makeID(LLcard.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
@@ -29,8 +31,11 @@ public class LLcard extends BaseCard {
     }
 
     @Override
+    // 给debug时直接把对应点数卡加到手牌里用
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        onChoseThisOption();
+        AbstractRelic attribute = AbstractDungeon.player.getRelic(Attribute.ID);
+        ((Attribute)attribute).plusHbrLL(1);
+        AddTempAttribute(0,0,0,0);
     }
 
     @Override
