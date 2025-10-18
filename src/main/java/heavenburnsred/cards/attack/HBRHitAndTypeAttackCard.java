@@ -62,6 +62,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         tags.add(HbrTags.HIT);
     }
 
+    // render牌右上角的hit数，目前没有图片，先用文字代替
     public void renderHit(SpriteBatch sb) {
         Color hitTextColor = Color.WHITE.cpy();
         if (isCustomVarModified("hit")) {
