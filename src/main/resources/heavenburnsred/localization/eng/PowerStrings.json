@@ -33,13 +33,13 @@
   "${modID}:UltraSistersPower": {
     "NAME": "大岛家的羁绊",
     "DESCRIPTIONS": [
-      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
+      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心。"
     ]
   },
   "${modID}:DelightfulDashPower": {
     "NAME": "快感短跑",
     "DESCRIPTIONS": [
-      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心"
+      "每回合限一次，回合外受伤时抽1且加入1张四妹进手牌，若为四妹则获得4格挡。"
     ]
   },
   "${modID}:InductionCeremonyPower": {
