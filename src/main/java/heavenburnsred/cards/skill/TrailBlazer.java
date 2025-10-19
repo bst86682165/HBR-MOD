@@ -40,7 +40,7 @@ public class TrailBlazer extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,magicNumber));
-        addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,1)));
+        addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,-1)));
         if(this.upgraded){
             for (AbstractPower power : p.powers){
                 if(power.type == AbstractPower.PowerType.DEBUFF){

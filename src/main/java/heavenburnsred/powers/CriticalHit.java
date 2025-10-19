@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import heavenburnsred.actions.UpdateAttributeDescriptionAction;
+import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
 
@@ -21,7 +23,17 @@ public class CriticalHit extends BasePower{
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction){
         if (targetCard.type == AbstractCard.CardType.ATTACK){
             addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, CriticalHit.POWER_ID));
+            addToBot(new UpdateAttributeDescriptionAction());
         }
     }
 
+    @Override
+    public void onInitialApplication() {
+        addToBot(new UpdateAttributeDescriptionAction());
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
 }
