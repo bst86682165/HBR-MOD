@@ -3,9 +3,9 @@ package heavenburnsred.cards.power;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.powers.DelightfulDashPower;
 import heavenburnsred.util.CardStats;
 
@@ -22,7 +22,6 @@ public class DelightfulDash extends BaseCard {
     public DelightfulDash() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
          //Sets the card's damage and how much it changes when upgraded.
-
     }
 
     public void upgrade() {
@@ -37,7 +36,7 @@ public class DelightfulDash extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        addToBot(new ApplyHBRStackPowerAction(p,p,new DelightfulDashPower(p, magicNumber, this.upgraded)));
+        addToBot(new ApplyNotStackingPowerAction(p,p,new DelightfulDashPower(p, magicNumber, this.upgraded)));
 
     }
 

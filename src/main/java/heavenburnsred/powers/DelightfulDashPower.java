@@ -8,10 +8,8 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import heavenburnsred.cards.skill.FallingintoaFantasy;
-import heavenburnsred.patches.SoaringExcitementAction;
 
 import java.util.Objects;
 
