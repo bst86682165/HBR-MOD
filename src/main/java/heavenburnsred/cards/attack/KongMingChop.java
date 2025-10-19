@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.patches.ApplyHBRStackPowerAction;
+import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.powers.DefendDown;
 import heavenburnsred.util.CardStats;
 

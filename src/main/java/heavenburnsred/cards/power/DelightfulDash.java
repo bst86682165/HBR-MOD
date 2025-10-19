@@ -5,8 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.patches.ApplyHBRStackPowerAction;
-import heavenburnsred.powers.AttackUp;
+import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.powers.DelightfulDashPower;
 import heavenburnsred.util.CardStats;
 

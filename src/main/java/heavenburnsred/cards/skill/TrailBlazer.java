@@ -1,6 +1,5 @@
 package heavenburnsred.cards.skill;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
+import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.powers.CriticalHit;
 import heavenburnsred.util.CardStats;
 
@@ -40,7 +40,7 @@ public class TrailBlazer extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new CriticalHit(p,1)));
+        addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,1)));
         if(this.upgraded){
             for (AbstractPower power : p.powers){
                 if(power.type == AbstractPower.PowerType.DEBUFF){

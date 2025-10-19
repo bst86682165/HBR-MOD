@@ -1,4 +1,4 @@
-package heavenburnsred.patches;
+package heavenburnsred.actions;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;

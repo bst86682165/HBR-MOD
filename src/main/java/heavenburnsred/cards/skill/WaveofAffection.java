@@ -1,15 +1,11 @@
 package heavenburnsred.cards.skill;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.patches.ApplyHBRStackPowerAction;
 import heavenburnsred.patches.WaveofAffectionAction;
-import heavenburnsred.powers.DefendDown;
 import heavenburnsred.util.CardStats;
 
 public class WaveofAffection extends BaseCard {

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.patches.ApplyHBRStackPowerAction;
+import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.powers.DefendDown;
 import heavenburnsred.util.CardStats;
 
