@@ -23,7 +23,7 @@
   },
   "${modID}:BlueFlame": {
     "NAME": "苍焰螺旋",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:超频  !${modID}:hit! 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
   },
   "${modID}:LLcard": {
     "NAME": "力量",
@@ -52,7 +52,7 @@
   },
   "${modID}:KongMingChop": {
     "NAME": "卧龙演舞斩",
-    "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。 NL ${modID}:超频  !${modID}:hit! 。"
+    "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。"
   },
   "${modID}:FallingintoaFantasy": {
     "NAME": "沉入梦幻",

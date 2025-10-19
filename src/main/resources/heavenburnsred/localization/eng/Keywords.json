@@ -45,14 +45,6 @@
     "COLOR": "fc83da"
   },
   {
-    "PROPER_NAME": "超频（X）",
-    "NAMES": [
-      "超频"
-    ],
-    "DESCRIPTION": "为初始遗物超频条增加HIT数，每个被攻击的怪物增加X点。",
-    "COLOR": "fc83da"
-  },
-  {
     "PROPER_NAME": "降防",
     "NAMES": [
       "降防"
