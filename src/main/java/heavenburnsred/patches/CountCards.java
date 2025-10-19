@@ -8,7 +8,7 @@ import java.util.Objects;
 public class CountCards {
     public CountCards (){
     }
-    public int CountCardsInWholeDeck(String CardID){
+    public static int CountCardsInWholeDeck(String CardID){
         int CardCount = 0;
         String TargetID = CardID;
         for (AbstractCard card : AbstractDungeon.player.drawPile.group) {

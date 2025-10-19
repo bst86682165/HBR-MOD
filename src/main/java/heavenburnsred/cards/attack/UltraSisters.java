@@ -41,7 +41,7 @@ public class UltraSisters extends HBRHitAndTypeAttackCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int FFcount = new CountCards().CountCardsInWholeDeck(FallingintoaFantasy.ID);
+        int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
         addToBot(new GainBlockAction(p,6 + damage * FFcount));
         addToBot(new DamageAction(m, new DamageInfo(p, 6 + (damage - 1) * FFcount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }

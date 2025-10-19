@@ -124,7 +124,7 @@ public class FallingintoaFantasy extends BaseCard {
                 MakeNewCard.upgrade();
             }
             else {
-            int count = new CountCards().CountCardsInWholeDeck(FallingintoaFantasy.ID);
+            int count = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
             if (count == 11) {
                 MakeNewCard.upgrade();
                 addToBot(new UpgradeCardsByTypeAction(card -> card.cardID.contains("FallingintoaFantasy"), "沉入梦幻"));
