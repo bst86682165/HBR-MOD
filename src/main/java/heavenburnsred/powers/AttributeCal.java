@@ -14,6 +14,7 @@ public class AttributeCal extends BasePower {
     public static final String POWER_ID = makeID("AttributeCal");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
+    private static final int CRITICAL = 10;
 
     public AttributeCal(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
@@ -69,7 +70,7 @@ public class AttributeCal extends BasePower {
 
         //处理暴击效果
         if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
-            deltaAttack += 10;
+            deltaAttack += CRITICAL;
         }
 
         damage *= calculateGiveDamageRatio(deltaAttack);
@@ -78,12 +79,18 @@ public class AttributeCal extends BasePower {
 
     // 目前采用保留2位小数的描述方式
     public void updateDescription() {
+        int tmpDelta = 0;
+        String tmpSeperation = "";
+        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)) {
+            tmpDelta = CRITICAL;
+            tmpSeperation = " #y";
+        }
         this.description =
-                "力量型攻击倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
-                "灵巧型攻击倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
-                "体精型攻击倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
-                "智运型攻击倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + "。" + DESCRIPTIONS[1] +
-                "均衡型攻击倍率：" + String.format("%.2f", calculateGiveDamageRatio(Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + "。";
+                "力量型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "灵巧型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "体精型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "智运型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "均衡型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + " 。";
     }
 
     // 防止战斗中被移除，未测试
