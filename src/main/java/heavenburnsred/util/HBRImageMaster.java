@@ -11,6 +11,9 @@ public class HBRImageMaster {
     public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON = getCardUIRegion("hbr_frame_attack_common", 0, 55.5f);
     public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON = getCardUIRegion("hbr_frame_attack_uncommon", 0, 55.5f);
     public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE = getCardUIRegion("hbr_frame_attack_rare", 0, 55.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON_L = getCardUIRegion("hbr_frame_attack_common_L", 2.5f, 114.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON_L = getCardUIRegion("hbr_frame_attack_uncommon_L", 2.5f, 114.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE_L = getCardUIRegion("hbr_frame_attack_rare_L", 2.5f, 114.5f);
 
     public static TextureAtlas.AtlasRegion getCardUIRegion(final String Name, float offsetX, float offsetY) {
         String textureString = imagePath("cardui/" + Name + ".png");
