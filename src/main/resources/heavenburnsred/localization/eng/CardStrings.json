@@ -106,12 +106,12 @@
   },
   "${modID}:TrailBlazer": {
     "NAME": "让道宣言",
-    "DESCRIPTION": "获得 !M! 点格挡，下一次攻击获得暴击效果。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点格挡，下一次攻击获得暴击效果。 NL 移除自身所有负面效果。"
+    "DESCRIPTION": "获得 !M! 点格挡，获得 ${modID}:暴击 效果。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点格挡，获得 ${modID}:暴击 效果。 NL 移除自身所有负面效果。"
   },
   "${modID}:AbsolutePhenomenon": {
     "NAME": "绝美奇观",
-    "DESCRIPTION": "下一次攻击获得暴击效果。"
+    "DESCRIPTION": "获得 ${modID}:暴击 效果。"
   }
 }
 

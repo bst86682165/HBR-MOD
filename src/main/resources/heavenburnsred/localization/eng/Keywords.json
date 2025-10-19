@@ -59,5 +59,13 @@
     ],
     "DESCRIPTION": "下一张攻击牌造成的伤害提升 #b10% 。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "暴击",
+    "NAMES": [
+      "暴击"
+    ],
+    "DESCRIPTION": "增加下一次攻击与敌人的白值差值10点。 NL 不可叠加。",
+    "COLOR": "fc83da"
   }
 ]
