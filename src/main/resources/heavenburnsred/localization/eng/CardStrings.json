@@ -112,6 +112,11 @@
   "${modID}:AbsolutePhenomenon": {
     "NAME": "绝美奇观",
     "DESCRIPTION": "获得 ${modID}:暴击 效果。"
+  },
+  "${modID}:AngelWings": {
+    "NAME": "天使之翼",
+    "DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。",
+    "UPGRADE_DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。 NL 保留 。"
   }
 }
 

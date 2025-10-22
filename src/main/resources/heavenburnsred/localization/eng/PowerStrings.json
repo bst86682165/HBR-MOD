@@ -71,6 +71,12 @@
     "DESCRIPTIONS": [
       "增加下一次攻击与敌人的白值差值10点。"
     ]
+  },
+  "${modID}:AngelWingsPower": {
+    "NAME": "aoi的庇护",
+    "DESCRIPTIONS": [
+      "无效化敌人下 #b",
+      " 次攻击及其附带debuff。"
+    ]
   }
-
 }

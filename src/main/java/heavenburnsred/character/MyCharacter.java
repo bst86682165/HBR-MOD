@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -23,6 +24,7 @@ import heavenburnsred.cards.attack.BlueFlame;
 import heavenburnsred.cards.attack.Strike;
 import heavenburnsred.cards.skill.Defend;
 import heavenburnsred.cards.skill.Enhancement;
+import heavenburnsred.powers.AngelWingsPower;
 import heavenburnsred.relics.Attribute;
 import heavenburnsred.relics.ODBar;
 
@@ -268,5 +270,15 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new MyCharacter();
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        int tmp = info.output;
+        if (this.hasPower(AngelWingsPower.POWER_ID)) {
+            ((AngelWingsPower)this.getPower(AngelWingsPower.POWER_ID)).onAttackedBeforeDefence(info);
+        }
+        super.damage(info);
+        info.output = tmp;
     }
 }
