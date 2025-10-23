@@ -8,15 +8,23 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import static heavenburnsred.BasicMod.imagePath;
 
 public class HBRImageMaster {
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON = getCardUIRegion("hbr_frame_attack_common", 0, 55.5f);
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON = getCardUIRegion("hbr_frame_attack_uncommon", 0, 55.5f);
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE = getCardUIRegion("hbr_frame_attack_rare", 0, 55.5f);
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON_L = getCardUIRegion("hbr_frame_attack_common_L", 2.5f, 114.5f);
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON_L = getCardUIRegion("hbr_frame_attack_uncommon_L", 2.5f, 114.5f);
-    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE_L = getCardUIRegion("hbr_frame_attack_rare_L", 2.5f, 114.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON = getCardUIRegion("cardui/hbr_frame_attack_common", 0, 55.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON = getCardUIRegion("cardui/hbr_frame_attack_uncommon", 0, 55.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE = getCardUIRegion("cardui/hbr_frame_attack_rare", 0, 55.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_COMMON_L = getCardUIRegion("cardui/hbr_frame_attack_common_L", 2.5f, 114.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_UNCOMMON_L = getCardUIRegion("cardui/hbr_frame_attack_uncommon_L", 2.5f, 114.5f);
+    public static TextureAtlas.AtlasRegion HBR_CARD_FRAME_ATTACK_RARE_L = getCardUIRegion("cardui/hbr_frame_attack_rare_L", 2.5f, 114.5f);
+
+    public static TextureAtlas.AtlasRegion RICE_FIELD_0 = getCardUIRegion("animation/riceField/riceParticle_0", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_1 = getCardUIRegion("animation/riceField/riceParticle_1", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_2 = getCardUIRegion("animation/riceField/riceParticle_2", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_3 = getCardUIRegion("animation/riceField/riceParticle_3", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_4 = getCardUIRegion("animation/riceField/riceParticle_4", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_5 = getCardUIRegion("animation/riceField/riceParticle_5", 0, 0);
+    public static TextureAtlas.AtlasRegion RICE_FIELD_6 = getCardUIRegion("animation/riceField/riceParticle_6", 0, 0);
 
     public static TextureAtlas.AtlasRegion getCardUIRegion(final String Name, float offsetX, float offsetY) {
-        String textureString = imagePath("cardui/" + Name + ".png");
+        String textureString = imagePath(Name + ".png");
         Texture cardUITexture;
         cardUITexture = ImageMaster.loadImage(textureString);
 

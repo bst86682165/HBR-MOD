@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.DivinityParticleEffect;
 import com.megacrit.cardcrawl.vfx.stance.DivinityStanceChangeParticle;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
+import heavenburnsred.effects.stances.RiceFieldParticleEffect;
 
 import static heavenburnsred.BasicMod.makeID;
 
@@ -47,7 +48,7 @@ public class RiceField extends AbstractStance {
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.2F;
                 // 先用神格的粒子效果
-                AbstractDungeon.effectsQueue.add(new DivinityParticleEffect());
+                AbstractDungeon.effectsQueue.add(new RiceFieldParticleEffect());
             }
         }
         this.particleTimer2 -= Gdx.graphics.getDeltaTime();
