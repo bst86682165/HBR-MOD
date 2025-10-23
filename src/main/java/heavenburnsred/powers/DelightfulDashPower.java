@@ -61,7 +61,6 @@ public class DelightfulDashPower extends BasePower{
         First = true;
     }
 
-
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

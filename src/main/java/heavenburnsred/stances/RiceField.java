@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.DivinityParticleEffect;
+import com.megacrit.cardcrawl.vfx.stance.DivinityStanceChangeParticle;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
-import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 
 import static heavenburnsred.BasicMod.makeID;
 
@@ -40,19 +40,21 @@ public class RiceField extends AbstractStance {
         return damage;
     }
 
-    // 先用神格的动画效果
+    // 动画效果
     public void updateAnimation() {
         if (!Settings.DISABLE_EFFECTS) {
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.2F;
+                // 先用神格的粒子效果
                 AbstractDungeon.effectsQueue.add(new DivinityParticleEffect());
             }
         }
         this.particleTimer2 -= Gdx.graphics.getDeltaTime();
         if (this.particleTimer2 < 0.0F) {
             this.particleTimer2 = MathUtils.random(0.45F, 0.55F);
-            AbstractDungeon.effectsQueue.add(new StanceAuraEffect("Divinity"));
+            // 通过patch调整光晕效果为金色
+            AbstractDungeon.effectsQueue.add(new StanceAuraEffect(RiceField.STANCE_ID));
         }
     }
 
@@ -63,16 +65,22 @@ public class RiceField extends AbstractStance {
     public void onEnterStance() {
         if (sfxId != -1L)
             stopIdleSfx();
+        // 先用神格的音效
         CardCrawlGame.sound.play("STANCE_ENTER_DIVINITY");
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_DIVINITY");
-        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.PINK, true));
-        AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Divinity"));
+        // 全屏闪光效果，渲染为金黄色
+        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
+        // 粒子放射效果，渲染为金黄色
+        for(int i = 0; i < 20; ++i) {
+            AbstractDungeon.effectsQueue.add(new DivinityStanceChangeParticle(Color.GOLD, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY));
+        }
     }
 
     public void onExitStance() {
         stopIdleSfx();
     }
 
+    // 先用神格的音效
     public void stopIdleSfx() {
         if (sfxId != -1L) {
             CardCrawlGame.sound.stop("STANCE_LOOP_DIVINITY", sfxId);
