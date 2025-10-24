@@ -91,4 +91,6 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
             FontHelper.renderFont(sb, FontHelper.SCP_cardEnergyFont, text, Settings.WIDTH / 2.0F + 70.0F * Settings.scale, Settings.HEIGHT / 2.0F + 404.0F * Settings.scale, c);
         }
     }
+
+    public void onBreakBlock() {}
 }
