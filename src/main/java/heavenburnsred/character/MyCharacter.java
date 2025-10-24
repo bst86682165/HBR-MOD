@@ -164,7 +164,7 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
         //IDs of starting relics. You can have multiple, but one is recommended.
         retVal.add(ODBar.ID);
         retVal.add(Attribute.ID);
-        retVal.add(PrismaticShard.ID);
+//        retVal.add(PrismaticShard.ID);
 
         return retVal;
     }
