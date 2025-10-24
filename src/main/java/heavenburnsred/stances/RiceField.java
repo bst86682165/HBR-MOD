@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.stance.DivinityParticleEffect;
 import com.megacrit.cardcrawl.vfx.stance.DivinityStanceChangeParticle;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 import heavenburnsred.effects.stances.RiceFieldParticleEffect;
@@ -47,7 +46,7 @@ public class RiceField extends AbstractStance {
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.2F;
-                // 先用神格的粒子效果
+                // 水稻生长的粒子效果
                 AbstractDungeon.effectsQueue.add(new RiceFieldParticleEffect());
             }
         }
@@ -69,7 +68,7 @@ public class RiceField extends AbstractStance {
         // 先用神格的音效
         CardCrawlGame.sound.play("STANCE_ENTER_DIVINITY");
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_DIVINITY");
-        // 全屏闪光效果，渲染为金黄色
+        // 屏幕边缘闪光效果，渲染为金黄色
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
         // 粒子放射效果，渲染为金黄色
         for(int i = 0; i < 20; ++i) {
