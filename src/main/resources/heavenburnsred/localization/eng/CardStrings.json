@@ -117,6 +117,23 @@
     "NAME": "天使之翼",
     "DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。",
     "UPGRADE_DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。 NL 保留 。"
+  },
+  "${modID}:DoubleInOne": {
+    "NAME": "可怜？可镰！",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 【目标有格挡时额外造成一次伤害。 ${modID}:击破 时获得1层 ${modID}:加攻 。 ${modID}:←切换→  NL 获得2层临时 力量 。】"
+  },
+  "${modID}:DoubleInOne_L": {
+    "NAME": "可镰",
+    "DESCRIPTION": "造成 !D! 点伤害两次，目标有格挡时额外造成一次伤害。 NL ${modID}:击破 时获得1层 ${modID}:加攻 。"
+  },
+  "${modID}:DoubleInOne_R": {
+    "NAME": "可怜",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 获得2层临时 力量 。"
+  },
+  "${modID}:SpringBath": {
+    "NAME": "一起泡温泉吧",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点格挡。 NL 消耗 。"
   }
 }
 

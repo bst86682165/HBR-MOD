@@ -67,5 +67,21 @@
     ],
     "DESCRIPTION": "增加下一次攻击与敌人的白值差值10点。 NL 不可叠加。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "切换",
+    "NAMES": [
+      "←切换→"
+    ],
+    "DESCRIPTION": "中括号内前后2种效果可任选其一生效。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "击破",
+    "NAMES": [
+      "击破"
+    ],
+    "DESCRIPTION": "突破敌人的格挡。",
+    "COLOR": "fc83da"
   }
 ]
