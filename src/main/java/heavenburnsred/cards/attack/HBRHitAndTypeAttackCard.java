@@ -6,8 +6,11 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.util.CardStats;
@@ -93,9 +96,12 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
     }
 
     // 为我们的攻击卡设置破盾，打HP和DP的入口，使用BlockRelatedDamageAction来调用这三个方法
+    public void onBreakBlock(AbstractPlayer p, AbstractCreature m) {onBreakBlock();}
     public void onBreakBlock() {}
 
-    public void onAttack() {}
+    public void onAttackHP(AbstractPlayer p, AbstractCreature m) {onAttackHP();}
+    public void onAttackHP() {}
 
-    public void onDamageBlock() {}
+    public void onBeingBlocked(AbstractPlayer p, AbstractCreature m) {onBeingBlocked();}
+    public void onBeingBlocked() {}
 }

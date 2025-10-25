@@ -3,44 +3,47 @@ package heavenburnsred.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import heavenburnsred.cards.attack.HBRHitAndTypeAttackCard;
 
 
 // 加入检测破盾的机制，允许
 public class BlockRelatedDamageAction extends DamageAction {
-    private final AbstractCreature m;
     private final HBRHitAndTypeAttackCard HBRCard;
-    private int previousBlock;
+    private final int previousBlock;
+    private final int previousHealth;
+    private final AbstractCreature targetMonster;
 
     public BlockRelatedDamageAction(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect, HBRHitAndTypeAttackCard card) {
         super(target, info, effect);
-        m = target;
+        targetMonster = target;
+        previousHealth = target.currentHealth;
+        previousBlock = target.currentBlock;
         HBRCard = card;
     }
 
     public BlockRelatedDamageAction(AbstractCreature target, DamageInfo info, HBRHitAndTypeAttackCard card) {
-        super(target, info);
-        m = target;
-        HBRCard = card;
+        this(target,info,AttackEffect.NONE,card);
     }
 
     @Override
     public void update() {
-        // 最开始没结算damage时先保存当前的格挡值
-        if (this.duration == 0.1f) {
-            previousBlock = m.currentBlock;
-        }
+        // 先结算damage
         super.update();
         // 在damage结算后，判断打HP等条件并调用HBR攻击卡适当的方法
         if (this.isDone) {
-            if (previousBlock == 0) {
-                this.HBRCard.onAttack();
-            } else if (previousBlock > 0 && m.currentBlock == 0) {
-                this.HBRCard.onBreakBlock();
-            } else if (previousBlock > 0) {
-                this.HBRCard.onDamageBlock();
-            }
+            AbstractPlayer p = AbstractDungeon.player;
+            // 穿盾打到HP也算未被格挡的伤害，因此会和onBreakBlock有重叠
+            if (targetMonster.currentHealth < previousHealth)
+                this.HBRCard.onAttackHP(p, targetMonster);
+            // 恰好打穿格挡也算击破
+            if (previousBlock > 0 && targetMonster.currentBlock == 0)
+                this.HBRCard.onBreakBlock(p, targetMonster);
+            // 完全被怪格挡住
+            if (previousBlock > 0 && targetMonster.currentBlock > 0)
+                this.HBRCard.onBeingBlocked(p, targetMonster);
         }
     }
 }
