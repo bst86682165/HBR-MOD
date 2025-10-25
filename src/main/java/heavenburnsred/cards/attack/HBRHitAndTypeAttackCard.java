@@ -72,7 +72,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         // 小卡图
         if (!isPopup) {
             Color hitTextColor = Color.WHITE.cpy();
-            if (isCustomVarModified("hit")) {
+            if (customVarUpgraded("hit")) {
                 hitTextColor = ENERGY_COST_MODIFIED_COLOR;
             }
             hitTextColor.a = this.transparency;
@@ -84,7 +84,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         } else {
             // 大图的颜色和位置略有不同
             Color c = null;
-            if (isCustomVarModified("hit")) {
+            if (customVarUpgraded("hit")) {
                 c = Settings.GREEN_TEXT_COLOR;
             } else {
                 c = Settings.CREAM_COLOR;
