@@ -13,12 +13,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import heavenburnsred.cards.HbrTags;
+import heavenburnsred.cards.attack.DoubleInOne;
 import heavenburnsred.patches.HBRRelicClick;
 import heavenburnsred.cards.BaseCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.badlogic.gdx.graphics.Color;
 import heavenburnsred.util.TextureLoader;
+
+import java.util.Objects;
 
 import static heavenburnsred.BasicMod.makeID;
 import static heavenburnsred.BasicMod.relicPath;
@@ -92,6 +95,7 @@ public class ODBar extends HBRRelicClick {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (Objects.equals(card.cardID, makeID(DoubleInOne.class.getSimpleName()))) return;
         int old_counter = this.counter;
         // 攻击卡按hit数计算
         if (card.hasTag(HbrTags.HIT)) {
@@ -125,6 +129,7 @@ public class ODBar extends HBRRelicClick {
     }
 
     public void onRightClick() {
+        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) return;
         AbstractPlayer p = AbstractDungeon.player;
         if (!this.usedUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
                 && this.counter >= 40) {
