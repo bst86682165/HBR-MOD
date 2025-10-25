@@ -138,6 +138,10 @@
     "NAME": "一起泡温泉吧",
     "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点格挡。 NL 消耗 。"
+  },
+  "${modID}:NinjaAttack": {
+    "NAME": "神崎流忍术",
+    "DESCRIPTION": "造成 !D! 点伤害三次。 NL 造成未格挡的伤害时增加 !M! 点临时 力量 。"
   }
 }
 
