@@ -92,5 +92,10 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         }
     }
 
+    // 为我们的攻击卡设置破盾，打HP和DP的入口，使用BlockRelatedDamageAction来调用这三个方法
     public void onBreakBlock() {}
+
+    public void onAttack() {}
+
+    public void onDamageBlock() {}
 }

@@ -8,18 +8,18 @@ import heavenburnsred.cards.attack.HBRHitAndTypeAttackCard;
 
 
 // 加入检测破盾的机制，允许
-public class BreakBlockHBRDamageAction extends DamageAction {
+public class BlockRelatedDamageAction extends DamageAction {
     private final AbstractCreature m;
     private final HBRHitAndTypeAttackCard HBRCard;
     private int previousBlock;
 
-    public BreakBlockHBRDamageAction(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect, HBRHitAndTypeAttackCard card) {
+    public BlockRelatedDamageAction(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect, HBRHitAndTypeAttackCard card) {
         super(target, info, effect);
         m = target;
         HBRCard = card;
     }
 
-    public BreakBlockHBRDamageAction(AbstractCreature target, DamageInfo info, HBRHitAndTypeAttackCard card) {
+    public BlockRelatedDamageAction(AbstractCreature target, DamageInfo info, HBRHitAndTypeAttackCard card) {
         super(target, info);
         m = target;
         HBRCard = card;
@@ -32,9 +32,15 @@ public class BreakBlockHBRDamageAction extends DamageAction {
             previousBlock = m.currentBlock;
         }
         super.update();
-        // 在damage结算后，判断是否破盾并调用card的onBreakBlock
-        if (this.isDone && previousBlock > 0 && m.currentBlock == 0) {
-            this.HBRCard.onBreakBlock();
+        // 在damage结算后，判断打HP等条件并调用HBR攻击卡适当的方法
+        if (this.isDone) {
+            if (previousBlock == 0) {
+                this.HBRCard.onAttack();
+            } else if (previousBlock > 0 && m.currentBlock == 0) {
+                this.HBRCard.onBreakBlock();
+            } else if (previousBlock > 0) {
+                this.HBRCard.onDamageBlock();
+            }
         }
     }
 }
