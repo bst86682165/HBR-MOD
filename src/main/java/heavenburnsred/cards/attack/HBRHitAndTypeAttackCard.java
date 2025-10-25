@@ -51,7 +51,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         setCustomVar("hit", hit, upgradeHit);
         tags.add(HbrTags.HIT);
     }
-    // 如果想特殊指定图片可以用这两个构造方法，但是估计不会用到的
+    // 如果想特殊指定图片可以用这两个构造方法
     public HBRHitAndTypeAttackCard(String ID, CardStats info, String cardImage, HBRAttackType attackPreference, int hit) {
         this(ID, info, cardImage, attackPreference, hit, 0);
     }
