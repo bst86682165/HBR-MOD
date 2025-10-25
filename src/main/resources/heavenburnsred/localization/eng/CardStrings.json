@@ -122,13 +122,13 @@
     "NAME": "可怜？可镰！",
     "DESCRIPTION": " ${modID}:←切换→ NL ",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害两次，目标有格挡时额外造成一次伤害。 NL ${modID}:击破 时获得1层 ${modID}:加攻 。",
+      "造成 !D! 点伤害三次。 NL ${modID}:击破 时获得1层 ${modID}:加攻 。",
       "造成 !D! 点伤害两次。 NL 获得2层临时 力量 。"
     ]
   },
   "${modID}:DoubleInOne_L": {
     "NAME": "可镰",
-    "DESCRIPTION": "造成 !D! 点伤害两次，目标有格挡时额外造成一次伤害。 NL ${modID}:击破 时获得1层 ${modID}:加攻 。"
+    "DESCRIPTION": "造成 !D! 点伤害三次。 NL ${modID}:击破 时获得1层 ${modID}:加攻 。"
   },
   "${modID}:DoubleInOne_R": {
     "NAME": "可怜",

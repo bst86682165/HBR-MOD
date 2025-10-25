@@ -12,18 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import heavenburnsred.actions.ApplyHBRStackPowerAction;
-import heavenburnsred.actions.BreakBlockHBRDamageAction;
-import heavenburnsred.cards.skill.SummerDream;
+import heavenburnsred.actions.BlockRelatedDamageAction;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.AttackUp;
-import heavenburnsred.relics.Attribute;
 import heavenburnsred.relics.ODBar;
 import heavenburnsred.util.CardStats;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-import static heavenburnsred.BasicMod.imagePath;
 import static heavenburnsred.util.GeneralUtils.removePrefix;
 import static heavenburnsred.util.TextureLoader.getCardTextureString;
 
@@ -135,12 +131,9 @@ public class DoubleInOne extends HBRHitAndTypeAttackCard {
                     addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, TempStrength), TempStrength));
                     addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, TempStrength), TempStrength));
                 } else {
-                    addToBot(new BreakBlockHBRDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, this));
-                    addToBot(new BreakBlockHBRDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, this));
-                    if (m.currentBlock > 0) {
-                        // 打第三段，相当于1.5倍伤害
-                        addToBot(new BreakBlockHBRDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL, this));
-                    }
+                    addToBot(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, this));
+                    addToBot(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, this));
+                    addToBot(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL, this));
                 }
                 this.fatherCard.switchAll(this.isRight);
             }
@@ -190,5 +183,17 @@ public class DoubleInOne extends HBRHitAndTypeAttackCard {
             this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         }
         initializeDescription();
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        // 复制普通卡都是直接默认右边（可怜）
+        if (this.fatherCard==null) return super.makeStatEquivalentCopy();
+        // 复制选择卡（就是展示大图，应该也不太可能在其他地方复制选择卡了）
+        else {
+            DoubleInOne candidate = new DoubleInOne(this.isRight, this.fatherCard);
+            if (this.upgraded) candidate.upgrade();
+            return candidate;
+        }
     }
 }
