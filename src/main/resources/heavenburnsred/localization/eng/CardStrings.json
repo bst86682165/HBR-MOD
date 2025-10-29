@@ -142,6 +142,10 @@
   "${modID}:NinjaAttack": {
     "NAME": "神崎流忍术",
     "DESCRIPTION": "造成 !D! 点伤害三次。 NL 造成未格挡的伤害时增加 !M! 点临时 力量 。"
+  },
+  "${modID}:CrabAttack": {
+    "NAME": "螃蟹出击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 这张牌每被打出一次，在本场战斗中其伤害增加 !M! 。"
   }
 }
 
