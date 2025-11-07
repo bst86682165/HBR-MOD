@@ -2,6 +2,7 @@ package heavenburnsred.relics;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.cards.attack.DoubleInOne;
 import heavenburnsred.patches.HBRRelicClick;
@@ -19,6 +21,8 @@ import heavenburnsred.cards.BaseCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.badlogic.gdx.graphics.Color;
+import heavenburnsred.powers.ChargePower;
+import heavenburnsred.powers.OverDriveState;
 import heavenburnsred.util.TextureLoader;
 
 import java.util.Objects;
@@ -133,6 +137,7 @@ public class ODBar extends HBRRelicClick {
         AbstractPlayer p = AbstractDungeon.player;
         if (!this.usedUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
                 && this.counter >= 40) {
+            addToBot(new ApplyNotStackingPowerAction(p,p,new OverDriveState(p,-1)));
             this.counter = this.counter - 40;
             onCounterChanged(this.counter + 40, this.counter);
             int handCards = AbstractDungeon.player.hand.size();
