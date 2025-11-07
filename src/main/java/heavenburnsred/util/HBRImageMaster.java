@@ -1,5 +1,6 @@
 package heavenburnsred.util;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -22,6 +23,8 @@ public class HBRImageMaster {
     public static TextureAtlas.AtlasRegion RICE_FIELD_4 = getCardUIRegion("animation/riceField/riceParticle_4", 0, 0);
     public static TextureAtlas.AtlasRegion RICE_FIELD_5 = getCardUIRegion("animation/riceField/riceParticle_5", 0, 0);
     public static TextureAtlas.AtlasRegion RICE_FIELD_6 = getCardUIRegion("animation/riceField/riceParticle_6", 0, 0);
+
+    public static final Color RED_BORDER_COLOR = new Color(1.0F, 0.1F, 0.1F, 0.25F);
 
     public static TextureAtlas.AtlasRegion getCardUIRegion(final String Name, float offsetX, float offsetY) {
         String textureString = imagePath(Name + ".png");

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.actions.BlockRelatedDamageAction;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
+import heavenburnsred.util.HBRImageMaster;
 
 public class SettingOfSwordsman extends HBRHitAndTypeAttackCard {
     public static final String ID = makeID(SettingOfSwordsman.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
@@ -44,7 +45,7 @@ public class SettingOfSwordsman extends HBRHitAndTypeAttackCard {
 
     public void triggerOnGlowCheck() {
         // 要掉血时显示红色边框
-        this.glowColor = (this.baseMagicNumber == 2) ? new Color(1.0F, 0.33F, 0.33F, 0.25F) : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = (this.baseMagicNumber == 2) ? HBRImageMaster.RED_BORDER_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     @Override
