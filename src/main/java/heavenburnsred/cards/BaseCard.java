@@ -362,6 +362,11 @@ public abstract class BaseCard extends CustomCard {
         return var.upgraded;
     }
 
+    public void setCustomVarModified(String key) {
+        LocalVarInfo var = cardVariables.get(key);
+        var.forceModified = true;
+    }
+
 
     protected final void setCostUpgrade(int costUpgrade)
     {
@@ -594,6 +599,7 @@ public abstract class BaseCard extends CustomCard {
 
         for (LocalVarInfo var : cardVariables.values()) {
             var.value = var.base;
+            var.forceModified = false;
         }
     }
 

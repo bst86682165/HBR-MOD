@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.util.CardStats;
@@ -65,6 +65,14 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         tags.add(HbrTags.HIT);
     }
 
+    @Override
+    public void displayUpgrades() {
+        super.displayUpgrades();
+        if (customVarUpgraded("hit")) {
+            setCustomVarModified("hit");
+        }
+    }
+
     // render牌右上角的hit数，目前没有图片，先用文字代替
     public void renderHit(SpriteBatch sb, boolean isPopup) {
         if (this.isLocked || !this.isSeen)
@@ -72,7 +80,8 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         // 小卡图
         if (!isPopup) {
             Color hitTextColor = Color.WHITE.cpy();
-            if (customVarUpgraded("hit")) {
+            // 保证是有upgrade功能的grid或选择手牌界面（例如武装）再更改颜色（即火堆）
+            if (isCustomVarModified("hit")) {
                 hitTextColor = ENERGY_COST_MODIFIED_COLOR;
             }
             hitTextColor.a = this.transparency;
@@ -84,7 +93,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
         } else {
             // 大图的颜色和位置略有不同
             Color c = null;
-            if (customVarUpgraded("hit")) {
+            if (isCustomVarModified("hit")) {
                 c = Settings.GREEN_TEXT_COLOR;
             } else {
                 c = Settings.CREAM_COLOR;
