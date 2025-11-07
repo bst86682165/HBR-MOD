@@ -84,5 +84,11 @@
     "DESCRIPTIONS": [
       "当前处于超频状态，可以触发某些牌的额外效果。"
     ]
+  },
+  "${modID}:TokenPower": {
+    "NAME": "信念",
+    "DESCRIPTIONS": [
+      "部分卡牌效果取决于信念层数，最多叠加10层。"
+    ]
   }
 }
