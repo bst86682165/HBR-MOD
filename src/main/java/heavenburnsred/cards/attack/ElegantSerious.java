@@ -92,6 +92,14 @@ public class ElegantSerious extends HBRHitAndTypeAttackCard {
     }
 
     @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.hasPower(ChargePower.POWER_ID)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
+    @Override
     public AbstractCard makeCopy() { //Optional
         return new ElegantSerious();
     }

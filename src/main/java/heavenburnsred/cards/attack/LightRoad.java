@@ -59,6 +59,13 @@ public class LightRoad extends HBRHitAndTypeAttackCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        if (ODBar.getCounter() < 0) {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
     @Override
     public AbstractCard makeCopy() { //Optional
         return new LightRoad();
