@@ -146,6 +146,14 @@
   "${modID}:CrabAttack": {
     "NAME": "螃蟹出击",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 这张牌每被打出一次，在本场战斗中其伤害增加 !M! 。"
+  },
+  "${modID}:SettingOfSwordsman": {
+    "NAME": "最强剑士的设定",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 一场战斗内每打出第3次时失去10点生命。 NL ${modID}:击破 时获得 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （打出",
+      "次后掉血。）"
+    ]
   }
 }
 
