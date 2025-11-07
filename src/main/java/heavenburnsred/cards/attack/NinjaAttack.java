@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.actions.BlockRelatedDamageAction;
+import heavenburnsred.actions.QuickTemporalActionHelper;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.DefendDown;
 import heavenburnsred.util.CardStats;
@@ -42,23 +43,14 @@ public class NinjaAttack extends HBRHitAndTypeAttackCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, this));
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                applyPowers();
-                addToTop(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, NinjaAttack.this));
-                this.isDone = true;
-            }
+        QuickTemporalActionHelper.addToBotQuick(() -> {
+            applyPowers();
+            addToTop(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, NinjaAttack.this));
         });
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                applyPowers();
-                addToTop(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL, NinjaAttack.this));
-                this.isDone = true;
-            }
+        QuickTemporalActionHelper.addToBotQuick(() -> {
+            applyPowers();
+            addToTop(new BlockRelatedDamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, NinjaAttack.this));
         });
-
     }
 
     @Override
