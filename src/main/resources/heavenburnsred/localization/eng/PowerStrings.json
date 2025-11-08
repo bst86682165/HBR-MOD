@@ -90,5 +90,19 @@
     "DESCRIPTIONS": [
       "部分卡牌效果取决于信念层数，最多叠加10层。"
     ]
+  },
+  "${modID}:InnerStrengthPower": {
+    "NAME": "内在力量",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，获得",
+      "点 #y信念 。"
+    ]
+  },
+  "${modID}:AttackLossHPPower": {
+    "NAME": "最强招式的副作用",
+    "DESCRIPTIONS": [
+      "每打出一张攻击牌，失去",
+      "点生命"
+    ]
   }
 }

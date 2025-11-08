@@ -12,6 +12,14 @@ public class TokenPower extends BasePower {
         super(POWER_ID, TYPE, false, owner, amount);
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        if (this.amount > 10) {
+            this.amount = 10;
+        }
+    }
+
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

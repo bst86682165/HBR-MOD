@@ -15,7 +15,7 @@
   },
   "${modID}:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点 ${modID}:格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "${modID}:Enhancement": {
     "NAME": "强化",
@@ -57,11 +57,11 @@
   "${modID}:FallingintoaFantasy": {
     "NAME": "沉入梦幻",
     "DESCRIPTION": "抽1张牌，当手卡有2张以上此卡时费用为0。",
-    "UPGRADE_DESCRIPTION": "抽1张牌，获得2点格挡，当手卡有2张以上此卡时费用为0。"
+    "UPGRADE_DESCRIPTION": "抽1张牌，获得2点 格挡 ，当手卡有2张以上此卡时费用为0。"
   },
   "${modID}:UltraSisters": {
     "NAME": "六姐妹齐心",
-    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的格挡。"
+    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的 格挡 。"
   },
   "${modID}:MercyDance": {
     "NAME": "慈悲之舞",
@@ -69,17 +69,17 @@
   },
   "${modID}:SoaringExcitement": {
     "NAME": "飘然亢奋",
-    "DESCRIPTION": "获得 !B! 点格挡，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
+    "DESCRIPTION": "获得 !B! 点 格挡 ，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
   },
   "${modID}:TooHotToHandle": {
     "NAME": "发烫的肉体",
-    "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人1层降防，若敌人拥有格挡，再给予1层。 NL 将3张沉入梦幻加入手卡。"
+    "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有 格挡 ，再给予1层。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人1层降防，若敌人拥有 格挡 ，再给予1层。 NL 将3张沉入梦幻加入手卡。"
   },
   "${modID}:DelightfulDash": {
     "NAME": "快感短跑",
-    "DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点格挡。",
-    "UPGRADE_DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点可保留至下回合的格挡 NL 固有。"
+    "DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点 格挡 。",
+    "UPGRADE_DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点可保留至下回合的 格挡 NL 固有。"
   },
   "${modID}:WaveofAffection": {
     "NAME": "慈爱的波动",
@@ -106,8 +106,8 @@
   },
   "${modID}:TrailBlazer": {
     "NAME": "让道宣言",
-    "DESCRIPTION": "获得 !M! 点格挡，获得 ${modID}:暴击 效果。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点格挡，获得 ${modID}:暴击 效果。 NL 移除自身所有负面效果。"
+    "DESCRIPTION": "获得 !M! 点 格挡 ，获得 ${modID}:暴击 效果。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 移除自身所有负面效果。"
   },
   "${modID}:AbsolutePhenomenon": {
     "NAME": "绝美奇观",
@@ -137,7 +137,7 @@
   "${modID}:SpringBath": {
     "NAME": "一起泡温泉吧",
     "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点格挡。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
   },
   "${modID}:NinjaAttack": {
     "NAME": "神崎流忍术",
@@ -154,6 +154,37 @@
       " NL （打出",
       "次后掉血。）"
     ]
+  },
+  "${modID}:TokenStrike": {
+    "NAME": "信念打击",
+    "DESCRIPTION": "获得2层 ${modID}:信念 。 NL 造成 !D! 点伤害。 NL ${modID}:信念 足够时消耗 !M! 层并额外造成一次伤害。"
+  },
+  "${modID}:TokenMealOrder": {
+    "NAME": "我来为您点餐",
+    "DESCRIPTION": "获得 !M! 层 ${modID}:信念 。 NL 获得 !B! 点 格挡 。"
+  },
+  "${modID}:TokenRainbow": {
+    "NAME": "苍星虹彩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每有 !M! 层 ${modID}:信念 获得 [E] 。"
+  },
+  "${modID}:TokenInstinct": {
+    "NAME": "本能觉醒",
+    "DESCRIPTION": "获得 !M! 层 ${modID}:信念 。 NL 消耗所有 ${modID}:信念 ，每层获得 !B! 点 格挡 。"
+  },
+  "${modID}:TokenCrystal": {
+    "NAME": "疯狂水晶",
+    "DESCRIPTION": "获得2层 ${modID}:信念 。 NL 造成2次 ${modID}:信念 层数的基础伤害。 NL 获得1层持续 !M! 回合的 ${modID}:加攻 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （当前造成 !D! 点伤害。）"
+    ]
+  },
+  "${modID}:TokenInnerStrength": {
+    "NAME": "内在力量",
+    "DESCRIPTION": "在你的回合开始时， NL 获得 !M! 层 ${modID}:信念 。"
+  },
+  "${modID}:TokenRememberForever": {
+    "NAME": "无我忘身",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害， ${modID}:信念强化 。 NL 下2回合使用攻击牌失去3点生命。 NL 获得 !M! 层 ${modID}:信念 。"
   }
 }
 

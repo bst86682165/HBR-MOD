@@ -83,5 +83,29 @@
     ],
     "DESCRIPTION": "突破敌人的格挡。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "超频状态",
+    "NAMES": [
+      "超频"
+    ],
+    "DESCRIPTION": "发动超频条遗物以进入超频状态。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "信念",
+    "NAMES": [
+      "信念"
+    ],
+    "DESCRIPTION": "部分卡牌效果取决于信念层数，最多叠加10层。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "信念强化",
+    "NAMES": [
+      "信念强化"
+    ],
+    "DESCRIPTION": "每层 #y信念 增加 #b10% 基础伤害",
+    "COLOR": "fc83da"
   }
 ]
