@@ -29,14 +29,6 @@
     "COLOR": "fc83da"
   },
   {
-    "PROPER_NAME": "格挡",
-    "NAMES": [
-      "格挡"
-    ],
-    "DESCRIPTION": "持续到下回合开始前，阻挡伤害。",
-    "COLOR": "fc83da"
-  },
-  {
     "PROPER_NAME": "加攻",
     "NAMES": [
       "加攻"

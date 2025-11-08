@@ -91,13 +91,13 @@
   },
   "${modID}:SummerDream": {
     "NAME": "青夏之梦",
-    "DESCRIPTION": "获得 [E] [E] 。 NL 获得 ${modID}:充能 。 NL 向 *弃牌堆 添加一张 *优雅整肃 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] 。 NL 获得 ${modID}:充能 。 NL 向 *抽牌堆 添加一张 *优雅整肃+ 。 NL 消耗 。"
+    "DESCRIPTION": "本回合和下回合 NL 获得 [E] 。获得 ${modID}:充能 。 NL 向 *弃牌堆 添加一张 *优雅整肃 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合和下回合 NL 获得 [E] 。获得 ${modID}:充能 。 NL 向 *抽牌堆 添加一张 *优雅整肃+ 。 NL 消耗 。"
   },
   "${modID}:ElegantSerious": {
     "NAME": "优雅整肃",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为50。 NL 向 *弃牌堆 添加一张 *青夏之梦 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为50。 NL 向 *弃牌堆 添加一张 *青夏之梦+ 。 NL 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为40。 NL 向 *弃牌堆 添加一张 *青夏之梦 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${modID}:充能 时基础伤害变为40。 NL 向 *弃牌堆 添加一张 *青夏之梦+ 。 NL 消耗 。"
   },
   "${modID}:SignUpDaily": {
     "NAME": "每日签到",

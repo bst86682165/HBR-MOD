@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.cards.attack.ElegantSerious;
@@ -54,7 +55,8 @@ public class SummerDream extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         {
-            addToBot((AbstractGameAction)new GainEnergyAction(2));
+            addToBot((AbstractGameAction)new GainEnergyAction(1));
+            addToBot((AbstractGameAction)new ApplyPowerAction(p, p, new EnergizedPower(p, 1), 1));
             // 如果已经有充能则不添加充能（本buff不可叠加）
             addToBot(new ApplyNotStackingPowerAction(p,p,new ChargePower(p,-1)));
             if (this.upgraded) {

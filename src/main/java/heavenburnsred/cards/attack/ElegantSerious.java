@@ -25,7 +25,7 @@ public class ElegantSerious extends HBRHitAndTypeAttackCard {
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 1;
-    private static final int CHARGE_DAMAGE = 50;
+    private static final int CHARGE_DAMAGE = 40;
 
     public ElegantSerious() {
         super(ID,info,HBRAttackType.LL); //Pass the required information to the BaseCard constructor.
