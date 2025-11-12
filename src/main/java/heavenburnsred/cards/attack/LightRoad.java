@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import heavenburnsred.actions.ChangeODBarHitAction;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.relics.ODBar;
@@ -30,16 +31,6 @@ public class LightRoad extends HBRHitAndTypeAttackCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-
-        setCustomVar("direct_od", OD_DOWN);
-        tags.add(HbrTags.DIRECT_OD);
-    }
-
-    public void upgrade() { // 升级调用的方法
-        if (!this.upgraded) {
-            this.upgradeName(); // 卡牌名字变为绿色并添加“+”，且标为升级过的卡牌，之后不能再升级。
-            this.upgradeDamage(UPG_DAMAGE); // 将该卡牌的伤害提高3点。
-        }
     }
 
     @Override
@@ -57,6 +48,7 @@ public class LightRoad extends HBRHitAndTypeAttackCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        addToBot(new ChangeODBarHitAction(OD_DOWN));
     }
 
     public void triggerOnGlowCheck() {
@@ -64,10 +56,5 @@ public class LightRoad extends HBRHitAndTypeAttackCard {
         if (ODBar.getCounter() < 0) {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
-    }
-
-    @Override
-    public AbstractCard makeCopy() { //Optional
-        return new LightRoad();
     }
 }

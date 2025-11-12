@@ -7,5 +7,5 @@ public class HbrTags {
     @SpireEnum
     public static AbstractCard.CardTags HIT;
     @SpireEnum
-    public static AbstractCard.CardTags DIRECT_OD;
+    public static AbstractCard.CardTags SELECT_CARD;
 }

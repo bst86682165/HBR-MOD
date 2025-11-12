@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
+import heavenburnsred.actions.ChangeODBarHitAction;
 import heavenburnsred.cards.HbrTags;
 import heavenburnsred.cards.attack.DoubleInOne;
 import heavenburnsred.patches.HBRRelicClick;
@@ -38,12 +39,13 @@ public class ODBar extends HBRRelicClick {
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.STARTER; // The relic's rarity.
     private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.CLINK; // The sound played when
                                                                                               // the relic is clicked.
-
-    private static final int HITLIMIT = 120;
+    public final int hit_limit;
+    private static final int HIT_LIMIT = 120;
 
     public ODBar() {
         super(ID, NAME, RARITY, SOUND);
         this.counter = 0;
+        this.hit_limit = HIT_LIMIT;
         loadOtherTexture();
     }
 
@@ -99,37 +101,7 @@ public class ODBar extends HBRRelicClick {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (Objects.equals(card.cardID, makeID(DoubleInOne.class.getSimpleName()))) return;
-        int old_counter = this.counter;
-        // 攻击卡按hit数计算
-        if (card.hasTag(HbrTags.HIT)) {
-            if (card.type == AbstractCard.CardType.ATTACK) {  // 理论上有hit的一定是attack，但这个判断还是先放着吧
-                if (card.target == AbstractCard.CardTarget.ENEMY) {
-                    this.counter += ((BaseCard)card).customVar("hit");
-                } else if (card.target == AbstractCard.CardTarget.ALL_ENEMY) {
-                    int monsterCounts = 0;  // 计算并储存场上剩余怪物数量
-                    for (AbstractMonster mon : (AbstractDungeon.getMonsters()).monsters) {
-                        if (!mon.isDeadOrEscaped())
-                            monsterCounts++;
-                    }
-                    this.counter += monsterCounts * ((BaseCard)card).customVar("hit");
-                }
-            }
-        }
-
-        // 直充od单独再计算
-        if (card.hasTag(HbrTags.DIRECT_OD)) {
-            this.counter += ((BaseCard)card).customVar("direct_od");
-        }
-
-        // 最后判断是否溢出
-        if (this.counter > HITLIMIT) {
-            this.counter = HITLIMIT;
-        }
-
-        // 利用新旧counter数检测counter的改变，是否需要图片修改
-        int new_counter = this.counter;
-        if (new_counter != old_counter) onCounterChanged(old_counter, new_counter);
+        addToBot(new ChangeODBarHitAction(card));
     }
 
     public void onRightClick() {

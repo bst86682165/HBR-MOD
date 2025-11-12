@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.actions.BlockRelatedDamageAction;
+import heavenburnsred.cards.HbrTags;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.AttackUp;
 import heavenburnsred.relics.ODBar;
@@ -54,6 +55,8 @@ public class DoubleInOne extends HBRHitAndTypeAttackCard {
         this(isRight, false);
         // 最普通的卡才有cardsToPreview，防止循环调用
         this.cardsToPreview = new DoubleInOne(!isRight, true);
+        // 用于保证不会被增加hit数
+        this.tags.add(HbrTags.SELECT_CARD);
     }
     // 用来展示的卡
     public DoubleInOne(boolean isRight, boolean forDisplay) {
