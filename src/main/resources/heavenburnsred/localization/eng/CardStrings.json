@@ -185,6 +185,22 @@
   "${modID}:TokenRememberForever": {
     "NAME": "无我忘身",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害， ${modID}:信念强化 。 NL 下2回合使用攻击牌失去3点生命。 NL 获得 !M! 层 ${modID}:信念 。"
+  },
+  "${modID}:EDefenceCancer": {
+    "NAME": "E盾星癌体",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 目标敌人获得 !M! 层 *多层护甲 。"
+  },
+  "${modID}:PartialShield": {
+    "NAME": "偏导护盾",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 目标敌人获得 !M! 点 格挡 。"
+  },
+  "${modID}:TruthSeeker": {
+    "NAME": "真相洞察者",
+    "DESCRIPTION": " 固有 。 NL 对所有敌人造成 !D! 点伤害。对有格挡的敌人额外造成 !M! 点伤害。 NL 消耗 。"
+  },
+  "${modID}:BlueSnowLotus": {
+    "NAME": "哀伤的雪花莲",
+    "DESCRIPTION": "敌人造成 !D! 点伤害。 NL ${modID}:击破 时获得 !M! HIT数。 NL 消耗 。"
   }
 }
 
