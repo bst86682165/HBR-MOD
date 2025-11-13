@@ -200,7 +200,11 @@
   },
   "${modID}:BlueSnowLotus": {
     "NAME": "哀伤的雪花莲",
-    "DESCRIPTION": "敌人造成 !D! 点伤害。 NL ${modID}:击破 时获得 !M! HIT数。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${modID}:击破 时获得 !M! HIT数。 NL 消耗 。"
+  },
+  "${modID}:NoHPAxisEver": {
+    "NAME": "官方没写HP轴",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 所有敌人获得 !B! 点 格挡 。"
   }
 }
 
