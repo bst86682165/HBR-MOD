@@ -104,5 +104,18 @@
       "每打出一张攻击牌，失去",
       "点生命"
     ]
+  },
+  "${modID}:SuperBreakStatusPower": {
+    "NAME": "超击破状态",
+    "DESCRIPTIONS": [
+      " #y击破 时抽",
+      "张牌。"
+    ]
+  },
+  "${modID}:NeverHurtAnyonePower": {
+    "NAME": "猫娘杀手",
+    "DESCRIPTIONS": [
+      "打出攻击牌时会说“喵~”。"
+    ]
   }
 }

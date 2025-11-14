@@ -205,6 +205,15 @@
   "${modID}:NoHPAxisEver": {
     "NAME": "官方没写HP轴",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 所有敌人获得 !B! 点 格挡 。"
+  },
+  "${modID}:SuperBreakStatus": {
+    "NAME": "超击破状态",
+    "DESCRIPTION": " ${modID}:击破 时抽 !M! 张牌。"
+  },
+  "${modID}:NeverHurtAnyone": {
+    "NAME": "再也不伤害任何人",
+    "DESCRIPTION": "自身和全体敌方 NL 获得 !M! 层 *多层护甲 。 NL 变成猫娘杀手喵~。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 自身和全体敌方 NL 获得 !M! 层 *多层护甲 。 NL 变成猫娘杀手喵~。"
   }
 }
 
