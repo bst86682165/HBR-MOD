@@ -214,6 +214,10 @@
     "NAME": "再也不伤害任何人",
     "DESCRIPTION": "自身和全体敌方 NL 获得 !M! 层 *多层护甲 。 NL 变成猫娘杀手喵~。",
     "UPGRADE_DESCRIPTION": " 固有 。 NL 自身和全体敌方 NL 获得 !M! 层 *多层护甲 。 NL 变成猫娘杀手喵~。"
+  },
+  "${modID}:GarbageIsHome": {
+    "NAME": "垃圾场是我家",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的一张牌放入你的手牌。 NL 丢弃一张牌。"
   }
 }
 
