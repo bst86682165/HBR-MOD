@@ -9,6 +9,18 @@
       "Blizzard is a good example for this."
     ]
   },
+  "${modID}:AAAAttackForCopy": {
+    "NAME": "攻击卡模板",
+    "DESCRIPTION": "攻击卡模板。"
+  },
+  "${modID}:AAASkillForCopy": {
+    "NAME": "技能卡模板",
+    "DESCRIPTION": "技能卡模板。"
+  },
+  "${modID}:AAAPowerForCopy": {
+    "NAME": "能力卡模板",
+    "DESCRIPTION": "能力卡模板。"
+  },
   "${modID}:Strike": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
@@ -222,6 +234,14 @@
   "${modID}:CrystalBall": {
     "NAME": "水晶球占卜",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。"
+  },
+  "${modID}:HBRNuclearExplosion": {
+    "NAME": "HBR是叠核弹游戏",
+    "DESCRIPTION": "你状态栏每有一种非同名增益效果，就造成一次 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （你目前拥有",
+      " 种非同名增益效果。）"
+    ]
   }
 }
 
