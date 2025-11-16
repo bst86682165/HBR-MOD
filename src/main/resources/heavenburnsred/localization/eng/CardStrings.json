@@ -218,6 +218,10 @@
   "${modID}:GarbageIsHome": {
     "NAME": "垃圾场是我家",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的一张牌放入你的手牌。 NL 丢弃一张牌。"
+  },
+  "${modID}:CrystalBall": {
+    "NAME": "水晶球占卜",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。"
   }
 }
 
