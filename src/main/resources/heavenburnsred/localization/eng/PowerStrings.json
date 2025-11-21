@@ -42,8 +42,8 @@
       "每回合限一次，回合外受伤时抽1且加入1张四妹进手牌，若为四妹则获得4格挡。"
     ]
   },
-  "${modID}:InductionCeremonyPower": {
-    "NAME": "入队仪式",
+  "${modID}:SpecialOrderPower": {
+    "NAME": "特别餐点",
     "DESCRIPTIONS": [
       "本场战斗中，六维全属性增加","点"
     ]
@@ -69,7 +69,13 @@
   "${modID}:CriticalHit": {
     "NAME": "暴击",
     "DESCRIPTIONS": [
-      "增加下一次攻击与敌人的白值差值10点。"
+      "增加下一次攻击与敌人的白值差值5点。"
+    ]
+  },
+  "${modID}:Misfortune": {
+    "NAME": "灾厄之后",
+    "DESCRIPTIONS": [
+      "回合结束时增加3点白值 NL （只能叠加1层）。"
     ]
   },
   "${modID}:AngelWingsPower": {

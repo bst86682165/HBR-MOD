@@ -14,7 +14,7 @@ public class AttributeCal extends BasePower {
     public static final String POWER_ID = makeID("AttributeCal");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
-    private static final int CRITICAL = 10;
+    private static final int CRITICAL = 5;
 
     public AttributeCal(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);

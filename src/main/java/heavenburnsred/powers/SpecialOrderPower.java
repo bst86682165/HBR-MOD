@@ -5,11 +5,11 @@ import heavenburnsred.relics.Attribute;
 
 import static heavenburnsred.BasicMod.makeID;
 
-public class InductionCeremonyPower extends BasePower {
-    public static final String POWER_ID = makeID(InductionCeremonyPower.class.getSimpleName());
+public class SpecialOrderPower extends BasePower {
+    public static final String POWER_ID = makeID(SpecialOrderPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
 
-    public InductionCeremonyPower(AbstractCreature owner, int amount) {
+    public SpecialOrderPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, false, owner, amount);
     }
 
