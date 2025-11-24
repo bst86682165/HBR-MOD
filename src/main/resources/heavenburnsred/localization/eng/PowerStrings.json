@@ -123,5 +123,11 @@
     "DESCRIPTIONS": [
       "打出攻击牌时会说“喵~”。"
     ]
+  },
+  "${modID}:LuminousCosmosPower": {
+    "NAME": "光辉波斯菊",
+    "DESCRIPTIONS": [
+      "受到的伤害降低25%”。"
+    ]
   }
 }

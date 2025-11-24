@@ -14,7 +14,7 @@ public class AttributeCal extends BasePower {
     public static final String POWER_ID = makeID("AttributeCal");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
-    private static final int CRITICAL = 5;
+    private static final int CRITICAL = 10;
 
     public AttributeCal(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
@@ -88,8 +88,8 @@ public class AttributeCal extends BasePower {
         this.description =
                 "力量型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
                 "灵巧型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
-                "体精型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
-                "智运型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                /*"体精型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "智运型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +*/
                 "均衡型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + " 。";
     }
 
