@@ -254,6 +254,10 @@
   "${modID}:CutenessOverload": {
     "NAME": "公主殿下的宠爱",
     "DESCRIPTION": "获得 !B! 点格挡， NL 造成 !D! 点伤害。 NL 敌人拥有攻击意图时费用减1"
+  },
+  "${modID}:TheDemonKingDescends": {
+    "NAME": "魔王降临",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害"
   }
 }
 
