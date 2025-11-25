@@ -257,7 +257,11 @@
   },
   "${modID}:TheDemonKingDescends": {
     "NAME": "魔王降临",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，获得伤害量的hit数"
+  },
+  "${modID}:GangsteroftheSea": {
+    "NAME": "大海不良分子",
+    "DESCRIPTION": "给予敌人 !M! 层降防， NL 获得26点hit值"
   }
 }
 
