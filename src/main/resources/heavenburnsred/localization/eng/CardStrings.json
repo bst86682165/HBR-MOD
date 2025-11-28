@@ -73,7 +73,7 @@
   },
   "${modID}:UltraSisters": {
     "NAME": "六姐妹齐心",
-    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的 格挡 。"
+    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !B! 倍抽牌堆、手卡中沉入梦幻卡数量的 格挡 。"
   },
   "${modID}:MercyDance": {
     "NAME": "慈悲之舞",
@@ -262,6 +262,10 @@
   "${modID}:GangsteroftheSea": {
     "NAME": "大海不良分子",
     "DESCRIPTION": "给予敌人 !M! 层降防， NL 获得26点hit值"
+  },
+  "${modID}:SingingtoaShootingStar": {
+    "NAME": "若向流星歌唱",
+    "DESCRIPTION": "获得造成伤害30%的 格挡， NL 获得 !M! 层暴击（单独发动）"
   }
 }
 

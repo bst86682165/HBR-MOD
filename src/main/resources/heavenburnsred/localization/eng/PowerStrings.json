@@ -69,7 +69,7 @@
   "${modID}:CriticalHit": {
     "NAME": "暴击",
     "DESCRIPTIONS": [
-      "增加下一次攻击与敌人的白值差值5点。"
+      "增加下一次攻击与敌人的白值差值10点。"
     ]
   },
   "${modID}:Misfortune": {
@@ -128,6 +128,18 @@
     "NAME": "光辉波斯菊",
     "DESCRIPTIONS": [
       "受到的伤害降低25%”。"
+    ]
+  },
+  "${modID}:CriticalHitSingleActivation": {
+    "NAME": "暴击（单独发动）",
+    "DESCRIPTIONS": [
+      "增加攻击时与敌人的白值差值10点”。"
+    ]
+  },
+  "${modID}:SheisDivaPower": {
+    "NAME": "歌姬之加护",
+    "DESCRIPTIONS": [
+      "造成伤害时，获得伤害量30%的格挡”。"
     ]
   }
 }

@@ -69,7 +69,7 @@ public class AttributeCal extends BasePower {
         }
 
         //处理暴击效果
-        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)){
+        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID) || AbstractDungeon.player.hasPower(CriticalHitSingleActivation.POWER_ID)){
             deltaAttack += CRITICAL;
         }
 
@@ -81,7 +81,7 @@ public class AttributeCal extends BasePower {
     public void updateDescription() {
         int tmpDelta = 0;
         String tmpSeperation = "";
-        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(CriticalHit.POWER_ID) || AbstractDungeon.player.hasPower(CriticalHitSingleActivation.POWER_ID)) {
             tmpDelta = CRITICAL;
             tmpSeperation = " #y";
         }

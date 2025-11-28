@@ -21,7 +21,7 @@ public class CriticalHit extends BasePower{
     }
 
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction){
-        if (targetCard.type == AbstractCard.CardType.ATTACK){
+        if (targetCard.type == AbstractCard.CardType.ATTACK && !AbstractDungeon.player.hasPower(CriticalHitSingleActivation.POWER_ID)){
             addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, CriticalHit.POWER_ID));
             addToBot(new UpdateAttributeDescriptionAction());
         }

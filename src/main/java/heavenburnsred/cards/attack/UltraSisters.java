@@ -25,25 +25,21 @@ public class UltraSisters extends HBRHitAndTypeAttackCard {
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 3;
     private static final int UPG_DAMAGE = 1;
+    private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 1;
 
     public UltraSisters() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-    }
-
-    public void upgrade() { // 升级调用的方法
-        if (!this.upgraded) {
-            this.upgradeName(); // 卡牌名字变为绿色并添加“+”，且标为升级过的卡牌，之后不能再升级。
-            this.upgradeDamage(UPG_DAMAGE);
-        }
+        setDamage(DAMAGE, UPG_DAMAGE);//Sets the card's damage and how much it changes when upgraded.
+        setBlock(BLOCK,UPG_BLOCK);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
-        addToBot(new GainBlockAction(p,6 + damage * FFcount));
-        addToBot(new DamageAction(m, new DamageInfo(p, 6 + (damage - 1) * FFcount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        addToBot(new GainBlockAction(p,block * FFcount));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage * FFcount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

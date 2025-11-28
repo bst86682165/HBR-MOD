@@ -1,5 +1,6 @@
 package heavenburnsred.powers;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,6 +38,16 @@ public class MonsterPoint extends BasePower{
         }
         return DamageRatio;
     }
+
+
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (info.type == DamageInfo.DamageType.NORMAL && AbstractDungeon.player.hasPower(SheisDivaPower.POWER_ID)){
+            int GainBlock = (int) (damageAmount * 0.3);
+            addToBot(new GainBlockAction(AbstractDungeon.player,GainBlock));
+        }
+        return damageAmount;
+    }
+
 
     // 受到伤害时计算减伤，可以直接反应到怪物头上的数值
     @Override
