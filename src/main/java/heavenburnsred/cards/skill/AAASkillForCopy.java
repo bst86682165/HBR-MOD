@@ -30,8 +30,6 @@ public class AAASkillForCopy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        {
-            addToBot(new GainBlockAction(p, p, this.block));
-        }
+        addToBot(new GainBlockAction(p, p, this.block));
     }
 }
