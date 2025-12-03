@@ -20,7 +20,7 @@ public class DefendDown extends HBRTurnStackPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if (!this.isEffected) {  // 计算伤害时第一个加攻buff
+        if (!this.isEffected) {  // 计算伤害时第一个降防buff
             int layers = calculateTotalLayers();
             for (AbstractPower p : this.owner.powers) {
                 if (p.ID.equals(this.ID)) {
@@ -37,7 +37,7 @@ public class DefendDown extends HBRTurnStackPower {
     }
 
     public void updateDescription() {
-        // 返回上限为2的层数，每层50%加攻量
+        // 返回上限为2的层数，每层50%降防量
         this.description = DESCRIPTIONS[0] + (calculateTotalLayers() * 50) + "% 。";
     }
 }
