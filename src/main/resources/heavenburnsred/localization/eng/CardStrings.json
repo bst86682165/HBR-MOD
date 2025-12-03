@@ -58,9 +58,11 @@
     "UPGRADE_DESCRIPTION": "增加1点智运属性，获得增益效果"
   },
   "${modID}:LightRoad": {
-    "NAME": "光之路标·改",
-    "DESCRIPTION": "消耗20HIT数，对敌人造成 !D! 点伤害。 NL 超频条的HIT数值为负数时不能打出。",
-    "UPGRADE_DESCRIPTION": "超频条的HIT数值为负数时不能打出。"
+    "NAME": "光之路标",
+    "DESCRIPTION": "消耗20HIT数， NL 抽 !M! 张牌。 NL 超频条的HIT数值为负数时不能打出。",
+    "EXTENDED_DESCRIPTION": [
+      "我的超频条的HIT数值必须为正数。"
+    ]
   },
   "${modID}:KongMingChop": {
     "NAME": "卧龙演舞斩",
