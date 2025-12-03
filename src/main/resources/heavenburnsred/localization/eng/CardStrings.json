@@ -275,6 +275,10 @@
     "EXTENDED_DESCRIPTION": [
       "超频条的HIT数值必须不为 #r负数 。"
     ]
+  },
+  "${modID}:Compensate": {
+    "NAME": "补偿",
+    "DESCRIPTION": "获得 !M! HIT数。 NL 回合结束时 NL 受到5点伤害。"
   }
 }
 

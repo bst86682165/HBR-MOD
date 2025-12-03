@@ -127,19 +127,26 @@
   "${modID}:LuminousCosmosPower": {
     "NAME": "光辉波斯菊",
     "DESCRIPTIONS": [
-      "受到的伤害降低25%”。"
+      "受到的伤害降低25%。"
     ]
   },
   "${modID}:CriticalHitSingleActivation": {
     "NAME": "暴击（单独发动）",
     "DESCRIPTIONS": [
-      "增加攻击时与敌人的白值差值10点”。"
+      "增加攻击时与敌人的白值差值10点。"
     ]
   },
   "${modID}:SheisDivaPower": {
     "NAME": "歌姬之加护",
     "DESCRIPTIONS": [
-      "造成伤害时，获得伤害量30%的格挡”。"
+      "造成伤害时，获得伤害量30%的格挡。"
+    ]
+  },
+  "${modID}:CompensatePower": {
+    "NAME": "补偿",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，受到 #b",
+      " 点伤害。"
     ]
   }
 }
