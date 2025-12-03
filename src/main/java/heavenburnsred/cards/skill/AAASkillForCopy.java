@@ -26,17 +26,6 @@ public class AAASkillForCopy extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setBlock(BLOCK,UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
-
-        tags.add(CardTags.STARTER_DEFEND);
-
-
-    }
-
-    public void upgrade() {
-        if (!this.upgraded) {
-            upgradeName();
-            upgradeBlock(UPG_BLOCK);
-        }
     }
 
     @Override
@@ -44,10 +33,5 @@ public class AAASkillForCopy extends BaseCard {
         {
             addToBot(new GainBlockAction(p, p, this.block));
         }
-    }
-
-    @Override
-    public AbstractCard makeCopy() { //Optional
-        return new AAASkillForCopy();
     }
 }
