@@ -61,7 +61,7 @@ public class DoubleInOne extends HBRHitAndTypeAttackCard {
     // 用来展示的卡
     public DoubleInOne(boolean isRight, boolean forDisplay) {
         // 卡图和hit数初始化在super中
-        super(ID,info,getCardTextureString((isRight ? (removePrefix(ID) + "_R") : (removePrefix(ID) + "_L")), CardType.ATTACK),HBRAttackType.WP,(isRight ? HIT_R : HIT_L));
+        super(ID,info,getCardTextureString((isRight ? (removePrefix(ID) + "_R") : (removePrefix(ID) + "_L")), CardType.ATTACK),HBRAttackType.LQ,(isRight ? HIT_R : HIT_L));
 
         setDamage(DAMAGE, UPG_DAMAGE);
 
@@ -74,7 +74,7 @@ public class DoubleInOne extends HBRHitAndTypeAttackCard {
     // 用来展示并被选择的卡
     public DoubleInOne(boolean isRight, DoubleInOne fatherCard) {
         // 卡图和hit数初始化在super中
-        super(ID+(isRight ? "_R" : "_L"),info,getCardTextureString((isRight ? (removePrefix(ID) + "_R") : (removePrefix(ID) + "_L")), CardType.ATTACK),HBRAttackType.WP,(isRight ? HIT_R : HIT_L));
+        super(ID+(isRight ? "_R" : "_L"),info,getCardTextureString((isRight ? (removePrefix(ID) + "_R") : (removePrefix(ID) + "_L")), CardType.ATTACK),HBRAttackType.LQ,(isRight ? HIT_R : HIT_L));
         setDamage(DAMAGE, UPG_DAMAGE);
         // 记录是左边卡（可镰）还是右边卡（可怜）
         this.isRight = isRight;
