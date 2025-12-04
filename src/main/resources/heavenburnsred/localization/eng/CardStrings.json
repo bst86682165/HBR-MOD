@@ -296,6 +296,10 @@
     "EXTENDED_DESCRIPTION": [
       "该牌不能被打出。"
     ]
+  },
+  "${modID}:HighDimEnergy": {
+    "NAME": "高维再生能源",
+    "DESCRIPTION": "当你获得正面效果或对敌方造成负面效果时，获得 !M! 点格挡。"
   }
 }
 
