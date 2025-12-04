@@ -12,7 +12,7 @@ public class CompensatePower extends BasePower {
     private static final PowerType TYPE = PowerType.DEBUFF;
 
     public CompensatePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount);
+        super(POWER_ID, TYPE, true, owner, amount);
     }
 
     public void updateDescription() {
