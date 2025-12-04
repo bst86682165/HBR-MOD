@@ -287,7 +287,15 @@
   },
   "${modID}:NightAwake": {
     "NAME": "夜醒",
-    "DESCRIPTION": "下2张非 *夜醒 牌打出后回到手牌。"
+    "DESCRIPTION": "下2张 *非夜醒 牌打出后回到手牌。"
+  },
+  "${modID}:MotherLove": {
+    "NAME": "理莎妈妈的慈爱",
+    "DESCRIPTION": "不可打出。 NL 死亡时复活并 NL 获得 *3 *0 %血上限的 *临时生命 ，生效后从牌组中移除。",
+    "UPGRADE_DESCRIPTION": " 虚无 。不可打出。 NL 死亡时复活并 NL 获得 *3 *0 %血上限的 *临时生命 ，生效后从牌组中移除。",
+    "EXTENDED_DESCRIPTION": [
+      "该牌不能被打出。"
+    ]
   }
 }
 
