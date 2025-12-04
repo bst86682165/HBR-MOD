@@ -99,5 +99,13 @@
     ],
     "DESCRIPTION": "每层 #y信念 增加 #b10% 基础伤害",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "击晕",
+    "NAMES": [
+      "击晕"
+    ],
+    "DESCRIPTION": "使敌人暂停行动一回合",
+    "COLOR": "fc83da"
   }
 ]

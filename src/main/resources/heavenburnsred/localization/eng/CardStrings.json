@@ -279,6 +279,11 @@
   "${modID}:Compensate": {
     "NAME": "补偿",
     "DESCRIPTION": "获得 !M! HIT数。 NL 回合结束时 NL 受到5点伤害。"
+  },
+  "${modID}:BeLarger": {
+    "NAME": "变大吧！",
+    "DESCRIPTION": "${modID}:击晕 目标敌人。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "${modID}:击晕 所有敌人。 NL 消耗 。"
   }
 }
 
