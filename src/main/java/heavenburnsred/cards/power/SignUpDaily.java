@@ -1,5 +1,6 @@
 package heavenburnsred.cards.power;
 
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
@@ -16,7 +17,7 @@ import heavenburnsred.powers.AlreadySignUp;
 import heavenburnsred.powers.PlayHBRForever;
 import heavenburnsred.util.CardStats;
 
-public class SignUpDaily extends BaseCard {
+public class SignUpDaily extends BaseCard implements StartupCard {
     public static final String ID = makeID(SignUpDaily.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -47,10 +48,9 @@ public class SignUpDaily extends BaseCard {
         if (this.misc <= 1) {
             CardCrawlGame.sound.play("GOLD_GAIN");
             AbstractDungeon.player.gainGold(220);
-            if (this.upgraded) {
-                addToBot((AbstractGameAction) new IncreaseMiscAction(this.uuid, this.misc, SIGNUPTIMES-1));
-            }
-            else {
+            // 还原misc为7，保证夜醒了也没事
+            addToBot((AbstractGameAction) new IncreaseMiscAction(this.uuid, this.misc, SIGNUPTIMES-1));
+            if (!this.upgraded) {
                 CardCrawlGame.sound.play("CARD_EXHAUST");
                 for (int i = 0; i < AbstractDungeon.player.masterDeck.group.size(); i++) {
                     AbstractCard c = AbstractDungeon.player.masterDeck.group.get(i);
@@ -87,5 +87,12 @@ public class SignUpDaily extends BaseCard {
     @Override
     public AbstractCard makeCopy() { //Optional
         return new SignUpDaily();
+    }
+
+    // 用来刚进战斗时刷新牌库中的文字
+    @Override
+    public boolean atBattleStartPreDraw() {
+        addToBot(new IncreaseMiscAction(this.uuid, this.misc, 0));
+        return false;
     }
 }

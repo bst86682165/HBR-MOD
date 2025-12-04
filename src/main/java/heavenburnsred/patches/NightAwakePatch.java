@@ -28,7 +28,8 @@ public class NightAwakePatch {
         AbstractCard targetCard = ReflectionHacks.getPrivate(__instance, UseCardAction.class, "targetCard");
         // 有夜醒并且打出非夜醒牌时，复制一份能力牌
         if (p.hasPower(NightAwakePower.POWER_ID) && !(targetCard instanceof NightAwake) && targetCard.type == AbstractCard.CardType.POWER) {
-            AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(targetCard.makeStatEquivalentCopy()));
+            AbstractCard returnCard = targetCard.makeSameInstanceOf();
+            AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(returnCard,true,true));
             // 减少一层夜醒
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p,p, NightAwakePower.POWER_ID, 1));
         }
