@@ -284,6 +284,10 @@
     "NAME": "变大吧！",
     "DESCRIPTION": "${modID}:击晕 目标敌人。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "${modID}:击晕 所有敌人。 NL 消耗 。"
+  },
+  "${modID}:NightAwake": {
+    "NAME": "夜醒",
+    "DESCRIPTION": "下2张非 *夜醒 牌打出后回到手牌。"
   }
 }
 
