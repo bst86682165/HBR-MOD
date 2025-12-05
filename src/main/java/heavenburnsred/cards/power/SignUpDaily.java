@@ -17,7 +17,7 @@ import heavenburnsred.powers.AlreadySignUp;
 import heavenburnsred.powers.PlayHBRForever;
 import heavenburnsred.util.CardStats;
 
-public class SignUpDaily extends BaseCard implements StartupCard {
+public class SignUpDaily extends BaseCard {
     public static final String ID = makeID(SignUpDaily.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
@@ -87,12 +87,5 @@ public class SignUpDaily extends BaseCard implements StartupCard {
     @Override
     public AbstractCard makeCopy() { //Optional
         return new SignUpDaily();
-    }
-
-    // 用来刚进战斗时刷新牌库中的文字
-    @Override
-    public boolean atBattleStartPreDraw() {
-        addToBot(new IncreaseMiscAction(this.uuid, this.misc, 0));
-        return false;
     }
 }
