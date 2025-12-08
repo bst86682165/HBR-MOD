@@ -300,6 +300,11 @@
   "${modID}:HighDimEnergy": {
     "NAME": "高维再生能源",
     "DESCRIPTION": "当你获得正面效果或对敌方造成负面效果时，获得 !M! 点格挡。"
+  },
+  "${modID}:Eden": {
+    "NAME": "伊甸园",
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。"
   }
 }
 
