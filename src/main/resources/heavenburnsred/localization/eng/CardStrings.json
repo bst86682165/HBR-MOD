@@ -305,6 +305,31 @@
     "NAME": "伊甸园",
     "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。",
     "UPGRADE_DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。"
+  },
+  "${modID}:ColourfulRed": {
+    "NAME": "火",
+    "DESCRIPTION": "获得 !M! 点 活力 。"
+  },
+  "${modID}:ColourfulWhite": {
+    "NAME": "光",
+    "DESCRIPTION": "抽 !M! 张牌。"
+  },
+  "${modID}:ColourfulYellow": {
+    "NAME": "雷",
+    "DESCRIPTION": "获得 [E] [E] [E] 。"
+  },
+  "${modID}:ColourfulBlue": {
+    "NAME": "冰",
+    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 。"
+  },
+  "${modID}:ColourfulBlack": {
+    "NAME": "暗",
+    "DESCRIPTION": "获得 [E] 。 NL 消耗 !M! 张牌。"
+  },
+  "${modID}:Colourful": {
+    "NAME": "五彩缤纷",
+    "DESCRIPTION": "选择一种颜色~ NL 红： 活力 。 NL 蓝： 虚弱 。 NL 黄： [E] 。",
+    "UPGRADE_DESCRIPTION": "选择一种颜色~ NL 红： 活力 。 NL 蓝： 虚弱 。 NL 黄： [E] 。 NL 黑： 消耗 手牌。 NL 白：抽牌。"
   }
 }
 
