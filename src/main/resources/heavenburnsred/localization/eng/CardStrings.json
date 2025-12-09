@@ -330,6 +330,22 @@
     "NAME": "五彩缤纷",
     "DESCRIPTION": "选择一种颜色~ NL 红： 活力 。 NL 蓝： 虚弱 。 NL 黄： [E] 。",
     "UPGRADE_DESCRIPTION": "选择一种颜色~ NL 红： 活力 。 NL 蓝： 虚弱 。 NL 黄： [E] 。 NL 黑： 消耗 手牌。 NL 白：抽牌。"
+  },
+  "${modID}:ProIntelligencer": {
+    "NAME": "专业情报员",
+    "DESCRIPTION": " ${modID}:←切换→ NL ",
+    "EXTENDED_DESCRIPTION": [
+      "降低2点 *智运 。 NL 获得 !B! 点 格挡 。 NL 获得1层1回合 ${modID}:加攻 。",
+      "提升 !M! 点 *智运 。 NL 抽2张牌。 NL *智运 超过20时改为 NL 抽4张牌。"
+    ]
+  },
+  "${modID}:ProIntelligencer_L": {
+    "NAME": "智障",
+    "DESCRIPTION": "降低2点 *智运 。 NL 获得 !B! 点 格挡 。 NL 获得1层1回合 ${modID}:加攻 。"
+  },
+  "${modID}:ProIntelligencer_R": {
+    "NAME": "智慧",
+    "DESCRIPTION": "提升 !M! 点 *智运 。 NL 抽2张牌。 NL *智运 超过20时改为 NL 抽4张牌。"
   }
 }
 

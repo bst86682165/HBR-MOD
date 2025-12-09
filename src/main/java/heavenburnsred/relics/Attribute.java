@@ -150,6 +150,9 @@ public class Attribute extends BaseRelic
     public int getCurTJ(){
         return TTTJ + hbrTJ;
     }
+    public int getCurZY(){
+        return TTZY + hbrZY;
+    }
 
     public static void AddTempAttribute(int TempLL, int TempLQ, int TempTJ, int TempZY) {
         TTLL += TempLL;
@@ -231,11 +234,15 @@ public class Attribute extends BaseRelic
     }
 
     public String getUpdatedTip() {
+        String LQ_text =
+               TTZY > 0 ? ("+ #b" + TTZY + " 。") :
+               TTZY < 0 ? ("- #r" + (-TTZY) + " 。") :
+               "。";
         return DESCRIPTIONS[2] + DESCRIPTIONS[0] +
-               "力量" + this.hbrLL + (TTLL > 0 ? "+ #b" + TTLL + " 。":"。") + DESCRIPTIONS[0] +
-               "灵巧" + this.hbrLQ + (TTLQ > 0 ? "+ #b" + TTLQ + " 。":"。") + DESCRIPTIONS[0] +
-               "体精" + this.hbrTJ + (TTTJ > 0 ? "+ #b" + TTTJ + " 。":"。") + DESCRIPTIONS[0] +
-               "智运" + this.hbrZY + (TTZY > 0 ? "+ #b" + TTZY + " 。":"。");
+               "力量：" + this.hbrLL + (TTLL > 0 ? "+ #b" + TTLL + " 。":"。") + DESCRIPTIONS[0] +
+               "灵巧：" + this.hbrLQ + (TTLQ > 0 ? "+ #b" + TTLQ + " 。":"。") + DESCRIPTIONS[0] +
+               "体精：" + this.hbrTJ + (TTTJ > 0 ? "+ #b" + TTTJ + " 。":"。") + DESCRIPTIONS[0] +
+               "智运：" + this.hbrTJ + LQ_text;
     }
 
     // 选完提升的属性之后刷新显示
