@@ -346,6 +346,11 @@
   "${modID}:ProIntelligencer_R": {
     "NAME": "智慧",
     "DESCRIPTION": "提升 !M! 点 *智运 。 NL 抽2张牌。 NL *智运 超过20时改为 NL 抽4张牌。"
+  },
+  "${modID}:AngelBeats": {
+    "NAME": "天使心跳",
+    "DESCRIPTION": "${modID}:临时回复 最大 NL 生命值的 !M! %， NL 造成15×当前 NL 血量百分比的伤害。 NL (当前造成 !D! 点伤害)。",
+    "UPGRADE_DESCRIPTION": "${modID}:临时回复 最大 NL 生命值的 !M! %， NL 造成20×当前 NL 血量百分比的伤害。 NL (当前造成 !D! 点伤害)。"
   }
 }
 
