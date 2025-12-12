@@ -156,8 +156,8 @@
       " 张牌打出后回到手牌。"
     ]
   },
-  "${modID}:HighDimEnergyPower": {
-    "NAME": "高维再生能源",
+  "${modID}:WraithCurseDancePower": {
+    "NAME": "死灵诅咒之舞",
     "DESCRIPTIONS": [
       "当你获得正面效果或对敌方造成负面效果时，获得 #b",
       " 点格挡。"

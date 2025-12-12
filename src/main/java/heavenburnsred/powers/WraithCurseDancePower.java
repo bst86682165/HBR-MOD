@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static heavenburnsred.BasicMod.makeID;
 
-public class HighDimEnergyPower extends BasePower {
-    public static final String POWER_ID = makeID(HighDimEnergyPower.class.getSimpleName());
+public class WraithCurseDancePower extends BasePower {
+    public static final String POWER_ID = makeID(WraithCurseDancePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
 
-    public HighDimEnergyPower(AbstractCreature owner, int amount) {
+    public WraithCurseDancePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, false, owner, amount);
     }
 

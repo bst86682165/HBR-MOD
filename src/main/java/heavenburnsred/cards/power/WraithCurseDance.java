@@ -5,12 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.powers.HighDimEnergyPower;
-import heavenburnsred.powers.InnerStrengthPower;
+import heavenburnsred.powers.WraithCurseDancePower;
 import heavenburnsred.util.CardStats;
 
-public class HighDimEnergy extends BaseCard {
-    public static final String ID = makeID(HighDimEnergy.class.getSimpleName());
+public class WraithCurseDance extends BaseCard {
+    public static final String ID = makeID(WraithCurseDance.class.getSimpleName());
     public static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.POWER, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -21,7 +20,7 @@ public class HighDimEnergy extends BaseCard {
     public final int MAGIC = 3;
     public final int MAGIC_UPG = 1;
 
-    public HighDimEnergy() {
+    public WraithCurseDance() {
         super(ID,info);
 
         setMagic(MAGIC, MAGIC_UPG);
@@ -29,6 +28,6 @@ public class HighDimEnergy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HighDimEnergyPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new WraithCurseDancePower(p, this.magicNumber), this.magicNumber));
     }
 }
