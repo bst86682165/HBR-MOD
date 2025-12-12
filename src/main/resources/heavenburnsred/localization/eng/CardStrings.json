@@ -355,6 +355,22 @@
   "${modID}:HitCountUp": {
     "NAME": "连击",
     "DESCRIPTION": "你每打出一张牌，就获得 !M! 点HIT数。"
+  },
+  "${modID}:RushUp": {
+    "NAME": "猛虎上山",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。获得 !M! 层 活力 。"
+  },
+  "${modID}:VoidStorm": {
+    "NAME": "虚空风暴",
+    "DESCRIPTION": "造成 !D! 点伤害，使敌人失去 !M! 点 力量 。"
+  },
+  "${modID}:HeroEntrance": {
+    "NAME": "英雄登场",
+    "DESCRIPTION": "造成 !D! 点伤害X次。"
+  },
+  "${modID}:KicksAndGiggles": {
+    "NAME": "徒然飞踢",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。"
   }
 }
 

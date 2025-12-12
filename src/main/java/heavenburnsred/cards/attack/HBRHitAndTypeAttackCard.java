@@ -85,7 +85,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
                 hitTextColor = ENERGY_COST_MODIFIED_COLOR;
             }
             hitTextColor.a = this.transparency;
-            String text = "Hit: " + customVar("hit");
+            String text = "Hit: " + (customVar("hit") == 0 ? "X" : customVar("hit"));
             BitmapFont font = getHitFont.invoke(this);
             // 这个renderRotatedText函数主要调offset即可，代表先偏移后旋转，可以维持和卡牌总体的相对静止，直接调x和y会先旋转再偏移，是错的
             // + IMG_WIDTH * this.drawScale * 0.75f这一项是我在能量text位置基础上加入的新偏移，向右移动一定的距离到右上角，0.75f可以修改
@@ -98,7 +98,7 @@ public abstract class HBRHitAndTypeAttackCard extends BaseCard {
             } else {
                 c = Settings.CREAM_COLOR;
             }
-            String text = "Hit: " + customVar("hit");
+            String text = "Hit: " + (customVar("hit") == 0 ? "X" : customVar("hit"));
             // 这里调x即可
             FontHelper.renderFont(sb, FontHelper.SCP_cardEnergyFont, text, Settings.WIDTH / 2.0F + 70.0F * Settings.scale, Settings.HEIGHT / 2.0F + 404.0F * Settings.scale, c);
         }
