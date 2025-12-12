@@ -169,5 +169,12 @@
       "回合开始及战斗结束时失去 #b",
       " 点生命。"
     ]
+  },
+  "${modID}:HitCountUpPower": {
+    "NAME": "连击",
+    "DESCRIPTIONS": [
+      "你每打出一张牌，就获得 #b",
+      " 点HIT数。"
+    ]
   }
 }

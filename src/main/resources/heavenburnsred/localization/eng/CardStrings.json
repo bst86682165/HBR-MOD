@@ -351,6 +351,10 @@
     "NAME": "天使心跳",
     "DESCRIPTION": "${modID}:临时回复 最大 NL 生命值的 !M! %， NL 造成15×当前 NL 血量百分比的伤害。 NL (当前造成 !D! 点伤害)。",
     "UPGRADE_DESCRIPTION": "${modID}:临时回复 最大 NL 生命值的 !M! %， NL 造成20×当前 NL 血量百分比的伤害。 NL (当前造成 !D! 点伤害)。"
+  },
+  "${modID}:HitCountUp": {
+    "NAME": "连击",
+    "DESCRIPTION": "你每打出一张牌，就获得 !M! 点HIT数。"
   }
 }
 
