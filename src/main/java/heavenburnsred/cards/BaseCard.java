@@ -3,7 +3,9 @@ package heavenburnsred.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import heavenburnsred.BasicMod;
+import heavenburnsred.powers.FreeModCardPower;
 import heavenburnsred.util.CardStats;
 import heavenburnsred.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
@@ -704,5 +706,16 @@ public abstract class BaseCard extends CustomCard {
         public boolean isModified() {
             return forceModified || base != value;
         }
+    }
+
+    @Override
+    public boolean freeToPlay() {
+        boolean candidate = super.freeToPlay();
+        // 如果为本mod有女性角色的牌
+        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
+                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
+                AbstractDungeon.player.hasPower(FreeModCardPower.POWER_ID) && !this.hasTag(HbrTags.NO_GIRLS))
+            return true;
+        return candidate;
     }
 }

@@ -115,5 +115,13 @@
     ],
     "DESCRIPTION": "回复生命至最多150%最大生命值，回合开始及战斗结束时失去等额生命，不会导致死亡。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "鸟儿牌",
+    "NAMES": [
+      "鸟儿牌"
+    ],
+    "DESCRIPTION": "卡面有本mod其他女性角色的牌。",
+    "COLOR": "fc83da"
   }
 ]

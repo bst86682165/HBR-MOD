@@ -176,5 +176,12 @@
       "你每打出一张牌，就获得 #b",
       " 点HIT数。"
     ]
+  },
+  "${modID}:FreeModCardPower": {
+    "NAME": "鸟儿",
+    "DESCRIPTIONS": [
+      "你打出的下 #b",
+      " 张鸟儿牌耗能变为0。"
+    ]
   }
 }

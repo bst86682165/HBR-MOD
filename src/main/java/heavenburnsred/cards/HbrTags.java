@@ -8,4 +8,6 @@ public class HbrTags {
     public static AbstractCard.CardTags HIT;
     @SpireEnum
     public static AbstractCard.CardTags SELECT_CARD;
+    @SpireEnum
+    public static AbstractCard.CardTags NO_GIRLS;
 }
