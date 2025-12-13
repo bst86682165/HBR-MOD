@@ -398,7 +398,7 @@
   },
   "${modID}:MythOfInari": {
     "NAME": "御稻荷神话",
-    "DESCRIPTION": "获得 !M! 层 活力 。 NL 抽2张牌。"
+    "DESCRIPTION": "若存在有 ${modID}:降防 状态的敌人，耗能减少1 [E] 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层2回合 ${modID}:降防 。"
   }
 }
 
