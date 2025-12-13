@@ -391,6 +391,14 @@
   "${modID}:GachaRage": {
     "NAME": "抽卡红温",
     "DESCRIPTION": "获得 !M! 层 活力 。 NL 抽2张牌。"
+  },
+  "${modID}:Unrivaled": {
+    "NAME": "国士无双",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 ${modID}:降防 状态 ， NL 获得 [E] 并且 NL 抽1张牌。"
+  },
+  "${modID}:MythOfInari": {
+    "NAME": "御稻荷神话",
+    "DESCRIPTION": "获得 !M! 层 活力 。 NL 抽2张牌。"
   }
 }
 
