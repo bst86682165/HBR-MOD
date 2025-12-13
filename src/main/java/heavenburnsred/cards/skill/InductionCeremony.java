@@ -25,6 +25,7 @@ public class InductionCeremony extends BaseCard {
 
     public InductionCeremony() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
+        this.cardsToPreview = new Serahu();  // 用来展示关联卡
         setInnate(true);
         setExhaust(true);
         setMagic(MAGIC,UPG_MAGIC); //Sets the card's damage and how much it changes when upgraded.
