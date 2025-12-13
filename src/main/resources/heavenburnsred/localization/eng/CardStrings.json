@@ -399,6 +399,15 @@
   "${modID}:MythOfInari": {
     "NAME": "御稻荷神话",
     "DESCRIPTION": "若存在有 ${modID}:降防 状态的敌人，耗能减少1 [E] 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层2回合 ${modID}:降防 。"
+  },
+  "${modID}:HighScoreChallenge": {
+    "NAME": "高分挑战",
+    "DESCRIPTION": "获得 [E] [E] 。 NL 将一张 *高难词条 放入你的弃牌堆中。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 将一张 *高难词条 放入你的弃牌堆中。"
+  },
+  "${modID}:HighDifficultyItem": {
+    "NAME": "高难词条",
+    "DESCRIPTION": "不能被打出 。 NL 抽到这张牌时失去所有HIT数。 NL 虚无 。"
   }
 }
 
