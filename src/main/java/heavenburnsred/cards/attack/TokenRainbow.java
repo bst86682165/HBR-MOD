@@ -28,7 +28,7 @@ public class TokenRainbow extends HBRHitAndTypeAttackCard {
     private static final int TOKEN_USE_UPGRADE = -1;
 
     public TokenRainbow() {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HBRAttackType.LL); //Pass the required information to the BaseCard constructor.
 
         setMagic(TOKEN_USE, TOKEN_USE_UPGRADE);
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.

@@ -30,7 +30,7 @@ public class SettingOfSwordsman extends HBRHitAndTypeAttackCard {
     private static final int HP_LOSS = 10;
 
     public SettingOfSwordsman() {
-        super(ID,info); //Pass the required information to the BaseCard constructor.
+        super(ID,info,HBRAttackType.LQ); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(USED_IN_COMBAT);  // 用来存储战斗中打出次数

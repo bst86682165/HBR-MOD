@@ -26,7 +26,7 @@ public class TheDemonKingDescends extends HBRHitAndTypeAttackCard {
     private static int HIT = 0;
 
     public TheDemonKingDescends() {
-        super(ID,info,HBRAttackType.LL,HIT);
+        super(ID,info,HBRAttackType.LQ,HIT);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
     }

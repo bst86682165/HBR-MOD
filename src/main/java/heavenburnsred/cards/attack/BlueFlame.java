@@ -19,7 +19,7 @@ public class BlueFlame extends HBRHitAndTypeAttackCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 9;
 //    private static final int UPG_DAMAGE = 0;
     private static final int HIT = 5;
     private static final int HIT_UPGRADE = 5;
