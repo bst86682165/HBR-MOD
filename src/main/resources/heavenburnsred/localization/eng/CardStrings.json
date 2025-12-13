@@ -308,7 +308,7 @@
   },
   "${modID}:ColourfulRed": {
     "NAME": "火",
-    "DESCRIPTION": "获得 !M! 点 活力 。"
+    "DESCRIPTION": "获得 !M! 层 活力 。"
   },
   "${modID}:ColourfulWhite": {
     "NAME": "光",
@@ -371,6 +371,26 @@
   "${modID}:KicksAndGiggles": {
     "NAME": "徒然飞踢",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。"
+  },
+  "${modID}:InductionCeremony": {
+    "NAME": "入队仪式",
+    "DESCRIPTION": "固有 。 NL 增加 !M! 张 *炽天使 到你的手牌。 NL 消耗 。"
+  },
+  "${modID}:Serahu": {
+    "NAME": "炽天使",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层 ${modID}:信念 。 NL 消耗 。"
+  },
+  "${modID}:ShowMeSpirit": {
+    "NAME": "给姐拿出气势",
+    "DESCRIPTION": "给予敌人1层 !M! 回合 ${modID}:降防 。 NL 获得3层 活力 。"
+  },
+  "${modID}:IndianCurry": {
+    "NAME": "印度咖喱",
+    "DESCRIPTION": "获得 !B! 点 格挡 X 次。 NL 回复 X 点生命。"
+  },
+  "${modID}:GachaRage": {
+    "NAME": "抽卡红温",
+    "DESCRIPTION": "获得 !M! 层 活力 。 NL 抽2张牌。"
   }
 }
 
