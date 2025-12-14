@@ -29,7 +29,8 @@ public class HighDifficultyItem extends BaseCard {
 
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new ChangeODBarHitAction(-ODBar.getCounter()));
+        int now_od = ODBar.getCounter();
+        if (now_od > 0) addToBot(new ChangeODBarHitAction(-now_od));
     }
 
     // 不能升级

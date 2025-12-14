@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import heavenburnsred.actions.ApplyHBRStackPowerAction;
 import heavenburnsred.actions.ChangeODBarHitAction;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
@@ -40,7 +41,7 @@ public class GangsteroftheSea extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m,p,new DefendDown(m, 1, magicNumber)));
+        addToBot(new ApplyHBRStackPowerAction(m,p,new DefendDown(m, magicNumber, 1)));
         addToBot(new ChangeODBarHitAction(HITamount));
     }
 

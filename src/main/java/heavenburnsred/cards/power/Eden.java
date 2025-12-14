@@ -22,7 +22,6 @@ public class Eden extends BaseCard {
             CardTarget.SELF, //The target. Single target is ENEMY, all enemies is ALL_ENEMY. Look at cards similar to what you want to see what to use.
             0);//The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
 
-    public final int COST_UP = 1;
     public final int MAGIC = 5;
 
     public Eden() {
