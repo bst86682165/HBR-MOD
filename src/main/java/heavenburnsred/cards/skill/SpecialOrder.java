@@ -25,7 +25,6 @@ public class SpecialOrder extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC);
-        this.exhaust = true;
     }
 
     public void upgrade() {

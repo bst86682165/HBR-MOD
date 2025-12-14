@@ -22,17 +22,13 @@ public class LuminousCosmos extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 4;
 
     public LuminousCosmos() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
 
         setBlock(BLOCK,UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
-
-        tags.add(CardTags.STARTER_DEFEND);
-
-
     }
 
     public void upgrade() {

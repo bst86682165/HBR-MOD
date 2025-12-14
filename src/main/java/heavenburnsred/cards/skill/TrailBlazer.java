@@ -1,15 +1,19 @@
 package heavenburnsred.cards.skill;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.powers.CriticalHit;
+import heavenburnsred.powers.OverDriveState;
 import heavenburnsred.util.CardStats;
 
 public class TrailBlazer extends BaseCard {
@@ -21,31 +25,26 @@ public class TrailBlazer extends BaseCard {
             CardTarget.SELF, //The target. Single target is ENEMY, all enemies is ALL_ENEMY. Look at cards similar to what you want to see what to use.
             2);//The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
 
-    private static final int MAGIC = 10;  // 使用为加攻效果的回合数
+    private static final int BLOCK = 10;  // 使用为加攻效果的回合数
 
     public TrailBlazer() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         //Sets the card's damage and how much it changes when upgraded.
-        setMagic(MAGIC);
-    }
-
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
-        }
+        setBlock(BLOCK);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,magicNumber));
+        addToBot(new GainBlockAction(p,block));
         addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,-1)));
-        if(this.upgraded){
-            for (AbstractPower power : p.powers){
-                if(power.type == AbstractPower.PowerType.DEBUFF){
-                    addToBot(new RemoveSpecificPowerAction(p,p,power));
-                }
+        if(p.hasPower(OverDriveState.POWER_ID)){
+            // 升级清除所有负面
+            if (this.upgraded) {
+                addToBot(new RemoveDebuffsAction(p));
+            }
+            // 未升级获得人工制品
+            else {
+                addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1), 1));
             }
         }
     }
