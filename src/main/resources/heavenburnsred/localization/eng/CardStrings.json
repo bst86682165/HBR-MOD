@@ -39,23 +39,19 @@
   },
   "${modID}:LLcard": {
     "NAME": "力量",
-    "DESCRIPTION": "增加1点力量属性，强化你的攻击。",
-    "UPGRADE_DESCRIPTION": "增加1点力量属性，强化你的攻击"
+    "DESCRIPTION": "增加1点力量属性，强化你的攻击。"
   },
   "${modID}:LQcard": {
     "NAME": "灵巧",
-    "DESCRIPTION": "增加1点灵巧属性，强化你的攻击。",
-    "UPGRADE_DESCRIPTION": "增加1点灵巧属性，强化你的攻击"
+    "DESCRIPTION": "增加1点灵巧属性，强化你的攻击。"
   },
   "${modID}:TJcard": {
     "NAME": "体精",
-    "DESCRIPTION": "增加1点体精属性，强化你的防御。",
-    "UPGRADE_DESCRIPTION": "增加1点体精属性，强化你的防御"
+    "DESCRIPTION": "增加1点体精属性，强化你的防御。"
   },
   "${modID}:ZYcard": {
     "NAME": "智运",
-    "DESCRIPTION": "增加1点智运属性，获得增益效果。",
-    "UPGRADE_DESCRIPTION": "增加1点智运属性，获得增益效果"
+    "DESCRIPTION": "增加1点智运属性，获得增益效果。"
   },
   "${modID}:LightRoad": {
     "NAME": "光之路标",
@@ -66,42 +62,42 @@
   },
   "${modID}:KongMingChop": {
     "NAME": "卧龙演舞斩",
-    "DESCRIPTION": "对敌人造成 !D! 点伤害。 NL 赋予目标敌人1层持续 !M! 回合的 ${modID}:降防 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予目标敌人1层持续 !M! 回合的 ${modID}:降防 。"
   },
   "${modID}:FallingintoaFantasy": {
     "NAME": "沉入梦幻",
-    "DESCRIPTION": "抽1张牌，当手卡有2张以上此卡时费用为0。",
-    "UPGRADE_DESCRIPTION": "抽1张牌，获得2点 格挡 ，当手卡有2张以上此卡时费用为0。"
+    "DESCRIPTION": "抽1张牌，当手牌中有超过1张此牌时耗能变为0。 虚无 。",
+    "UPGRADE_DESCRIPTION": "抽1张牌，获得2点 格挡 ，当手牌中有超过1张此牌时耗能变为0。"
   },
   "${modID}:UltraSisters": {
     "NAME": "六姐妹齐心",
-    "DESCRIPTION": "造成 !D! 倍抽牌堆、手卡中沉入梦幻卡数量的伤害，获得 !B! 倍抽牌堆、手卡中沉入梦幻卡数量的 格挡 。"
+    "DESCRIPTION": "造成 !D! 倍抽牌堆、手牌中 *沉入梦幻 数量的伤害，获得 !B! 倍抽牌堆、手牌中 *沉入梦幻 数量的 格挡 。"
   },
   "${modID}:MercyDance": {
     "NAME": "慈悲之舞",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将2张沉入梦幻加入手卡。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将2张 *沉入梦幻 加入手牌。"
   },
   "${modID}:SoaringExcitement": {
     "NAME": "飘然亢奋",
-    "DESCRIPTION": "获得 !B! 点 格挡 ，抽3张牌，弃置n张牌， NL n为抽卡获得的沉入梦幻以外的卡的数量"
+    "DESCRIPTION": "获得 !B! 点 格挡 ，抽3张牌，丢弃n张牌， NL n为抽到的 *非 *沉入梦幻 牌的数量。"
   },
   "${modID}:TooHotToHandle": {
     "NAME": "发烫的肉体",
-    "DESCRIPTION": "给予所有敌人1层降防，若敌人拥有 格挡 ，再给予1层。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人1层降防，若敌人拥有 格挡 ，再给予1层。 NL 将3张沉入梦幻加入手卡。"
+    "DESCRIPTION": "给予所有敌人1层1回合 ${modID}:降防 ，若敌人拥有 格挡 ，再给予1层。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人1层1回合 ${modID}:降防 ，若敌人拥有 格挡 ，再给予1层。 NL 将3张 *沉入梦幻 加入手牌。"
   },
   "${modID}:DelightfulDash": {
     "NAME": "快感短跑",
-    "DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点 格挡 。",
-    "UPGRADE_DESCRIPTION": "当在回合外第一次受到伤害时抽1张卡并将1张沉入梦幻加入手卡。若抽的卡是沉入梦幻，获得4点可保留至下回合的 格挡 NL 固有。"
+    "DESCRIPTION": "当在回合外第一次受到伤害时抽1张牌并将1张 *沉入梦幻 加入手牌。若抽的牌是 *沉入梦幻 ，获得4点 格挡 。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 当在回合外第一次受到伤害时抽1张牌并将1张 *沉入梦幻 加入手牌。若抽的牌是 *沉入梦幻 ，获得4点可保留至下回合的 格挡 。"
   },
   "${modID}:WaveofAffection": {
     "NAME": "慈爱的波动",
-    "DESCRIPTION": "消耗所有手卡，将等量的沉入梦幻加入手卡。"
+    "DESCRIPTION": " 消耗 所有手牌，将等量的 *沉入梦幻 加入手牌。"
   },
   "${modID}:SpecialOrder": {
     "NAME": "特别餐点",
-    "DESCRIPTION": "四项六维各增加 !M! 点。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 层  ${modID}:士气 。"
   },
   "${modID}:SummerDream": {
     "NAME": "青夏之梦",
@@ -115,26 +111,22 @@
   },
   "${modID}:SignUpDaily": {
     "NAME": "每日签到",
-    "DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。 NL 获得金币后移出牌组。",
-    "UPGRADE_DESCRIPTION": "累计打出7次后获得220枚金币。 NL 当前还需打出 !M! 次。"
+    "DESCRIPTION": "累计打出7次后， NL 获得220枚金币。 NL 当前还需打出 !M! 次。 NL 获得金币后移出牌组。",
+    "UPGRADE_DESCRIPTION": "累计打出7次后， NL 获得220枚金币。 NL 当前还需打出 !M! 次。"
   },
   "${modID}:TrailBlazer": {
     "NAME": "让道宣言",
-    "DESCRIPTION": "获得 !M! 点 格挡 ，获得 ${modID}:暴击 效果。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 移除自身所有负面效果。"
+    "DESCRIPTION": "获得 !B! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 处于 ${modID}:超频 时获得1层 人工制品 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 处于 ${modID}:超频 时移除自身所有负面效果。"
   },
   "${modID}:AbsolutePhenomenon": {
-    "NAME": "绝美奇观",
-    "DESCRIPTION": "获得 ${modID}:暴击 效果。"
-  },
-  "${modID}:YUKI": {
     "NAME": "绝美奇观",
     "DESCRIPTION": "获得 ${modID}:暴击 效果。"
   },
   "${modID}:AngelWings": {
     "NAME": "天使之翼",
     "DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。",
-    "UPGRADE_DESCRIPTION": "无效化敌人下2次攻击及其附带debuff。 NL 保留 。"
+    "UPGRADE_DESCRIPTION": "保留 。 NL 无效化敌人下2次攻击及其附带debuff。"
   },
   "${modID}:DoubleInOne": {
     "NAME": "可怜？可镰！",
@@ -251,34 +243,34 @@
   },
   "${modID}:LuminousCosmos": {
     "NAME": "光辉波斯菊",
-    "DESCRIPTION": "获得 !B! 点格挡，受到的攻击伤害降低1回合。"
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 获得1层 ${modID}:防御提升 。"
   },
   "${modID}:CutenessOverload": {
     "NAME": "公主殿下的宠爱",
-    "DESCRIPTION": "获得 !B! 点格挡， NL 造成 !D! 点伤害。 NL 敌人拥有攻击意图时费用减1"
+    "DESCRIPTION": "获得 !B! 点格挡， NL 造成 !D! 点伤害。 NL 敌人拥有攻击意图时耗能减少1 [E] 。"
   },
   "${modID}:TheDemonKingDescends": {
     "NAME": "魔王降临",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，获得伤害量的hit数"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，获得造成伤害量的HIT数。"
   },
   "${modID}:GangsteroftheSea": {
     "NAME": "大海不良分子",
-    "DESCRIPTION": "给予敌人 !M! 层降防， NL 获得26点hit值"
+    "DESCRIPTION": "给予1层 !M! 回合 ${modID}:降防 ， NL 获得26点HIT数。"
   },
   "${modID}:SingingtoaShootingStar": {
     "NAME": "若向流星歌唱",
-    "DESCRIPTION": "获得造成伤害30%的 格挡， NL 获得 !M! 层暴击（单独发动）"
+    "DESCRIPTION": "获得造成伤害30%的 格挡 ， NL 获得 !M! 层 ${modID}:暴击（单独发动） 。"
   },
   "${modID}:AutumnFirstRed": {
     "NAME": "染上初枫之红",
-    "DESCRIPTION": "消耗 !M! HIT数， NL 获得1层1回合 ${modID}:加攻 。 NL 给予所有敌人1层1回合 ${modID}:降防 。 NL 超频条的HIT数值为负时不能打出。",
+    "DESCRIPTION": "消 耗 !M! HIT数， NL 获得1层1回合 ${modID}:加攻 。 NL 给予所有敌人1层1回合 ${modID}:降防 。 NL 超频条的HIT数值为负时不能打出。",
     "EXTENDED_DESCRIPTION": [
       "超频条的HIT数值必须不为 #r负数 。"
     ]
   },
   "${modID}:Compensate": {
     "NAME": "补偿",
-    "DESCRIPTION": "获得 !M! HIT数。 NL 回合结束时 NL 受到5点伤害。"
+    "DESCRIPTION": "获得 !M! HIT数。 NL 回合结束时， NL 受到5点伤害。"
   },
   "${modID}:BeLarger": {
     "NAME": "变大吧！",
@@ -294,17 +286,17 @@
     "DESCRIPTION": "不能被打出 。 NL 死亡时复活并 NL 获得 *3 *0 %血上限的 *临时生命 ，生效后从牌组中移除。",
     "UPGRADE_DESCRIPTION": " 虚无 。 不能被打出 。 NL 死亡时复活并 NL 获得 *3 *0 %血上限的 *临时生命 ，生效后从牌组中移除。",
     "EXTENDED_DESCRIPTION": [
-      "该牌不能被打出。"
+      "这张牌不能被打出。"
     ]
   },
   "${modID}:WraithCurseDance": {
     "NAME": "死灵诅咒之舞",
-    "DESCRIPTION": "当你获得正面效果或对敌方造成负面效果时，获得 !M! 点格挡。"
+    "DESCRIPTION": "当你获得正面效果或对敌方造成负面效果时，获得 !M! 点 格挡 。"
   },
   "${modID}:Eden": {
     "NAME": "伊甸园",
-    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的费用 *+1 。"
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的耗能 *+1 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。 NL 获得1层99回合 ${modID}:加攻 。 NL 本场战斗中 NL 所有卡牌的耗能 *+1 。"
   },
   "${modID}:ColourfulRed": {
     "NAME": "火",

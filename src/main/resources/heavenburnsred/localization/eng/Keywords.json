@@ -41,7 +41,7 @@
     "NAMES": [
       "降防"
     ],
-    "DESCRIPTION": "被攻击时受到伤害增加50%。最多可以叠加2层。",
+    "DESCRIPTION": "受到的攻击伤害增加50%。最多可以叠加2层。",
     "COLOR": "fc83da"
   },
   {
@@ -49,7 +49,7 @@
     "NAMES": [
       "充能"
     ],
-    "DESCRIPTION": "下一张攻击牌造成的伤害提升 #b10% 。",
+    "DESCRIPTION": "下一张攻击牌造成的伤害提升 #b10% 。 不可叠加。",
     "COLOR": "fc83da"
   },
   {
@@ -57,7 +57,7 @@
     "NAMES": [
       "暴击"
     ],
-    "DESCRIPTION": "增加下一次攻击与敌人的白值差值10点。 NL 不可叠加。",
+    "DESCRIPTION": "增加下一次攻击与敌人的白值差值10点。",
     "COLOR": "fc83da"
   },
   {
@@ -97,7 +97,7 @@
     "NAMES": [
       "信念强化"
     ],
-    "DESCRIPTION": "每层 #y信念 增加 #b10% 基础伤害",
+    "DESCRIPTION": "每层 #y信念 增加 #b10% 基础伤害。",
     "COLOR": "fc83da"
   },
   {
@@ -105,7 +105,7 @@
     "NAMES": [
       "击晕"
     ],
-    "DESCRIPTION": "使敌人暂停行动一回合",
+    "DESCRIPTION": "使敌人暂停行动一回合。",
     "COLOR": "fc83da"
   },
   {
@@ -122,6 +122,22 @@
       "鸟儿牌"
     ],
     "DESCRIPTION": "卡面有本mod其他女性角色的牌。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "士气",
+    "NAMES": [
+      "士气"
+    ],
+    "DESCRIPTION": "每层士气使本场战斗中，六维全属性增加1点。 NL 最多叠加10层。",
+    "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "防御提升",
+    "NAMES": [
+      "防御提升"
+    ],
+    "DESCRIPTION": "受到的攻击伤害减少 25% 。",
     "COLOR": "fc83da"
   }
 ]

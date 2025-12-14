@@ -25,6 +25,7 @@ public class WaveofAffection extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC); //Sets the card's damage and how much it changes when upgraded.
         this.exhaust = true;
+        this.cardsToPreview = new FallingintoaFantasy();
     }
 
     public void upgrade() {

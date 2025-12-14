@@ -18,6 +18,7 @@ public class AttackLossHPPower extends BasePower {
     public AttackLossHPPower(AbstractCreature owner, int amount, int hp_loss) {
         super(POWER_ID, TYPE, true, owner, amount);
         this.hp_loss = hp_loss;
+        updateDescription();
     }
 
     @Override
@@ -38,6 +39,6 @@ public class AttackLossHPPower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.hp_loss + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.hp_loss + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 }

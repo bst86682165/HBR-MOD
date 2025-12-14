@@ -35,6 +35,7 @@ public class TooHotToHandle extends BaseCard {
             this.upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.cardsToPreview = new FallingintoaFantasy();
         }
     }
 

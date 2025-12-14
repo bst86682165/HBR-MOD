@@ -33,6 +33,7 @@ public class UltraSisters extends HBRHitAndTypeAttackCard {
 
         setDamage(DAMAGE, UPG_DAMAGE);//Sets the card's damage and how much it changes when upgraded.
         setBlock(BLOCK,UPG_BLOCK);
+        this.cardsToPreview = new FallingintoaFantasy();
     }
 
     @Override

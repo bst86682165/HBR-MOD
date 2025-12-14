@@ -31,6 +31,7 @@ public class SoaringExcitement extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         setBlock(BLOCK,UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC);
+        this.cardsToPreview = new FallingintoaFantasy();
     }
 
     public void upgrade() {

@@ -30,6 +30,7 @@ public class MercyDance extends HBRHitAndTypeAttackCard {
         super(ID,info,HIT); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
+        this.cardsToPreview = new FallingintoaFantasy();
     }
 
     public void upgrade() { // 升级调用的方法

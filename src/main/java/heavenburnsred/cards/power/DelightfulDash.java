@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.cards.BaseCard;
+import heavenburnsred.cards.skill.FallingintoaFantasy;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.powers.DelightfulDashPower;
 import heavenburnsred.util.CardStats;
@@ -22,6 +23,7 @@ public class DelightfulDash extends BaseCard {
     public DelightfulDash() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
          //Sets the card's damage and how much it changes when upgraded.
+        this.cardsToPreview = new FallingintoaFantasy();
     }
 
     public void upgrade() {

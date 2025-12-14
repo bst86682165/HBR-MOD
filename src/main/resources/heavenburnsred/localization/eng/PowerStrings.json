@@ -27,25 +27,25 @@
   "${modID}:DefendDown": {
     "NAME": "降防",
     "DESCRIPTIONS": [
-      "被攻击时受到的攻击伤害增加 #b"
+      "受到的攻击伤害增加 #b"
     ]
   },
   "${modID}:UltraSistersPower": {
     "NAME": "大岛家的羁绊",
     "DESCRIPTIONS": [
-      "所有的沉入梦幻获得升级，向手卡加入1张六姐妹齐心。"
+      "升级所有的 #y沉入梦幻 ，向手牌中加入1张 #y六姐妹齐心 。"
     ]
   },
   "${modID}:DelightfulDashPower": {
     "NAME": "快感短跑",
     "DESCRIPTIONS": [
-      "每回合限一次，回合外受伤时抽1且加入1张四妹进手牌，若为四妹则获得4格挡。"
+      "每回合限一次，回合外受伤时向手牌中加入1张 #y沉入梦幻 并抽1张牌，若为 #y沉入梦幻 则获得4点 格挡 。"
     ]
   },
   "${modID}:SpecialOrderPower": {
-    "NAME": "特别餐点",
+    "NAME": "士气",
     "DESCRIPTIONS": [
-      "本场战斗中，六维全属性增加","点"
+      "本场战斗中，六维全属性增加","点。"
     ]
   },
   "${modID}:ChargePower": {
@@ -70,12 +70,6 @@
     "NAME": "暴击",
     "DESCRIPTIONS": [
       "增加下一次攻击与敌人的白值差值10点。"
-    ]
-  },
-  "${modID}:Misfortune": {
-    "NAME": "灾厄之后",
-    "DESCRIPTIONS": [
-      "回合结束时增加3点白值 NL （只能叠加1层）。"
     ]
   },
   "${modID}:AngelWingsPower": {
@@ -107,8 +101,9 @@
   "${modID}:AttackLossHPPower": {
     "NAME": "最强招式的副作用",
     "DESCRIPTIONS": [
-      "每打出一张攻击牌，失去",
-      "点生命"
+      "每打出一张攻击牌，失去 #r",
+      " 点生命。持续时间 #b",
+      " 回合。"
     ]
   },
   "${modID}:SuperBreakStatusPower": {
@@ -125,9 +120,10 @@
     ]
   },
   "${modID}:LuminousCosmosPower": {
-    "NAME": "光辉波斯菊",
+    "NAME": "防御提升",
     "DESCRIPTIONS": [
-      "受到的伤害降低25%。"
+      "受到的攻击伤害减少 #b25% 。持续时间 #b",
+      " 回合。"
     ]
   },
   "${modID}:CriticalHitSingleActivation": {
@@ -145,7 +141,7 @@
   "${modID}:CompensatePower": {
     "NAME": "补偿",
     "DESCRIPTIONS": [
-      "在你的回合结束时，受到 #b",
+      "在你的回合结束时，受到 #r",
       " 点伤害。"
     ]
   },
