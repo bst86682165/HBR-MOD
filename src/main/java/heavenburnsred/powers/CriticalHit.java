@@ -1,5 +1,6 @@
 package heavenburnsred.powers;
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +23,7 @@ public class CriticalHit extends BasePower{
 
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction){
         if (targetCard.type == AbstractCard.CardType.ATTACK && !AbstractDungeon.player.hasPower(CriticalHitSingleActivation.POWER_ID)){
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, CriticalHit.POWER_ID));
+            addToBot(new ReducePowerAction(this.owner, this.owner, CriticalHit.POWER_ID, 1));
             addToBot(new UpdateAttributeDescriptionAction());
         }
     }
@@ -34,6 +35,6 @@ public class CriticalHit extends BasePower{
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 }

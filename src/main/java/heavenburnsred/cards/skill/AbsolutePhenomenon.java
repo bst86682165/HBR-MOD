@@ -33,7 +33,7 @@ public class AbsolutePhenomenon extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,-1)));
+        addToBot(new ApplyPowerAction(p,p,new CriticalHit(p,1), 1));
     }
 
     @Override

@@ -36,7 +36,7 @@ public class TrailBlazer extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,block));
-        addToBot(new ApplyNotStackingPowerAction(p,p,new CriticalHit(p,-1)));
+        addToBot(new ApplyPowerAction(p,p,new CriticalHit(p,1), 1));
         if(p.hasPower(OverDriveState.POWER_ID)){
             // 升级清除所有负面
             if (this.upgraded) {

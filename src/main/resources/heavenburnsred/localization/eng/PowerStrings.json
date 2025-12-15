@@ -69,7 +69,8 @@
   "${modID}:CriticalHit": {
     "NAME": "暴击",
     "DESCRIPTIONS": [
-      "增加下一次攻击与敌人的白值差值10点。"
+      "增加下 #b",
+      " 次攻击与敌人的白值差值10点。"
     ]
   },
   "${modID}:AngelWingsPower": {
@@ -129,7 +130,8 @@
   "${modID}:CriticalHitSingleActivation": {
     "NAME": "暴击（单独发动）",
     "DESCRIPTIONS": [
-      "增加攻击时与敌人的白值差值10点。"
+      "增加攻击时与敌人的白值差值 #b10 点。持续时间 #b",
+      " 回合。"
     ]
   },
   "${modID}:SheisDivaPower": {

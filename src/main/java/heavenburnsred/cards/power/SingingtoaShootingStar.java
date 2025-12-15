@@ -29,7 +29,7 @@ public class SingingtoaShootingStar extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SheisDivaPower(p, -1)));
-        addToBot(new ApplyPowerAction(p, p, new CriticalHitSingleActivation(p,magicNumber)));
+        addToBot(new ApplyNotStackingPowerAction(p, p, new SheisDivaPower(p, -1)));
+        addToBot(new ApplyPowerAction(p, p, new CriticalHitSingleActivation(p,magicNumber), magicNumber));
     }
 }

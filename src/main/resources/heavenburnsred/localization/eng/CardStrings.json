@@ -116,12 +116,12 @@
   },
   "${modID}:TrailBlazer": {
     "NAME": "让道宣言",
-    "DESCRIPTION": "获得 !B! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 处于 ${modID}:超频 时获得1层 人工制品 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，获得 ${modID}:暴击 效果。 NL 处于 ${modID}:超频 时移除自身所有负面效果。"
+    "DESCRIPTION": "获得 !B! 点 格挡 ，下一次攻击获得 ${modID}:暴击 。 NL 处于 ${modID}:超频 时获得1层 人工制品 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，下一次攻击获得 ${modID}:暴击 。 NL 处于 ${modID}:超频 时移除自身所有负面效果。"
   },
   "${modID}:AbsolutePhenomenon": {
     "NAME": "绝美奇观",
-    "DESCRIPTION": "获得 ${modID}:暴击 效果。"
+    "DESCRIPTION": "下一次攻击获得 ${modID}:暴击 。"
   },
   "${modID}:AngelWings": {
     "NAME": "天使之翼",
@@ -259,7 +259,7 @@
   },
   "${modID}:SingingtoaShootingStar": {
     "NAME": "若向流星歌唱",
-    "DESCRIPTION": "获得造成伤害30%的 格挡 ， NL 获得 !M! 层 ${modID}:暴击（单独发动） 。"
+    "DESCRIPTION": "获得造成伤害30%的 格挡 ， NL 持续 !M! 回合处于 ${modID}:暴击 状态 。"
   },
   "${modID}:AutumnFirstRed": {
     "NAME": "染上初枫之红",
