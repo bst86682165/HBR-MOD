@@ -2,7 +2,6 @@ package heavenburnsred.relics;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -10,23 +9,18 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.actions.ChangeODBarHitAction;
-import heavenburnsred.cards.HbrTags;
-import heavenburnsred.cards.attack.DoubleInOne;
 import heavenburnsred.patches.HBRRelicClick;
-import heavenburnsred.cards.BaseCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.badlogic.gdx.graphics.Color;
-import heavenburnsred.powers.ChargePower;
 import heavenburnsred.powers.OverDriveState;
 import heavenburnsred.util.TextureLoader;
 
-import java.util.Objects;
 
 import static heavenburnsred.BasicMod.makeID;
 import static heavenburnsred.BasicMod.relicPath;
@@ -148,5 +142,17 @@ public class ODBar extends HBRRelicClick {
             return relic.counter;
         }
         return 0; // 没有遗物时默认 0 当然理论上不可能没有该遗物
+    }
+
+    @Override
+    public void onVictory() {
+        if (this.counter > 0) {
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+                setCounter(0);
+            }
+            else {
+                setCounter(this.counter / 2);
+            }
+        }
     }
 }

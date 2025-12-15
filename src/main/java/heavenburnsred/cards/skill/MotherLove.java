@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
-import heavenburnsred.relics.ODBar;
 import heavenburnsred.util.CardStats;
 
 import java.util.ArrayList;
