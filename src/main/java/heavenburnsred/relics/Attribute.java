@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import heavenburnsred.powers.AttributeCal;
 import heavenburnsred.powers.MonsterPoint;
 
@@ -134,9 +135,11 @@ public class Attribute extends BaseRelic
     private float calculateMonPoint() {
         int Floor = AbstractDungeon.floorNum;
         int Act = AbstractDungeon.actNum;
-        MonPoint = 6 + (int)(Floor / 3.5f) + 3 * Act;
+        MonPoint = 6 + Floor + 3 * Act;
         if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
-            MonPoint = MonPoint + 5;
+            MonPoint = MonPoint + 3;
+        } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
+            MonPoint = MonPoint + 1;
         }
         return MonPoint;
     }
