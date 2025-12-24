@@ -152,6 +152,7 @@ public class MyCharacter extends CustomPlayer {  // MyCharacter应该可以改�
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(Enhancement.ID);
         retVal.add(BlueFlame.ID);
 
