@@ -95,7 +95,7 @@ public class ODBar extends HBRRelicClick {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        addToBot(new ChangeODBarHitAction(card));
+        addToTop(new ChangeODBarHitAction(card));
     }
 
     public void onRightClick() {
@@ -150,9 +150,9 @@ public class ODBar extends HBRRelicClick {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
                 setCounter(0);
             }
-            else {
-                setCounter(this.counter / 2);
-            }
+//            else {
+//                setCounter(this.counter / 2);
+//            }
         }
     }
 }

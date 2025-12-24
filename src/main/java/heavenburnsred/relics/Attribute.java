@@ -135,7 +135,7 @@ public class Attribute extends BaseRelic
     private float calculateMonPoint() {
         int Floor = AbstractDungeon.floorNum;
         int Act = AbstractDungeon.actNum;
-        MonPoint = 6 + Floor + 3 * Act;
+        MonPoint = 7 + (int)(Floor/3) + 3 * Act;
         if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
             MonPoint = MonPoint + 3;
         } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
@@ -245,7 +245,7 @@ public class Attribute extends BaseRelic
                "力量：" + this.hbrLL + (TTLL > 0 ? "+ #b" + TTLL + " 。":"。") + DESCRIPTIONS[0] +
                "灵巧：" + this.hbrLQ + (TTLQ > 0 ? "+ #b" + TTLQ + " 。":"。") + DESCRIPTIONS[0] +
                "体精：" + this.hbrTJ + (TTTJ > 0 ? "+ #b" + TTTJ + " 。":"。") + DESCRIPTIONS[0] +
-               "智运：" + this.hbrTJ + LQ_text;
+               "智运：" + this.hbrZY + LQ_text;
     }
 
     // 选完提升的属性之后刷新显示
