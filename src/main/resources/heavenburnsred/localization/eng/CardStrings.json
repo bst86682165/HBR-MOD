@@ -121,7 +121,7 @@
   },
   "${modID}:AbsolutePhenomenon": {
     "NAME": "绝美奇观",
-    "DESCRIPTION": "下一次攻击获得 ${modID}:暴击 。"
+    "DESCRIPTION": "下一次攻击获得 ${modID}:暴击 。 NL 获得1层 *残影 。"
   },
   "${modID}:AngelWings": {
     "NAME": "天使之翼",
@@ -231,7 +231,7 @@
   },
   "${modID}:CrystalBall": {
     "NAME": "水晶球占卜",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。 NL 获得1层 *残影 。"
   },
   "${modID}:HBRNuclearExplosion": {
     "NAME": "HBR是叠核弹游戏",
@@ -247,7 +247,7 @@
   },
   "${modID}:CutenessOverload": {
     "NAME": "公主殿下的宠爱",
-    "DESCRIPTION": "获得 !B! 点格挡， NL 造成 !D! 点伤害。 NL 敌人拥有攻击意图时耗能减少1 [E] 。"
+    "DESCRIPTION": "获得 !B! 点格挡， NL 造成 !D! 点伤害。 NL 敌人拥有攻击意图时耗能减少1 [E] ，否则获得1层 *残影 。"
   },
   "${modID}:TheDemonKingDescends": {
     "NAME": "魔王降临",

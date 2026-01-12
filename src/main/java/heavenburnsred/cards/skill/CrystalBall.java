@@ -1,10 +1,11 @@
 package heavenburnsred.cards.skill;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import heavenburnsred.cards.BaseCard;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
@@ -20,7 +21,7 @@ public class CrystalBall extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 2;
     private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 2;
 
@@ -34,6 +35,7 @@ public class CrystalBall extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
         addToBot(new ScryAction(this.magicNumber));
     }
 }
