@@ -258,7 +258,7 @@
     "DESCRIPTION": "给予1层 !M! 回合 ${modID}:降防 ， NL 获得26点HIT数。"
   },
   "${modID}:SingingtoaShootingStar": {
-    "NAME": "若向流星歌唱",
+    "NAME": "歌姬形态",
     "DESCRIPTION": "获得造成伤害30%的 格挡 ， NL 持续 !M! 回合处于 ${modID}:暴击 状态 。"
   },
   "${modID}:AutumnFirstRed": {
@@ -426,6 +426,10 @@
     "NAME": "赶快给我光临",
     "DESCRIPTION": "花费 !M! *金币 ，从3张随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "花费 !M! *金币 ，从3张升级的随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。"
+  },
+  "${modID}:IntelligenceNabi": {
+    "NAME": "智慧纳比",
+    "DESCRIPTION": "处于 ${modID}:超频 时发动超频条不再丢弃卡牌。"
   }
 }
 

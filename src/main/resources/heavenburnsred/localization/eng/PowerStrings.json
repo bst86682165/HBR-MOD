@@ -195,5 +195,11 @@
       "无 格挡 时受到的攻击伤害增加 #b",
       "% 。"
     ]
+  },
+  "${modID}:IntelligenceNabiPower": {
+    "NAME": "智慧纳比",
+    "DESCRIPTIONS": [
+      "处于 #y超频 时发动 #y超频条 不再丢弃卡牌。"
+    ]
   }
 }

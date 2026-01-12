@@ -18,6 +18,7 @@ import heavenburnsred.patches.HBRRelicClick;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.badlogic.gdx.graphics.Color;
+import heavenburnsred.powers.IntelligenceNabiPower;
 import heavenburnsred.powers.OverDriveState;
 import heavenburnsred.util.TextureLoader;
 
@@ -107,7 +108,9 @@ public class ODBar extends HBRRelicClick {
             this.counter = this.counter - 40;
             onCounterChanged(this.counter + 40, this.counter);
             int handCards = AbstractDungeon.player.hand.size();
-            addToBot(new DiscardAction(p, p, handCards, true));
+            if (!(p.hasPower(IntelligenceNabiPower.POWER_ID) && p.hasPower(OverDriveState.POWER_ID))) {
+                addToBot(new DiscardAction(p, p, handCards, true));
+            }
             addToBot(new DrawCardAction(p, 5));
             addToBot(new GainEnergyAction(3));
         }
