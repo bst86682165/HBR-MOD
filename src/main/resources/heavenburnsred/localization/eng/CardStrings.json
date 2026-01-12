@@ -421,6 +421,11 @@
     "EXTENDED_DESCRIPTION": [
       "对所有敌人造成 !D! 点伤害。"
     ]
+  },
+  "${modID}:VisitRightAway": {
+    "NAME": "赶快给我光临",
+    "DESCRIPTION": "花费 !M! *金币 ，从3张随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "花费 !M! *金币 ，从3张升级的随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。"
   }
 }
 
