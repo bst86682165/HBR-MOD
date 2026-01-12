@@ -181,5 +181,19 @@
       "你打出的下 #b",
       " 张鸟儿牌耗能变为0。"
     ]
+  },
+  "${modID}:CatastropheFirePower": {
+    "NAME": "大灾难",
+    "DESCRIPTIONS": [
+      " #y击破 时提升敌人 #y破坏 上限 #b",
+      " 层。"
+    ]
+  },
+  "${modID}:DestructionPower": {
+    "NAME": "破坏",
+    "DESCRIPTIONS": [
+      "无 格挡 时受到的攻击伤害增加 #b",
+      "% 。"
+    ]
   }
 }

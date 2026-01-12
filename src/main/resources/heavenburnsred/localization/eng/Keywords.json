@@ -139,5 +139,13 @@
     ],
     "DESCRIPTION": "受到的攻击伤害减少 25% 。",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "破坏",
+    "NAMES": [
+      "破坏"
+    ],
+    "DESCRIPTION": "受到攻击时增加1层。每层破坏使敌人在无 格挡 时受到的攻击伤害增加 10% 。",
+    "COLOR": "fc83da"
   }
 ]

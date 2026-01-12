@@ -31,7 +31,7 @@
   },
   "${modID}:Enhancement": {
     "NAME": "强化",
-    "DESCRIPTION": "获得1层持续 !M! 回合的 ${modID}:加攻 。"
+    "DESCRIPTION": "获得1层持续 !M! 回合的 ${modID}:加攻 。 NL 获得1层 *残影 。"
   },
   "${modID}:BlueFlame": {
     "NAME": "苍焰螺旋",
@@ -405,6 +405,10 @@
     "NAME": "鸟儿来我房间吧",
     "DESCRIPTION": "获得1层1回合 ${modID}:加攻 。 NL 将弃牌堆中的一张牌放入你的手牌。 NL 你打出的下一张 ${modID}:鸟儿牌 耗能变为0。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "获得1层1回合 ${modID}:加攻 。 NL 将弃牌堆中的一张牌放入你的手牌。 NL 你打出的下一张 ${modID}:鸟儿牌 耗能变为0。"
+  },
+  "${modID}:CatastropheFire": {
+    "NAME": "大灾难",
+    "DESCRIPTION": "${modID}:击破 时提升敌人的 ${modID}:破坏 上限 !M! 层。"
   }
 }
 
