@@ -409,6 +409,18 @@
   "${modID}:CatastropheFire": {
     "NAME": "大灾难",
     "DESCRIPTION": "${modID}:击破 时提升敌人的 ${modID}:破坏 上限 !M! 层。"
+  },
+  "${modID}:GoodNight": {
+    "NAME": "Good Night",
+    "DESCRIPTION": "失去所有 格挡 ，向手牌中添加一张伤害为该格挡值的 *浮空摩托 。 NL 获得1层 !M! 回合 ${modID}:加攻 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去所有 格挡 ，向手牌中添加一张伤害为该格挡值的 *浮空摩托 。 NL 获得1层 !M! 回合 ${modID}:加攻 。 NL 消耗 。"
+  },
+  "${modID}:HoverMotorcycle": {
+    "NAME": "浮空摩托",
+    "DESCRIPTION": "对所有敌人造成X点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害。"
+    ]
   }
 }
 
