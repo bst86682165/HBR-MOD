@@ -74,12 +74,13 @@ public abstract class BasePower extends AbstractPower {
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
         super.renderAmount(sb, x, y, c);
 
+        // 默认amount2渲染为白色
         if (this.amount2 != 0) {
-            if (!this.isTurnBased) {
-                float alpha = c.a;
-                c = this.amount2 > 0 ? this.greenColor2 : this.redColor2;
-                c.a = alpha;
-            }
+//            if (!this.isTurnBased) {
+//                float alpha = c.a;
+//                c = this.amount2 > 0 ? this.greenColor2 : this.redColor2;
+//                c.a = alpha;
+//            }
 
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, c);
         }
