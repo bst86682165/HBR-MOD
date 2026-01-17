@@ -29,6 +29,7 @@ public class VisitRightAway extends BaseCard {
         super(ID,info); //Pass the required information to the BaseCard constructor.
         setMagic(MAGIC); //Sets the card's damage and how much it changes when upgraded.
         setExhaust(true);
+        setSelfRetain(true);
     }
 
     @Override
