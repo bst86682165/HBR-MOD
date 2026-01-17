@@ -200,8 +200,8 @@
     "NAME": "E盾星癌体",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 目标敌人获得 !M! 层 *多层护甲 。"
   },
-  "${modID}:PartialShield": {
-    "NAME": "偏导护盾",
+  "${modID}:ToleranceShield": {
+    "NAME": "忍耐",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 目标敌人获得 !M! 点 格挡 。"
   },
   "${modID}:TruthSeeker": {
@@ -424,12 +424,16 @@
   },
   "${modID}:VisitRightAway": {
     "NAME": "赶快给我光临",
-    "DESCRIPTION": "花费 !M! *金币 ，从3张随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "花费 !M! *金币 ，从3张升级的随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 消耗 。 NL 花费 !M! *金币 ，从3张随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。",
+    "UPGRADE_DESCRIPTION": "保留 。 消耗 。 NL 花费 !M! *金币 ，从3张升级的随机 *稀有 牌中选择1张加入你的手牌，这张牌第一次打出时耗能为0。"
   },
   "${modID}:IntelligenceNabi": {
     "NAME": "智慧纳比",
     "DESCRIPTION": "处于 ${modID}:超频 时发动超频条不再丢弃卡牌。"
+  },
+  "${modID}:PartialShield": {
+    "NAME": "偏导护盾",
+    "DESCRIPTION": "在你的下个回合，你从卡牌中获得的 格挡 翻倍。 NL 获得1层 *残影 。"
   }
 }
 

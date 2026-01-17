@@ -201,5 +201,20 @@
     "DESCRIPTIONS": [
       "处于 #y超频 时发动 #y超频条 不再丢弃卡牌。"
     ]
+  },
+  "${modID}:PartialShieldPower": {
+    "NAME": "偏导护盾",
+    "DESCRIPTIONS": [
+      "下回合从卡牌中获得 #y双倍格挡 。",
+      "下 ",
+      " 个回合从卡牌中获得 #y双倍格挡 。"
+    ]
+  },
+  "${modID}:DoubleDefencePower": {
+    "NAME": "双倍格挡",
+    "DESCRIPTIONS": [
+      "从卡牌中获得的 #y格挡 翻倍，生效 #b",
+      " 回合。"
+    ]
   }
 }
