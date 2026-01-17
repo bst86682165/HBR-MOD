@@ -32,6 +32,11 @@ public class IndianCurry extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ReinforcedBodyAction(p, this.block, this.freeToPlayOnce, this.energyOnUse));
-        addToBot(new HealAction(p, p, this.energyOnUse));
+        if (p.hasRelic("Chemical X")) {
+            addToBot(new HealAction(p, p, this.energyOnUse + 2));
+        }
+        else {
+            addToBot(new HealAction(p, p, this.energyOnUse));
+        }
     }
 }
