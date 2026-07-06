@@ -459,6 +459,11 @@
   "${modID}:MaidensSecretorum": {
     "NAME": "公主的秘密",
     "DESCRIPTION": "选择抽牌堆，手牌，弃牌堆各1张牌消耗，抽1张牌。 NL 消耗 。"
+  },
+  "${modID}:PhantomFish": {
+    "NAME": "梦幻之鱼",
+    "DESCRIPTION": "获得 !B! 点 格挡。 NL ${modID}:代弃 ",
+    "EXTENDED_DESCRIPTION": ["当这张卡在手卡最右方时才可以打出"]
   }
 }
 
