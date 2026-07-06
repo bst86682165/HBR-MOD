@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import heavenburnsred.cards.HbrTags;
 import heavenburnsred.character.MyCharacter;
 import heavenburnsred.util.CardStats;
 
@@ -30,6 +31,7 @@ public class CrabAttack extends HBRHitAndTypeAttackCard {
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(MAGIC);
+        tags.add(HbrTags.DISCARD_FODDER);
     }
 
     @Override

@@ -29,7 +29,6 @@ public class ShowMeSpirit extends BaseCard {
 
     public ShowMeSpirit() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
-
         setMagic(MAGIC,UPG_MAGIC);
     }
 

@@ -155,7 +155,7 @@
   },
   "${modID}:CrabAttack": {
     "NAME": "螃蟹出击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 这张牌每被打出一次，在本场战斗中其伤害增加 !M! 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 这张牌每被打出一次，在本场战斗中其伤害增加 !M! 。 NL ${modID}:代弃 "
   },
   "${modID}:SettingOfSwordsman": {
     "NAME": "最强剑士的设定",
@@ -354,7 +354,7 @@
   },
   "${modID}:VoidStorm": {
     "NAME": "虚空风暴",
-    "DESCRIPTION": "造成 !D! 点伤害，使敌人失去 !M! 点 力量 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并使敌人失去 !M! 点 力量 。"
   },
   "${modID}:HeroEntrance": {
     "NAME": "英雄登场",
@@ -429,7 +429,7 @@
   },
   "${modID}:IntelligenceNabi": {
     "NAME": "智慧纳比",
-    "DESCRIPTION": "处于 ${modID}:超频 时发动超频条不再丢弃卡牌。"
+    "DESCRIPTION": "未处于 ${modID}:超频 时发动超频条不再丢弃卡牌。"
   },
   "${modID}:PartialShield": {
     "NAME": "偏导护盾",
@@ -455,6 +455,10 @@
       "不久之后抱着月歌已熟睡的身体，感受着月歌的温度，夏洛也安心睡着了，肯定会做个好梦吧~",
       "之后，只有我们两个的早晨又开始了......"
     ]
+  },
+  "${modID}:MaidensSecretorum": {
+    "NAME": "公主的秘密",
+    "DESCRIPTION": "选择抽牌堆，手牌，弃牌堆各1张牌消耗，抽1张牌。 NL 消耗 。"
   }
 }
 

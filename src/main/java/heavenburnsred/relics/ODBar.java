@@ -2,6 +2,7 @@ package heavenburnsred.relics;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -14,6 +15,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import heavenburnsred.actions.ApplyNotStackingPowerAction;
 import heavenburnsred.actions.ChangeODBarHitAction;
+import heavenburnsred.cards.HbrTags;
+import heavenburnsred.cards.skill.FallingintoaFantasy;
 import heavenburnsred.patches.HBRRelicClick;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.core.Settings;
@@ -22,6 +25,8 @@ import heavenburnsred.powers.IntelligenceNabiPower;
 import heavenburnsred.powers.OverDriveState;
 import heavenburnsred.util.TextureLoader;
 
+
+import java.util.Objects;
 
 import static heavenburnsred.BasicMod.makeID;
 import static heavenburnsred.BasicMod.relicPath;
@@ -108,8 +113,20 @@ public class ODBar extends HBRRelicClick {
             this.counter = this.counter - 40;
             onCounterChanged(this.counter + 40, this.counter);
             int handCards = AbstractDungeon.player.hand.size();
-            if (!(p.hasPower(IntelligenceNabiPower.POWER_ID) && p.hasPower(OverDriveState.POWER_ID))) {
-                addToBot(new DiscardAction(p, p, handCards, true));
+            if (!(p.hasPower(IntelligenceNabiPower.POWER_ID) && !(p.hasPower(OverDriveState.POWER_ID)))) {
+                boolean HasDiscard = false;
+                for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                    if (card.hasTag(HbrTags.DISCARD_FODDER)) {
+                        AbstractDungeon.player.hand.moveToDiscardPile(card);
+                        card.triggerOnManualDiscard();
+                        GameActionManager.incrementDiscard(false);
+                        HasDiscard = true;
+                        break;
+                    }
+                }
+                if (!HasDiscard) {
+                    addToBot(new DiscardAction(p, p, handCards, true));
+                }
             }
             addToBot(new DrawCardAction(p, 5));
             addToBot(new GainEnergyAction(3));
