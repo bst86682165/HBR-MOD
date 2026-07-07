@@ -22,7 +22,7 @@ public class MaidensSecretorum extends BaseCard {
 
     public MaidensSecretorum() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
-
+        setExhaust(true);
     }
 
     @Override

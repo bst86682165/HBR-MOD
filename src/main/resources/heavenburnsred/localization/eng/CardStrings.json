@@ -464,6 +464,10 @@
     "NAME": "梦幻之鱼",
     "DESCRIPTION": "获得 !B! 点 格挡。 NL ${modID}:代弃 ",
     "EXTENDED_DESCRIPTION": ["当这张卡在手卡最右方时才可以打出"]
+  },
+  "${modID}:StrumtheKillerTune": {
+    "NAME": "美妙歌曲弹下去",
+    "DESCRIPTION": "获得2点能量，抽3张牌。下回合开始时失去1点能量，少抽1张牌。 NL 消耗 "
   }
 }
 

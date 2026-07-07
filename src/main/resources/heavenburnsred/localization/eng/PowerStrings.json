@@ -199,7 +199,7 @@
   "${modID}:IntelligenceNabiPower": {
     "NAME": "智慧纳比",
     "DESCRIPTIONS": [
-      "处于 #y超频 时发动 #y超频条 不再丢弃卡牌。"
+      "未处于 #y超频 时发动 #y超频条 不再需要丢弃卡牌。"
     ]
   },
   "${modID}:PartialShieldPower": {
@@ -222,6 +222,22 @@
     "DESCRIPTIONS": [
       "在你的回合结束时，在你的抽牌堆顶加入1张抽 #b",
       " 张牌的 #y夏洛的小作文 。"
+    ]
+  },
+  "${modID}:DrawLessNextTurnPower": {
+    "NAME": "迟缓",
+    "DESCRIPTIONS": [
+      "下回合少抽 ",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${modID}:EnergizedLessNextTurnPower": {
+    "NAME": "枯竭",
+    "DESCRIPTIONS": [
+      "下回合少回复 ",
+      " 点能量。",
+      " 点能量。"
     ]
   }
 }
