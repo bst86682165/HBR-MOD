@@ -34,8 +34,8 @@ public class Attribute extends BaseRelic
     private int hbrTJ = 10;
     private int hbrZY = 10;
     // 定义每次战斗重新计算的静态成员变量，怪物白值和我方攻击白值
-    private static float MonPoint;
-    private static float[] AttackPoint = new float[5];
+    private static int MonPoint;
+    private static int[] AttackPoint = new int[5];
 
     // 构建遗物实例及其描述，刷新鼠标放在其上出现的tips
     public Attribute() {
@@ -123,16 +123,16 @@ public class Attribute extends BaseRelic
     }
 
     // MonsterPoint的get、set方法
-    public static float getMonPoint() {
+    public static int getMonPoint() {
         return MonPoint;
     }
 
-    public static void setMonPoint(float monPoint) {
+    public static void setMonPoint(int monPoint) {
         MonPoint = monPoint;
     }
 
     // 战斗开局时调用，计算怪物白值，此处可以待怪物与白值对照表完成后再修改
-    private float calculateMonPoint() {
+    private int calculateMonPoint() {
         int Floor = AbstractDungeon.floorNum;
         int Act = AbstractDungeon.actNum;
         MonPoint = 7 + (int)(Floor/3) + 3 * Act;
@@ -173,22 +173,22 @@ public class Attribute extends BaseRelic
     }
 
     // AttackPoint的get、set方法
-    public static float[] getAttackPoint() {
+    public static int[] getAttackPoint() {
         return AttackPoint;
     }
 
-    public static void setAttackPoint(float[] attackPoint) {
+    public static void setAttackPoint(int[] attackPoint) {
         AttackPoint = attackPoint;
     }
 
     // 战斗开局时调用，初始化各类型攻击牌的attackpoint
     private void initializeAttackPoint() {
-        // 这里全部用小数计算
-        float LL_preferred = ((this.hbrLL + TTLL) * 2f + this.hbrLQ + TTLQ) / 3f;
-        float LQ_preferred = (this.hbrLL + TTLL + (this.hbrLQ + TTLQ) * 2f) / 3f;
-        float TJ_preferred = this.hbrTJ + TTTJ;
-        float ZY_preferred = this.hbrZY + TTZY;
-        float No_preferred = (this.hbrLL + this.hbrLQ + TTLL + TTLQ) / 2f;
+        // 这里用整数计算
+        int LL_preferred = ((this.hbrLL + TTLL) * 2 + this.hbrLQ + TTLQ) / 3;
+        int LQ_preferred = (this.hbrLL + TTLL + (this.hbrLQ + TTLQ) * 2) / 3;
+        int TJ_preferred = this.hbrTJ + TTTJ;
+        int ZY_preferred = this.hbrZY + TTZY;
+        int No_preferred = (this.hbrLL + this.hbrLQ + TTLL + TTLQ) / 2;
         AttackPoint[0] = LL_preferred;
         AttackPoint[1] = LQ_preferred;
         AttackPoint[2] = TJ_preferred;

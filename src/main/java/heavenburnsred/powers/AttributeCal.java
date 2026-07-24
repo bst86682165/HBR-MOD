@@ -42,7 +42,7 @@ public class AttributeCal extends BasePower {
         if (type != DamageInfo.DamageType.NORMAL) {
             return damage;
         }
-        float deltaAttack = 0;
+        int deltaAttack = 0;
         // 针对HBRHitAndTypeAttackCard类别的卡
         if (card instanceof HBRHitAndTypeAttackCard) {
             HBRHitAndTypeAttackCard.HBRAttackType attackCardType = ((HBRHitAndTypeAttackCard)card).attackPreference;
@@ -86,11 +86,11 @@ public class AttributeCal extends BasePower {
             tmpSeperation = " #y";
         }
         this.description =
-                "力量型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
-                "灵巧型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "力量型攻击倍率：" + tmpSeperation + String.format("%.1f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[0] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
+                "灵巧型攻击倍率：" + tmpSeperation + String.format("%.1f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[1] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
                 /*"体精型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[2] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +
                 "智运型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[3] - Attribute.getMonPoint())) + " 。" + DESCRIPTIONS[1] +*/
-                "均衡型攻击倍率：" + tmpSeperation + String.format("%.2f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + " 。";
+                "均衡型攻击倍率：" + tmpSeperation + String.format("%.1f", calculateGiveDamageRatio(tmpDelta + Attribute.getAttackPoint()[4] - Attribute.getMonPoint())) + " 。";
     }
 
     // 防止战斗中被移除，未测试
