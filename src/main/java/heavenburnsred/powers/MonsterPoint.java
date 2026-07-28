@@ -31,10 +31,10 @@ public class MonsterPoint extends BasePower{
             DamageRatio = 2;
         } else if (DEFpoint < 10 && DEFpoint >= 0) {
             DamageRatio = DEFpoint / 10f + 1;
-        } else if (DEFpoint < 0 && DEFpoint >= -20) {
+        } else if (DEFpoint < 0 && DEFpoint >= -10) {
             DamageRatio = (20 + DEFpoint) / 20f;
-        } else if (DEFpoint < -20) {
-            DamageRatio = 0;
+        } else if (DEFpoint < -10) {
+            DamageRatio = 0.5f;
         }
         return DamageRatio;
     }
@@ -58,8 +58,8 @@ public class MonsterPoint extends BasePower{
         return damage;
     }
 
-    // 目前采用保留2位小数的描述方式
+    // 目前采用保留1位小数的描述方式
     public void updateDescription() {
-        this.description = "造成伤害倍率：" + String.format("%.2f", calculateBeAttackedRatio()) + "。";
+        this.description = "造成伤害倍率：" + String.format("%.1f", calculateBeAttackedRatio()) + "。";
     }
 }

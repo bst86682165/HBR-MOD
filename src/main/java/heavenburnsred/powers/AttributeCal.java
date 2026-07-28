@@ -77,7 +77,7 @@ public class AttributeCal extends BasePower {
         return damage;
     }
 
-    // 目前采用保留2位小数的描述方式
+    // 目前采用保留1位小数的描述方式
     public void updateDescription() {
         int tmpDelta = 0;
         String tmpSeperation = "";

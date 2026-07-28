@@ -135,9 +135,9 @@ public class Attribute extends BaseRelic
     private int calculateMonPoint() {
         int Floor = AbstractDungeon.floorNum;
         int Act = AbstractDungeon.actNum;
-        MonPoint = 7 + (int)(Floor/3) + 3 * Act;
+        MonPoint = 7 + (int)(Floor/4) + 3 * Act;
         if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
-            MonPoint = MonPoint + 3;
+            MonPoint = MonPoint + 2;
         } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
             MonPoint = MonPoint + 1;
         }

@@ -462,7 +462,7 @@
   },
   "${modID}:PhantomFish": {
     "NAME": "梦幻之鱼",
-    "DESCRIPTION": "获得 !B! 点 格挡。 NL ${modID}:代弃 ",
+    "DESCRIPTION": "在手卡最右方时可以打出，获得 !B! 点 格挡。 NL ${modID}:代弃 ",
     "EXTENDED_DESCRIPTION": ["当这张卡在手卡最右方时才可以打出"]
   },
   "${modID}:StrumtheKillerTune": {
