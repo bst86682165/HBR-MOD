@@ -60,6 +60,6 @@ public class MonsterPoint extends BasePower{
 
     // 目前采用保留1位小数的描述方式
     public void updateDescription() {
-        this.description = "造成伤害倍率：" + String.format("%.1f", calculateBeAttackedRatio()) + "。";
+        this.description = "造成伤害倍率：" + String.format("%.2f", calculateBeAttackedRatio()) + "。";
     }
 }

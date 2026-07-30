@@ -27,6 +27,7 @@ public class UltraSisters extends HBRHitAndTypeAttackCard {
     private static final int UPG_DAMAGE = 1;
     private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 1;
+    private int cachedBlock = 0;
 
     public UltraSisters() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
@@ -36,11 +37,34 @@ public class UltraSisters extends HBRHitAndTypeAttackCard {
         this.cardsToPreview = new FallingintoaFantasy();
     }
 
+    public void applyPowers() {
+        int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
+        int realBaseDamage = this.baseDamage;   // 先保存真正的基础伤害
+        int realBaseBlock = this.baseBlock;
+        this.baseDamage = this.baseDamage * FFcount;
+        this.baseBlock = this.baseBlock * FFcount;
+        super.applyPowers();    // 调用父类方法
+        this.cachedBlock = this.block;
+        this.baseDamage = realBaseDamage;  // 恢复基础
+        this.baseBlock = realBaseBlock;
+        this.isDamageModified = (this.damage != this.baseDamage);
+        this.isBlockModified = (this.block != this.baseBlock);
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage = this.baseDamage * FFcount;
+        super.calculateCardDamage(mo);  // 计算对特定怪物的伤害（考虑易伤、虚弱等）
+        this.baseDamage = realBaseDamage;
+        this.isDamageModified = (this.damage != this.baseDamage);
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
-        addToBot(new GainBlockAction(p,block * FFcount));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage * FFcount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        //int FFcount = CountCards.CountCardsInWholeDeck(FallingintoaFantasy.ID);
+        addToBot(new GainBlockAction(p,p,cachedBlock));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

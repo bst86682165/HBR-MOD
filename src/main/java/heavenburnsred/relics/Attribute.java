@@ -2,6 +2,8 @@ package heavenburnsred.relics;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,6 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.BufferPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
@@ -161,7 +166,10 @@ public class Attribute extends BaseRelic
         TTLL += TempLL;
         TTLQ += TempLQ;
         TTTJ += TempTJ;
+        //用于战斗中随时调整智慧的效果
+        int ZYbefore = ((Attribute)AbstractDungeon.player.getRelic(Attribute.ID)).hbrZY + TTZY;
         TTZY += TempZY;
+        int ZYafter = ((Attribute)AbstractDungeon.player.getRelic(Attribute.ID)).hbrZY + TTZY;
         ((Attribute)AbstractDungeon.player.getRelic(Attribute.ID)).initializeAttackPoint();
         AbstractDungeon.player.getPower(AttributeCal.POWER_ID).updateDescription();
         for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
@@ -196,6 +204,9 @@ public class Attribute extends BaseRelic
         AttackPoint[4] = No_preferred;
     }
 
+    //智运相关的变量
+    private boolean ApplyL = false;
+    private boolean ApplyM = false;
     public void atBattleStartPreDraw(){
         this.flash();
         // 战斗开始先初始化怪物白值和己方5种攻击牌的攻击点数
@@ -203,10 +214,40 @@ public class Attribute extends BaseRelic
         setMonPoint(calculateMonPoint());
         initializeAttackPoint();
 
+        //初始化智运相关变量
+        ApplyL = false;
+        ApplyM = false;
+
         //在此书写智运提高后的增益
+        /*
+        +2：战斗开始时回复2点生命
+        +5：战斗开始时获得1层人工制品
+        +8：第一回合多抽1张牌
+        +11：1点力量
+        +14：1点敏捷
+        +17：战斗开始获得1层缓冲
+         */
+        if (hbrZY > 12){
+            addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,2));
+        }
         if (hbrZY > 15){
             addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ArtifactPower(AbstractDungeon.player,1)));
         }
+        if (hbrZY > 18){
+            addToBot(new DrawCardAction(1));
+        }
+        if (hbrZY > 21){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,1),1));
+            ApplyL = true;
+        }
+        if (hbrZY > 24){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,1),1));
+            ApplyM = true;
+        }
+        if (hbrZY > 27){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BufferPower(AbstractDungeon.player,1),1));
+        }
+
     }
 
     //以buff的形式赋予自身防御值与怪兽白值,改为每回合开始以应对复活的情况

@@ -71,7 +71,8 @@
   },
   "${modID}:UltraSisters": {
     "NAME": "六姐妹齐心",
-    "DESCRIPTION": "造成 !D! 倍抽牌堆、手牌中 *沉入梦幻 数量的伤害，获得 !B! 倍抽牌堆、手牌中 *沉入梦幻 数量的 格挡 。"
+    "DESCRIPTION": "造成 *3 倍牌库中 *沉入梦幻 数量的伤害(当前 !D!) NL 获得 *4 倍牌库中 *沉入梦幻 数量的 格挡 (当前 !B!)。",
+    "UPGRADE_DESCRIPTION": "造成 *4 倍牌库中 *沉入梦幻 数量的伤害(当前 !D!) NL 获得 *5 倍牌库中 *沉入梦幻 数量的 格挡 (当前 !B!)。"
   },
   "${modID}:MercyDance": {
     "NAME": "慈悲之舞",
@@ -378,7 +379,7 @@
   },
   "${modID}:IndianCurry": {
     "NAME": "印度咖喱",
-    "DESCRIPTION": "获得 !B! 点 格挡 X 次。 NL 回复 X 点生命。"
+    "DESCRIPTION": "获得 !B! 点 格挡 X 次。 NL 回复 X 点生命。 NL 消耗"
   },
   "${modID}:GachaRage": {
     "NAME": "抽卡红温",

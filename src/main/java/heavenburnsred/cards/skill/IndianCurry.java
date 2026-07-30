@@ -20,13 +20,13 @@ public class IndianCurry extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 2;
 
     public IndianCurry() {
         super(ID,info); //Pass the required information to the BaseCard constructor.
-
         setBlock(BLOCK,UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
+        this.exhaust = true;
     }
 
     @Override
